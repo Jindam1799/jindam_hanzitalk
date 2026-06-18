@@ -1,100 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>진담한자톡</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- 인트로 화면 -->
     <div id="intro-screen">
-        <div class="intro-content">
-            <p class="brand-subtitle">진심을 담은 중국어, <strong>진담중국어</strong></p>
-            <h1>진담한자톡</h1>
-            <p class="blink-text">화면을 터치하여 시작하세요</p>
-        </div>
-    </div>
-
-    <div class="header" id="main-header" style="display: none">
+      <div class="intro-content">
+        <p class="brand-subtitle">
+          진심을 담은 중국어, <strong>진담중국어</strong>
+        </p>
         <h1>진담한자톡</h1>
-        <div class="settings-group">
-            <div class="setting-wrapper">
-                <label for="theme-color">성취 색상</label>
-                <input type="color" id="theme-color" value="#e11d48" />
-            </div>
-            <button class="review-btn" id="open-review-btn">📝 복습장</button>
-        </div>
+        <p class="blink-text">화면을 터치하여 시작하세요</p>
+      </div>
     </div>
 
+    <!-- 로비 헤더 -->
+    <div class="header" id="main-header" style="display: none">
+      <h1>진담한자톡</h1>
+      <div class="settings-group">
+        <div class="setting-wrapper">
+          <label for="theme-color">성취 색상</label>
+          <input type="color" id="theme-color" value="#e11d48" />
+        </div>
+        <button class="review-btn" id="open-review-btn">📝 집중 복습장</button>
+      </div>
+    </div>
+
+    <!-- 💡 레벨 선택 드롭다운 메뉴 -->
+    <div class="level-selector" id="level-selector" style="display: none">
+      <button class="level-toggle-btn" id="level-toggle-btn">
+        <span id="current-level-text">🌱 LV.1 기본</span>
+        <span class="dropdown-arrow">▼</span>
+      </button>
+
+      <div class="level-dropdown-menu" id="level-dropdown-menu">
+        <button class="lvl-btn active" data-level="1">🌱 LV.1 기본</button>
+        <button class="lvl-btn" data-level="2">🔄 LV.2 변신</button>
+        <button class="lvl-btn" data-level="3">🌿 LV.3 사물</button>
+        <button class="lvl-btn" data-level="4">🚶 LV.4 행동</button>
+        <button class="lvl-btn" data-level="5">💭 LV.5 상태</button>
+      </div>
+    </div>
+
+    <!-- 캘린더 뷰 -->
     <div id="calendar-view" style="display: none"></div>
 
+    <!-- 집중 복습장 뷰 -->
     <div id="review-list-view" style="display: none">
-        <button class="back-text-btn" id="close-review-btn">← 달력으로 돌아가기</button>
-        <h2>복습장</h2>
-        <p style="color: var(--text-muted); margin-bottom: 20px">지금까지 학습한 한자를 10번씩 반복해서 연습합니다.</p>
-        <div id="review-grid" class="review-grid"></div>
+      <button class="back-text-btn" id="close-review-btn">
+        ← 달력으로 돌아가기
+      </button>
+      <h2>집중 복습장 (10번 쓰기)</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px">
+        지금까지 학습한 한자를 10번씩 반복해서 연습합니다.
+      </p>
+      <div id="review-grid" class="review-grid"></div>
     </div>
 
-    <div id="setting-modal" class="modal-overlay" style="display:none;">
-        <div class="modal-content">
-            <h2 id="modal-day-title">Day X 학습 설정</h2>
-            <p>오늘의 학습 난이도를 선택해 주세요.</p>
-            
-            <div class="level-buttons">
-                <button class="level-btn" onclick="confirmStudyStart('beginner')">
-                    <strong>🌱 초급 (기초 한자)</strong>
-                    <span>부수 + 대표 파생 한자 5개</span>
-                </button>
-                <button class="level-btn" onclick="confirmStudyStart('intermediate')">
-                    <strong>🌿 중급 (단어 확장)</strong>
-                    <span>부수 + 파생 한자가 포함된 단어</span>
-                </button>
-                <button class="level-btn" onclick="confirmStudyStart('advanced')">
-                    <strong>🌳 고급 (성어 마스터)</strong>
-                    <span>부수 + 자주 쓰는 사자성어</span>
-                </button>
-            </div>
+    <!-- 난이도 선택 모달 -->
+    <div id="setting-modal" class="modal-overlay" style="display: none">
+      <div class="modal-content">
+        <h2 id="modal-day-title">Day X 학습 설정</h2>
+        <p>오늘의 학습 난이도를 선택해 주세요.</p>
 
-            <div class="modal-buttons" style="justify-content: center;">
-                <button class="action-btn" id="modal-cancel-btn">뒤로 가기</button>
-            </div>
+        <div class="level-buttons">
+          <!-- 활성화된 초급 버튼 -->
+          <button class="level-btn" onclick="confirmStudyStart('beginner')">
+            <strong>🌱 초급 (기초 한자)</strong>
+            <span>부수 + 대표 파생 한자 5개</span>
+          </button>
+          <!-- 잠금 처리된 중급/고급 버튼 -->
+          <button class="level-btn locked">
+            <strong>🌿 중급 (단어 확장) 🔒</strong>
+            <span>부수 + 파생 한자가 포함된 단어</span>
+          </button>
+          <button class="level-btn locked">
+            <strong>🌳 고급 (성어 마스터) 🔒</strong>
+            <span>부수 + 자주 쓰는 사자성어</span>
+          </button>
         </div>
+
+        <div class="modal-buttons" style="justify-content: center">
+          <button class="action-btn" id="modal-cancel-btn">뒤로 가기</button>
+        </div>
+      </div>
     </div>
 
+    <!-- 학습 화면 영역 -->
     <div id="study-view" style="display: none">
-        <div class="study-nav">
-            <button class="back-text-btn" id="back-btn">← 그만하기</button>
-            <div class="step-indicator" id="step-indicator">Step 1/3</div>
-        </div>
-        
-        <div class="study-info">
-            <div class="study-title-row">
-                <span id="study-title-text" class="study-title"></span>
-                <span id="pinyin-display" class="pinyin-display"></span>
-                <button class="tts-btn" id="tts-btn" title="발음 듣기">
-                    <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-                </button>
-            </div>
-            <p class="study-desc" id="study-desc"></p>
-        </div>
+      <div class="study-nav">
+        <button class="back-text-btn" id="back-btn">← 그만하기</button>
+        <div class="step-indicator" id="step-indicator">Step 1/3</div>
+      </div>
 
-        <div class="writer-container">
-            <div id="writer-target"></div>
+      <div class="study-info">
+        <div class="study-title-row">
+          <span id="study-title-text" class="study-title"></span>
+          <span id="pinyin-display" class="pinyin-display"></span>
+          <button class="tts-btn" id="tts-btn" title="발음 듣기">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+              />
+            </svg>
+          </button>
         </div>
+        <p class="study-desc" id="study-desc"></p>
+      </div>
 
-        <div class="status-msg" id="status-msg"></div>
-        <div class="btn-group">
-            <button class="action-btn" id="hint-btn">모범 획순 보기</button>
-            <button class="action-btn primary" id="next-btn">다음 단계</button>
-        </div>
+      <div class="writer-container">
+        <div id="writer-target"></div>
+      </div>
+
+      <div class="status-msg" id="status-msg"></div>
+      <div class="btn-group">
+        <button class="action-btn" id="hint-btn">모범 획순 보기</button>
+        <button class="action-btn primary" id="next-btn">다음 단계</button>
+      </div>
     </div>
 
+    <!-- 진담중국어 브랜드 하단 푸터 -->
     <div class="brand-footer">
-        <span>진심을 담은 중국어,</span> <strong>진담중국어</strong>
+      <span>진심을 담은 중국어,</span> <strong>진담중국어</strong>
     </div>
 
     <script src="data.js"></script>
     <script src="scripts.js"></script>
-</body>
+  </body>
 </html>
