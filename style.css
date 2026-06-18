@@ -20,7 +20,6 @@
   user-select: none;
 }
 
-/* 기본 바디 세팅 (스크롤 방지 고정) */
 body {
   background-color: var(--bg-color);
   color: var(--text-main);
@@ -259,6 +258,19 @@ input[type='color']::-webkit-color-swatch {
   color: var(--text-muted);
 }
 
+/* 잠금 처리된 버튼 스타일 추가 */
+.level-btn.locked {
+  opacity: 0.4;
+  background: var(--bg-color);
+  cursor: not-allowed;
+  border-color: var(--border-light);
+}
+.level-btn.locked:hover {
+  transform: none;
+  background: var(--bg-color);
+  border-color: var(--border-light);
+}
+
 .modal-buttons {
   display: flex;
   gap: 10px;
@@ -312,7 +324,7 @@ input[type='color']::-webkit-color-swatch {
   color: var(--text-muted);
 }
 
-/* --- 일일 학습 뷰 (PC 기준 기본 구조) --- */
+/* 일일 학습 뷰 */
 #study-view {
   display: none;
   flex-direction: column;
@@ -406,7 +418,6 @@ input[type='color']::-webkit-color-swatch {
   margin: 0;
 }
 
-/* 캔버스 컨레이너 기본 세팅 */
 .writer-container {
   width: 100%;
   max-width: 450px;
@@ -501,35 +512,129 @@ button:disabled {
   color: var(--theme-color);
   font-weight: 700;
 }
+/* (기존 CSS 코드들은 그대로 유지하고, 아래 내용으로 기존 .level-nav 부분을 교체해 주세요) */
 
-/* =================================================== */
-/* 📱 모바일 환경 전용 극대화 및 스크롤 배제 레이아웃 (핵심) */
-/* =================================================== */
+/* 💡 레벨 선택 드롭다운 디자인 */
+.level-selector {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 100; /* 캘린더보다 위에 뜨게 설정 */
+}
+
+.level-toggle-btn {
+  background: var(--surface);
+  border: 2px solid var(--theme-color);
+  color: var(--text-main);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.level-toggle-btn:hover {
+  background: #fff1f2;
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  color: var(--theme-color);
+  transition: transform 0.3s ease;
+}
+
+/* 메뉴가 열리면 화살표가 뒤집힘 */
+.level-selector.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.level-dropdown-menu {
+  position: absolute;
+  top: 55px; /* 버튼 바로 아래 위치 */
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  width: 200px;
+  display: none; /* JS로 클래스 토글시 display 변경 */
+  flex-direction: column;
+  overflow: hidden;
+  padding: 8px;
+}
+
+.level-selector.open .level-dropdown-menu {
+  display: flex;
+}
+
+.level-dropdown-menu .lvl-btn {
+  background: none;
+  border: none;
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.level-dropdown-menu .lvl-btn:hover {
+  background: var(--bg-color);
+  color: var(--text-main);
+}
+
+.level-dropdown-menu .lvl-btn.active {
+  color: var(--theme-color);
+  background: #fff1f2;
+}
+.lvl-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-light);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+.lvl-btn.active {
+  background: var(--theme-color);
+  color: #fff;
+  border-color: var(--theme-color);
+}
+
 @media (max-width: 480px) {
   body {
     padding: 10px;
     height: 100vh;
     height: 100dvh;
-    overflow: hidden; /* 시스템 레벨 스크롤 강제 차단 */
+    overflow: hidden;
   }
 
-  /* 학습 화면을 모바일 전체 화면에 최적화 */
   #study-view {
     width: 100% !important;
     height: 100% !important;
     max-height: 100% !important;
     border-radius: 16px !important;
     padding: 16px 12px !important;
-    justify-content: space-between !important; /* 내부 간격을 상하로 꽉 채우기 */
+    justify-content: space-between !important;
     box-shadow: none !important;
   }
 
-  /* 네비게이션 여백 최소화 */
   .study-nav {
     margin-bottom: 8px !important;
   }
 
-  /* 정보 레이아웃 텍스트 압축 */
   .study-info {
     margin-bottom: 10px !important;
   }
@@ -553,9 +658,8 @@ button:disabled {
     line-height: 1.4 !important;
   }
 
-  /* 캔버스를 화면 비율에 맞춰 대폭 확장 (가장 중요) */
   .writer-container {
-    width: 86vw !important; /* 모바일 좌우 너비 거의 꽉 채움 */
+    width: 86vw !important;
     max-width: 380px !important;
     margin: 0 auto 10px auto !important;
   }
@@ -566,14 +670,12 @@ button:disabled {
     margin-bottom: 10px !important;
   }
 
-  /* 하단 버튼 컴팩트화 */
   button.action-btn {
     padding: 10px 18px !important;
     font-size: 0.95rem !important;
     border-radius: 10px !important;
   }
 
-  /* 푸터 여백 축소 */
   .brand-footer {
     padding-top: 15px !important;
     padding-bottom: 5px !important;
