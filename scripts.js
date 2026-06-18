@@ -6,7 +6,7 @@ let currentStepIndex = 0;
 let writer = null;
 let currentHanziForTTS = '';
 
-// --- 💬 중국어 칭찬 메시지 10종 배열 ---
+// --- 💬 완성 칭찬 메시지 10종 (TTS 재생됨) ---
 const praiseList = [
   '太棒了！',
   '非常好！',
@@ -18,6 +18,17 @@ const praiseList = [
   '笔顺很漂亮！',
   '继续保持！',
   '无可挑剔！',
+];
+
+// --- 💬 획순 추임새 7종 (자막만 표시, TTS 안 함) ---
+const strokeEncouragementList = [
+  '对！',
+  '很好！',
+  '漂亮！',
+  '加油！',
+  '不错！',
+  '很棒！',
+  '正确！',
 ];
 
 // --- BGM 제어 시스템 ---
@@ -39,7 +50,7 @@ function loadVoices() {
 }
 window.speechSynthesis.onvoiceschanged = loadVoices;
 
-// --- 🎧 아날로그 질감 사운드 엔진 (진담중국어 스타일) ---
+// --- 🎧 아날로그 질감 사운드 엔진 ---
 let audioCtx = null;
 
 function initAudio() {
@@ -50,23 +61,20 @@ function initAudio() {
   if (audioCtx.state === 'suspended') audioCtx.resume();
 }
 
-// 1. "톡" 소리 개선: 피치가 급격히 떨어지는 타격감 + 짧은 노이즈로 귀엽고 경쾌한 톡톡 소리
 function playTokSound() {
   if (!audioCtx) return;
   const now = audioCtx.currentTime;
 
-  // 타격감을 위한 맑고 짧은 피치 드롭(Pitch Drop)
   const osc = audioCtx.createOscillator();
   const oscGain = audioCtx.createGain();
   osc.type = 'sine';
-  osc.frequency.setValueAtTime(800, now); // 높은 음에서 시작해서
-  osc.frequency.exponentialRampToValueAtTime(150, now + 0.05); // 아주 짧은 순간 뚝 떨어짐
+  osc.frequency.setValueAtTime(800, now);
+  osc.frequency.exponentialRampToValueAtTime(150, now + 0.05);
 
   oscGain.gain.setValueAtTime(0, now);
   oscGain.gain.linearRampToValueAtTime(0.6, now + 0.01);
-  oscGain.gain.exponentialRampToValueAtTime(0.01, now + 0.08); // 0.08초 만에 소멸
+  oscGain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
 
-  // 연필이 부딪히는 질감을 위한 고음역대 짧은 노이즈
   const bufferSize = audioCtx.sampleRate * 0.05;
   const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
   const output = noiseBuffer.getChannelData(0);
@@ -95,7 +103,6 @@ function playTokSound() {
   noiseSource.stop(now + 0.08);
 }
 
-// 2. "툭" (마지막 획): 성취감 있는 도장 소리
 function playTukSound() {
   if (!audioCtx) return;
   const now = audioCtx.currentTime;
@@ -158,6 +165,11 @@ function bindEvents() {
     document.getElementById('intro-screen').style.display = 'none';
     document.getElementById('main-header').style.display = 'block';
     document.getElementById('calendar-view').style.display = 'grid';
+
+    document.getElementById('study-view').style.display = 'none';
+    document.getElementById('review-list-view').style.display = 'none';
+    document.getElementById('setting-modal').style.display = 'none';
+
     initAudio();
     playRandomBGM();
   });
@@ -179,9 +191,6 @@ function bindEvents() {
   document.getElementById('modal-cancel-btn').addEventListener('click', () => {
     document.getElementById('setting-modal').style.display = 'none';
   });
-  document
-    .getElementById('modal-start-btn')
-    .addEventListener('click', confirmStudyStart);
 
   document
     .getElementById('tts-btn')
@@ -224,14 +233,13 @@ function openSettingModal(dayData) {
   document.getElementById('setting-modal').style.display = 'flex';
 }
 
-function confirmStudyStart() {
-  const countSelect = document.getElementById('char-count').value;
+function confirmStudyStart(level) {
   document.getElementById('setting-modal').style.display = 'none';
-  startStudy(pendingStudyDay, countSelect);
+  startStudy(pendingStudyDay, level);
 }
 
-// --- 일반 학습 로직 ---
-function startStudy(dayData, countSelect) {
+// --- 일반 학습 로직 (단어/성어 분할 지원) ---
+function startStudy(dayData, level) {
   currentStudyDay = dayData;
   document.getElementById('calendar-view').style.display = 'none';
   document.getElementById('main-header').style.display = 'none';
@@ -239,7 +247,7 @@ function startStudy(dayData, countSelect) {
 
   studyFlow = [];
   const rad = dayData.radical;
-  // 💡 [백지 인출] 삭제, rad.name 만 출력되게 수정
+
   studyFlow.push({
     type: 'trace',
     char: rad.char,
@@ -261,33 +269,41 @@ function startStudy(dayData, countSelect) {
     desc: `밑그림 없이 기억을 떠올려 적어보세요.`,
   });
 
-  let relatedPool = [...dayData.related];
-  for (let i = relatedPool.length - 1; i > 0; i--) {
+  let pool = [];
+  if (level === 'beginner') {
+    pool = [...(dayData.related || [])].slice(0, 5);
+  } else if (level === 'intermediate') {
+    pool = [...(dayData.words || dayData.related || [])];
+  } else if (level === 'advanced') {
+    pool = [...(dayData.idioms || dayData.related || [])];
+  }
+
+  for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [relatedPool[i], relatedPool[j]] = [relatedPool[j], relatedPool[i]];
+    [pool[i], pool[j]] = [pool[j], pool[i]];
   }
 
-  if (countSelect !== 'all') {
-    relatedPool = relatedPool.slice(0, parseInt(countSelect, 10));
-  }
-
-  relatedPool.forEach((rel) => {
-    // 💡 [백지 인출] 삭제
-    studyFlow.push({
-      type: 'trace',
-      char: rel.char,
-      ttsChar: rel.char,
-      pinyin: rel.pinyin,
-      title: `${rel.name}`,
-      desc: rel.desc,
-    });
-    studyFlow.push({
-      type: 'blank',
-      char: rel.char,
-      ttsChar: rel.char,
-      pinyin: rel.pinyin,
-      title: `${rel.name}`,
-      desc: `백지에 정확히 써보세요.`,
+  pool.forEach((item) => {
+    const chars = Array.from(item.char);
+    chars.forEach((c, idx) => {
+      const multiCharTag =
+        chars.length > 1 ? ` (${idx + 1}/${chars.length})` : '';
+      studyFlow.push({
+        type: 'trace',
+        char: c,
+        ttsChar: c,
+        pinyin: item.pinyin,
+        title: `${item.name}${multiCharTag}`,
+        desc: item.desc || `획순을 따라 써보세요.`,
+      });
+      studyFlow.push({
+        type: 'blank',
+        char: c,
+        ttsChar: c,
+        pinyin: item.pinyin,
+        title: `${item.name}${multiCharTag}`,
+        desc: `백지에 정확히 써보세요.`,
+      });
     });
   });
 
@@ -295,7 +311,7 @@ function startStudy(dayData, countSelect) {
   loadStep();
 }
 
-// --- 집중 복습장 (10번 쓰기) 로직 ---
+// --- 집중 복습장 로직 ---
 function openReviewMenu() {
   document.getElementById('calendar-view').style.display = 'none';
   document.getElementById('main-header').style.display = 'none';
@@ -334,7 +350,6 @@ function start10xReview(charData, isRadical) {
   currentStudyDay = null;
   studyFlow = [];
 
-  // 💡 [가이드] 삭제
   studyFlow.push({
     type: 'trace',
     char: charData.char,
@@ -346,7 +361,6 @@ function start10xReview(charData, isRadical) {
     desc: charData.desc,
   });
 
-  // 💡 [집중 훈련] 삭제
   for (let i = 1; i <= 10; i++) {
     studyFlow.push({
       type: 'blank',
@@ -418,7 +432,11 @@ function loadStep() {
       statusMsg.style.color = '#ea580c';
     },
     onCorrectStroke: function () {
-      statusMsg.innerText = '👍 계속 이어가세요!';
+      const randomEncourage =
+        strokeEncouragementList[
+          Math.floor(Math.random() * strokeEncouragementList.length)
+        ];
+      statusMsg.innerText = `👍 ${randomEncourage}`;
       statusMsg.style.color = 'var(--success)';
     },
     onComplete: function () {
@@ -438,7 +456,6 @@ function loadStep() {
   });
 }
 
-// --- 범용 TTS 함수 ---
 function playTTS(text, rate) {
   if (!text) return;
   window.speechSynthesis.cancel();
