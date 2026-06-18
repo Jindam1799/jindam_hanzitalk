@@ -6,15 +6,29 @@ let currentStepIndex = 0;
 let writer = null;
 let currentHanziForTTS = '';
 
+// --- 💬 중국어 칭찬 메시지 10종 배열 ---
+const praiseList = [
+  '太棒了！',
+  '非常好！',
+  '完美！',
+  '写得真好！',
+  '完全正确！',
+  '太出色了！',
+  '了不起！',
+  '笔顺很漂亮！',
+  '继续保持！',
+  '无可挑剔！',
+];
+
 // --- BGM 제어 시스템 ---
 const bgmTracks = ['bgm1.mp3', 'bgm2.mp3', 'bgm3.mp3', 'bgm4.mp3'];
 const bgmAudio = new Audio();
-bgmAudio.volume = 0.3; // 효과음/TTS를 위해 배경음은 작게
+bgmAudio.volume = 0.3;
 
 function playRandomBGM() {
   const randomTrack = bgmTracks[Math.floor(Math.random() * bgmTracks.length)];
   bgmAudio.src = randomTrack;
-  bgmAudio.play().catch((e) => console.log('BGM 재생 대기', e));
+  bgmAudio.play().catch((e) => console.log('BGM 대기', e));
 }
 bgmAudio.addEventListener('ended', playRandomBGM);
 
@@ -25,84 +39,103 @@ function loadVoices() {
 }
 window.speechSynthesis.onvoiceschanged = loadVoices;
 
-// --- 🎧 부드러운 연필/붓 ASMR 엔진 ---
+// --- 🎧 아날로그 질감 사운드 엔진 (진담중국어 스타일) ---
 let audioCtx = null;
-let brushGainNode = null;
-let isDrawing = false;
 
 function initAudio() {
-  if (audioCtx) return;
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  audioCtx = new AudioContext();
-  const bufferSize = audioCtx.sampleRate * 2;
-  const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-  const data = buffer.getChannelData(0);
-
-  let b0 = 0,
-    b1 = 0,
-    b2 = 0,
-    b3 = 0,
-    b4 = 0,
-    b5 = 0,
-    b6 = 0;
-  for (let i = 0; i < bufferSize; i++) {
-    let white = Math.random() * 2 - 1;
-    b0 = 0.99886 * b0 + white * 0.0555179;
-    b1 = 0.99332 * b1 + white * 0.0750759;
-    b2 = 0.969 * b2 + white * 0.153852;
-    b3 = 0.8665 * b3 + white * 0.3104856;
-    b4 = 0.55 * b4 + white * 0.5329522;
-    b5 = -0.7616 * b5 - white * 0.016898;
-    let pink = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
-    b6 = white * 0.115926;
-    data[i] = pink * 0.05;
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    audioCtx = new AudioContext();
   }
-  const noise = audioCtx.createBufferSource();
-  noise.buffer = buffer;
-  noise.loop = true;
-
-  const highpass = audioCtx.createBiquadFilter();
-  highpass.type = 'highpass';
-  highpass.frequency.value = 250;
-  const bandpass = audioCtx.createBiquadFilter();
-  bandpass.type = 'bandpass';
-  bandpass.frequency.value = 850;
-  bandpass.Q.value = 1.2;
-  const lowpass = audioCtx.createBiquadFilter();
-  lowpass.type = 'lowpass';
-  lowpass.frequency.value = 1500;
-
-  brushGainNode = audioCtx.createGain();
-  brushGainNode.gain.value = 0;
-  noise.connect(highpass);
-  highpass.connect(bandpass);
-  bandpass.connect(lowpass);
-  lowpass.connect(brushGainNode);
-  brushGainNode.connect(audioCtx.destination);
-  noise.start();
-}
-
-function startBrushSound() {
-  if (!audioCtx) initAudio();
   if (audioCtx.state === 'suspended') audioCtx.resume();
-  isDrawing = true;
-  brushGainNode.gain.cancelScheduledValues(audioCtx.currentTime);
-  brushGainNode.gain.setValueAtTime(
-    brushGainNode.gain.value,
-    audioCtx.currentTime,
-  );
-  brushGainNode.gain.linearRampToValueAtTime(0.8, audioCtx.currentTime + 0.05);
 }
 
-function stopBrushSound() {
-  if (!brushGainNode || !isDrawing) return;
-  isDrawing = false;
-  brushGainNode.gain.cancelScheduledValues(audioCtx.currentTime);
-  brushGainNode.gain.setValueAtTime(
-    brushGainNode.gain.value,
-    audioCtx.currentTime,
-  );
-  brushGainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.05);
+// 1. "톡" 소리 개선: 피치가 급격히 떨어지는 타격감 + 짧은 노이즈로 귀엽고 경쾌한 톡톡 소리
+function playTokSound() {
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+
+  // 타격감을 위한 맑고 짧은 피치 드롭(Pitch Drop)
+  const osc = audioCtx.createOscillator();
+  const oscGain = audioCtx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(800, now); // 높은 음에서 시작해서
+  osc.frequency.exponentialRampToValueAtTime(150, now + 0.05); // 아주 짧은 순간 뚝 떨어짐
+
+  oscGain.gain.setValueAtTime(0, now);
+  oscGain.gain.linearRampToValueAtTime(0.6, now + 0.01);
+  oscGain.gain.exponentialRampToValueAtTime(0.01, now + 0.08); // 0.08초 만에 소멸
+
+  // 연필이 부딪히는 질감을 위한 고음역대 짧은 노이즈
+  const bufferSize = audioCtx.sampleRate * 0.05;
+  const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+  const output = noiseBuffer.getChannelData(0);
+  for (let i = 0; i < bufferSize; i++) output[i] = Math.random() * 2 - 1;
+
+  const noiseSource = audioCtx.createBufferSource();
+  noiseSource.buffer = noiseBuffer;
+  const noiseFilter = audioCtx.createBiquadFilter();
+  noiseFilter.type = 'highpass';
+  noiseFilter.frequency.value = 1500;
+
+  const noiseGain = audioCtx.createGain();
+  noiseGain.gain.setValueAtTime(0, now);
+  noiseGain.gain.linearRampToValueAtTime(0.3, now + 0.01);
+  noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+
+  osc.connect(oscGain);
+  oscGain.connect(audioCtx.destination);
+  noiseSource.connect(noiseFilter);
+  noiseFilter.connect(noiseGain);
+  noiseGain.connect(audioCtx.destination);
+
+  osc.start(now);
+  osc.stop(now + 0.08);
+  noiseSource.start(now);
+  noiseSource.stop(now + 0.08);
+}
+
+// 2. "툭" (마지막 획): 성취감 있는 도장 소리
+function playTukSound() {
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+
+  const osc = audioCtx.createOscillator();
+  const oscGain = audioCtx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(300, now);
+  osc.frequency.exponentialRampToValueAtTime(120, now + 0.25);
+
+  oscGain.gain.setValueAtTime(0, now);
+  oscGain.gain.linearRampToValueAtTime(0.8, now + 0.02);
+  oscGain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+
+  const bufferSize = audioCtx.sampleRate * 0.25;
+  const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+  const output = noiseBuffer.getChannelData(0);
+  for (let i = 0; i < bufferSize; i++) output[i] = Math.random() * 2 - 1;
+
+  const noiseSource = audioCtx.createBufferSource();
+  noiseSource.buffer = noiseBuffer;
+  const noiseFilter = audioCtx.createBiquadFilter();
+  noiseFilter.type = 'lowpass';
+  noiseFilter.frequency.value = 600;
+
+  const noiseGain = audioCtx.createGain();
+  noiseGain.gain.setValueAtTime(0, now);
+  noiseGain.gain.linearRampToValueAtTime(0.3, now + 0.02);
+  noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+
+  osc.connect(oscGain);
+  oscGain.connect(audioCtx.destination);
+  noiseSource.connect(noiseFilter);
+  noiseFilter.connect(noiseGain);
+  noiseGain.connect(audioCtx.destination);
+
+  osc.start(now);
+  osc.stop(now + 0.25);
+  noiseSource.start(now);
+  noiseSource.stop(now + 0.25);
 }
 
 // --- 초기화 및 이벤트 바인딩 ---
@@ -121,13 +154,12 @@ function init() {
 }
 
 function bindEvents() {
-  // 인트로 화면 클릭 시 권한 획득 & 시작
   document.getElementById('intro-screen').addEventListener('click', () => {
     document.getElementById('intro-screen').style.display = 'none';
     document.getElementById('main-header').style.display = 'block';
     document.getElementById('calendar-view').style.display = 'grid';
-    initAudio(); // 브러쉬 오디오 엔진 초기화
-    playRandomBGM(); // BGM 재생 시작
+    initAudio();
+    playRandomBGM();
   });
 
   document.getElementById('theme-color').addEventListener('change', (e) => {
@@ -136,7 +168,6 @@ function bindEvents() {
     localStorage.setItem('dothabit_color', newColor);
   });
 
-  // 화면 전환 버튼들
   document.getElementById('back-btn').addEventListener('click', showCalendar);
   document
     .getElementById('open-review-btn')
@@ -145,7 +176,6 @@ function bindEvents() {
     .getElementById('close-review-btn')
     .addEventListener('click', showCalendar);
 
-  // 모달 제어
   document.getElementById('modal-cancel-btn').addEventListener('click', () => {
     document.getElementById('setting-modal').style.display = 'none';
   });
@@ -153,16 +183,14 @@ function bindEvents() {
     .getElementById('modal-start-btn')
     .addEventListener('click', confirmStudyStart);
 
-  // 스터디 컨트롤
-  document.getElementById('tts-btn').addEventListener('click', playTTS);
+  document
+    .getElementById('tts-btn')
+    .addEventListener('click', () => playTTS(currentHanziForTTS, 0.85));
   document.getElementById('hint-btn').addEventListener('click', playHint);
   document.getElementById('next-btn').addEventListener('click', handleAction);
 
-  // 필기 소리 제어
   const writerTarget = document.getElementById('writer-target');
-  writerTarget.addEventListener('pointerdown', startBrushSound);
-  window.addEventListener('pointerup', stopBrushSound);
-  window.addEventListener('pointercancel', stopBrushSound);
+  writerTarget.addEventListener('pointerdown', playTokSound);
 }
 
 function renderCalendar() {
@@ -187,7 +215,6 @@ function showCalendar() {
   renderCalendar();
 }
 
-// --- 학습 설정 모달 로직 ---
 let pendingStudyDay = null;
 
 function openSettingModal(dayData) {
@@ -212,6 +239,7 @@ function startStudy(dayData, countSelect) {
 
   studyFlow = [];
   const rad = dayData.radical;
+  // 💡 [백지 인출] 삭제, rad.name 만 출력되게 수정
   studyFlow.push({
     type: 'trace',
     char: rad.char,
@@ -229,7 +257,7 @@ function startStudy(dayData, countSelect) {
     pinyin: rad.pinyin,
     cnName: rad.cnName,
     cnPinyin: rad.cnPinyin,
-    title: `[백지 인출] ${rad.name}`,
+    title: `${rad.name}`,
     desc: `밑그림 없이 기억을 떠올려 적어보세요.`,
   });
 
@@ -244,6 +272,7 @@ function startStudy(dayData, countSelect) {
   }
 
   relatedPool.forEach((rel) => {
+    // 💡 [백지 인출] 삭제
     studyFlow.push({
       type: 'trace',
       char: rel.char,
@@ -257,7 +286,7 @@ function startStudy(dayData, countSelect) {
       char: rel.char,
       ttsChar: rel.char,
       pinyin: rel.pinyin,
-      title: `[백지 인출] ${rel.name}`,
+      title: `${rel.name}`,
       desc: `백지에 정확히 써보세요.`,
     });
   });
@@ -275,15 +304,12 @@ function openReviewMenu() {
   const grid = document.getElementById('review-grid');
   grid.innerHTML = '';
 
-  // 완료된 날짜의 한자들을 모두 모아서 버튼으로 만듦
   let hasData = false;
   completedDays.forEach((dayNum) => {
     const dayData = curriculum.find((c) => c.day === dayNum);
     if (!dayData) return;
 
-    // 부수 추가
     createReviewButton(grid, dayData.radical, true);
-    // 연계 한자 추가
     dayData.related.forEach((rel) => createReviewButton(grid, rel, false));
     hasData = true;
   });
@@ -296,10 +322,7 @@ function openReviewMenu() {
 function createReviewButton(grid, charData, isRadical) {
   const btn = document.createElement('div');
   btn.className = 'review-item';
-  btn.innerHTML = `
-        <div class="review-char">${charData.char}</div>
-        <div class="review-name">${charData.name}</div>
-    `;
+  btn.innerHTML = `<div class="review-char">${charData.char}</div><div class="review-name">${charData.name}</div>`;
   btn.onclick = () => start10xReview(charData, isRadical);
   grid.appendChild(btn);
 }
@@ -308,10 +331,10 @@ function start10xReview(charData, isRadical) {
   document.getElementById('review-list-view').style.display = 'none';
   document.getElementById('study-view').style.display = 'block';
 
-  currentStudyDay = null; // 복습 모드이므로 캘린더 진척도에 영향 안줌
+  currentStudyDay = null;
   studyFlow = [];
 
-  // 첫 1번은 가이드(trace), 나머지 9번은 백지(blank)
+  // 💡 [가이드] 삭제
   studyFlow.push({
     type: 'trace',
     char: charData.char,
@@ -319,11 +342,12 @@ function start10xReview(charData, isRadical) {
     pinyin: charData.pinyin,
     cnName: charData.cnName,
     cnPinyin: charData.cnPinyin,
-    title: `[가이드] ${charData.name} 1/10`,
+    title: `${charData.name}`,
     desc: charData.desc,
   });
 
-  for (let i = 2; i <= 10; i++) {
+  // 💡 [집중 훈련] 삭제
+  for (let i = 1; i <= 10; i++) {
     studyFlow.push({
       type: 'blank',
       char: charData.char,
@@ -331,7 +355,7 @@ function start10xReview(charData, isRadical) {
       pinyin: charData.pinyin,
       cnName: charData.cnName,
       cnPinyin: charData.cnPinyin,
-      title: `[집중 훈련] ${charData.name} ${i}/10`,
+      title: `${charData.name} (${i}/10)`,
       desc: `기억을 되살려 완벽하게 써보세요.`,
     });
   }
@@ -346,7 +370,7 @@ function loadStep() {
   currentHanziForTTS = stepData.ttsChar;
 
   document.getElementById('step-indicator').innerText =
-    `진행도: ${currentStepIndex + 1} / ${studyFlow.length}`;
+    `Step ${currentStepIndex + 1} / ${studyFlow.length}`;
   document.getElementById('study-title-text').innerText = stepData.title;
 
   const pinyinDisplay = document.getElementById('pinyin-display');
@@ -369,10 +393,13 @@ function loadStep() {
     : '✨ 연한 선을 따라 획순을 익히세요.';
   statusMsg.style.color = 'var(--text-muted)';
 
+  const containerEl = document.querySelector('.writer-container');
+  const boxSize = containerEl.clientWidth || 450;
+
   writer = HanziWriter.create('writer-target', stepData.char, {
-    width: 300,
-    height: 300,
-    padding: 45,
+    width: boxSize,
+    height: boxSize,
+    padding: boxSize * 0.15,
     showCharacter: false,
     showOutline: !isBlank,
     strokeColor: 'rgba(30, 41, 59, 0.9)',
@@ -380,10 +407,10 @@ function loadStep() {
     highlightColor: getComputedStyle(document.documentElement)
       .getPropertyValue('--theme-color')
       .trim(),
-    drawingWidth: 50,
+    drawingWidth: boxSize * 0.12,
   });
 
-  playTTS();
+  playTTS(currentHanziForTTS, 0.85);
 
   writer.quiz({
     onMistake: function () {
@@ -391,13 +418,19 @@ function loadStep() {
       statusMsg.style.color = '#ea580c';
     },
     onCorrectStroke: function () {
-      statusMsg.innerText = '👍 정확합니다.';
+      statusMsg.innerText = '👍 계속 이어가세요!';
       statusMsg.style.color = 'var(--success)';
     },
     onComplete: function () {
-      stopBrushSound();
-      statusMsg.innerText = '🎉 완벽합니다!';
+      playTukSound();
+
+      const randomPraise =
+        praiseList[Math.floor(Math.random() * praiseList.length)];
+      statusMsg.innerText = `🎉 ${randomPraise}`;
       statusMsg.style.color = 'var(--theme-color)';
+
+      setTimeout(() => playTTS(randomPraise, 1.0), 200);
+
       nextBtn.disabled = false;
       nextBtn.innerText =
         currentStepIndex === studyFlow.length - 1 ? '훈련 완료!' : '다음 단계';
@@ -405,12 +438,14 @@ function loadStep() {
   });
 }
 
-function playTTS() {
-  if (!currentHanziForTTS) return;
+// --- 범용 TTS 함수 ---
+function playTTS(text, rate) {
+  if (!text) return;
   window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(currentHanziForTTS);
+
+  const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'zh-CN';
-  utterance.rate = 0.85;
+  utterance.rate = rate;
 
   if (availableVoices.length === 0)
     availableVoices = window.speechSynthesis.getVoices();
@@ -448,7 +483,6 @@ function handleAction() {
     loadStep();
   } else {
     if (currentStudyDay !== null) {
-      // 일반 캘린더 학습 모드 클리어 시
       if (!completedDays.includes(currentStudyDay.day)) {
         completedDays.push(currentStudyDay.day);
         localStorage.setItem(
