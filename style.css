@@ -1,0 +1,426 @@
+:root {
+  --bg-color: #f8fafc;
+  --surface: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #94a3b8;
+  --border-light: #e2e8f0;
+  --success: #10b981;
+  --theme-color: #e11d48;
+  --shadow-sm:
+    0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+  user-select: none;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* --- 인트로 화면 --- */
+#intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.intro-content h1 {
+  font-size: 3rem;
+  color: var(--theme-color);
+  margin-bottom: 20px;
+}
+.blink-text {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  animation: blink 1.5s infinite;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* --- 헤더 및 설정 그룹 --- */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+.header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.settings-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.setting-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  padding: 8px 16px;
+  border-radius: 50px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+.setting-wrapper label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type='color']::-webkit-color-swatch {
+  border: 2px solid var(--border-light);
+  border-radius: 50%;
+}
+
+.review-btn {
+  background: var(--text-main);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+.review-btn:hover {
+  background: var(--theme-color);
+  transform: translateY(-2px);
+}
+
+/* --- 캘린더 --- */
+#calendar-view {
+  width: 100%;
+  max-width: 480px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+.dot-card {
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  background: var(--bg-color);
+  border: 2px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dot-card:hover {
+  transform: scale(1.08);
+  border-color: var(--theme-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.dot-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.dot-card.completed {
+  background-color: var(--theme-color);
+  border-color: var(--theme-color);
+  box-shadow: 0 4px 10px var(--theme-color);
+  opacity: 0.9;
+}
+.dot-card.completed .dot-number {
+  color: #ffffff;
+}
+
+/* --- 모달 (팝업) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+.modal-content {
+  background: var(--surface);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: var(--shadow-lg);
+}
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: var(--theme-color);
+}
+.modal-content p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+.modal-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 20px;
+  font-size: 1rem;
+  outline: none;
+}
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* --- 복습장 (Review Grid) --- */
+#review-list-view {
+  width: 100%;
+  max-width: 600px;
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  border: 1px solid var(--border-light);
+}
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+  max-height: 50vh;
+  overflow-y: auto;
+  /* hover 애니메이션이 잘리지 않도록 상단과 하단에 넉넉한 여백(padding) 추가 */
+  padding: 10px 5px 15px 5px;
+}
+.review-item {
+  background: var(--bg-color);
+  border: 2px solid var(--border-light);
+  border-radius: 12px;
+  padding: 15px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.review-item:hover {
+  border-color: var(--theme-color);
+  background: #fff1f2;
+  transform: translateY(-2px);
+}
+.review-char {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin-bottom: 5px;
+}
+.review-name {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --- 일일 학습 뷰 --- */
+#study-view {
+  display: none;
+  width: 100%;
+  max-width: 600px;
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 40px 20px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  position: relative;
+  border: 1px solid var(--border-light);
+}
+.back-text-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.back-text-btn:hover {
+  color: var(--theme-color);
+  transform: translateX(-3px);
+}
+
+.step-indicator {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--theme-color);
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.study-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pinyin-display {
+  font-size: 1.15rem;
+  color: var(--theme-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.study-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  word-break: keep-all;
+  line-height: 1.5;
+}
+
+.tts-btn {
+  background: var(--bg-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--theme-color);
+  transition: all 0.2s;
+}
+.tts-btn:hover {
+  background: #e2e8f0;
+  transform: scale(1.05);
+}
+.tts-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.writer-container {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 30px auto;
+  border-radius: 20px;
+  border: 2px solid var(--border-light);
+  background-color: #fafaf9;
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 49.5%,
+      #e2e8f0 49.5%,
+      #e2e8f0 50.5%,
+      transparent 50.5%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 49.5%,
+      #e2e8f0 49.5%,
+      #e2e8f0 50.5%,
+      transparent 50.5%
+    );
+}
+#writer-target {
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+.status-msg {
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-height: 24px;
+  margin-bottom: 20px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+button.action-btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  border: 1px solid var(--border-light);
+  background: var(--surface);
+  transition: all 0.2s ease;
+}
+button.action-btn:hover:not(:disabled) {
+  background: var(--bg-color);
+}
+button.primary {
+  background: var(--theme-color);
+  color: white;
+  border-color: var(--theme-color);
+}
+button.primary:hover:not(:disabled) {
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30일 부수 해빗 트래커</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+  </head>
+  <body>
+    <div id="intro-screen">
+      <div class="intro-content">
+        <h1>30일 부수 챌린지</h1>
+        <p class="blink-text">화면을 터치하여 시작하세요</p>
+      </div>
+    </div>
+
+    <div class="header" id="main-header" style="display: none">
+      <h1>30일 부수 트래커</h1>
+
+      <div class="settings-group">
+        <div class="setting-wrapper">
+          <label for="theme-color">성취 색상</label>
+          <input type="color" id="theme-color" value="#e11d48" />
+        </div>
+        <button class="review-btn" id="open-review-btn">
+          📝 집중 복습장 열기
+        </button>
+      </div>
+    </div>
+
+    <div id="calendar-view" style="display: none"></div>
+
+    <div id="review-list-view" style="display: none">
+      <button class="back-text-btn" id="close-review-btn">
+        ← 달력으로 돌아가기
+      </button>
+      <h2>집중 복습장 (10번 쓰기)</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px">
+        지금까지 학습한 한자를 10번씩 반복해서 연습합니다.
+      </p>
+      <div id="review-grid" class="review-grid"></div>
+    </div>
+
+    <div id="setting-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h2 id="modal-day-title">Day X 학습 설정</h2>
+        <p>오늘 랜덤으로 출제할 파생 한자의 개수를 골라주세요.</p>
+
+        <select id="char-count" class="modal-select">
+          <option value="2">2개</option>
+          <option value="3" selected>3개</option>
+          <option value="4">4개</option>
+          <option value="5">5개</option>
+          <option value="all">전체 다 하기</option>
+        </select>
+
+        <div class="modal-buttons">
+          <button class="action-btn" id="modal-cancel-btn">취소</button>
+          <button class="action-btn primary" id="modal-start-btn">
+            학습 시작
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="study-view" style="display: none">
+      <button class="back-text-btn" id="back-btn">← 그만하고 돌아가기</button>
+      <div class="step-indicator" id="step-indicator">Step 1/3</div>
+
+      <div class="study-title">
+        <span id="study-title-text"></span>
+        <button class="tts-btn" id="tts-btn" title="발음 듣기">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="pinyin-display" id="pinyin-display"></div>
+      <p class="study-desc" id="study-desc"></p>
+
+      <div class="writer-container">
+        <div id="writer-target"></div>
+      </div>
+
+      <div class="status-msg" id="status-msg"></div>
+
+      <div class="btn-group">
+        <button class="action-btn" id="hint-btn">모범 획순 보기</button>
+        <button class="action-btn primary" id="next-btn">다음 단계</button>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
