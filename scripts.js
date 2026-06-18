@@ -6,7 +6,7 @@ let currentStepIndex = 0;
 let writer = null;
 let currentHanziForTTS = '';
 
-// --- 💬 완성 칭찬 메시지 10종 (TTS 재생됨) ---
+// --- 💬 완성 칭찬 메시지 10종 ---
 const praiseList = [
   '太棒了！',
   '非常好！',
@@ -20,7 +20,7 @@ const praiseList = [
   '无可挑剔！',
 ];
 
-// --- 💬 획순 추임새 7종 (자막만 표시, TTS 안 함) ---
+// --- 💬 획순 추임새 7종 ---
 const strokeEncouragementList = [
   '对！',
   '很好！',
@@ -238,12 +238,12 @@ function confirmStudyStart(level) {
   startStudy(pendingStudyDay, level);
 }
 
-// --- 일반 학습 로직 (단어/성어 분할 지원) ---
 function startStudy(dayData, level) {
   currentStudyDay = dayData;
   document.getElementById('calendar-view').style.display = 'none';
   document.getElementById('main-header').style.display = 'none';
-  document.getElementById('study-view').style.display = 'block';
+  // 💡 모바일 상하 배치를 유연하게 가져가기 위해 block 대신 'flex'로 가동시킵니다.
+  document.getElementById('study-view').style.display = 'flex';
 
   studyFlow = [];
   const rad = dayData.radical;
@@ -311,7 +311,6 @@ function startStudy(dayData, level) {
   loadStep();
 }
 
-// --- 집중 복습장 로직 ---
 function openReviewMenu() {
   document.getElementById('calendar-view').style.display = 'none';
   document.getElementById('main-header').style.display = 'none';
@@ -345,7 +344,8 @@ function createReviewButton(grid, charData, isRadical) {
 
 function start10xReview(charData, isRadical) {
   document.getElementById('review-list-view').style.display = 'none';
-  document.getElementById('study-view').style.display = 'block';
+  // 💡 복습 창 진입 시에도 풀스크린 제어를 위해 'flex'로 가동시킵니다.
+  document.getElementById('study-view').style.display = 'flex';
 
   currentStudyDay = null;
   studyFlow = [];
@@ -378,7 +378,6 @@ function start10xReview(charData, isRadical) {
   loadStep();
 }
 
-// --- 공통 그리기 엔진 ---
 function loadStep() {
   const stepData = studyFlow[currentStepIndex];
   currentHanziForTTS = stepData.ttsChar;
