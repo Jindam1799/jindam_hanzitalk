@@ -8,17 +8,33 @@ const strokeAudio = new Audio(
   'https://actions.google.com/sounds/v1/ui/button_click.ogg',
 );
 
+// 🎵 BGM 설정
+const bgmFiles = ['bgm1.mp3', 'bgm2.mp3', 'bgm3.mp3', 'bgm4.mp3'];
+const bgmAudio = new Audio();
+bgmAudio.loop = true;
+bgmAudio.volume = 0.3; // TTS 소리가 묻히지 않게 볼륨을 30%로 설정
+
 const introScreen = document.getElementById('intro-screen');
 const levelSelector = document.getElementById('level-selector');
 const calendarView = document.getElementById('calendar-view');
 const studyView = document.getElementById('study-view');
 const dropdownMenu = document.getElementById('level-dropdown-menu');
 
+// 인트로 터치 시 화면 전환 & BGM 재생
 introScreen.addEventListener('click', () => {
   introScreen.style.display = 'none';
   levelSelector.style.display = 'flex';
   calendarView.style.display = 'grid';
   renderCalendar(currentLevel);
+
+  // 🎵 첫 터치 시 랜덤 BGM 재생 (브라우저 자동재생 정책 대응)
+  if (bgmAudio.paused) {
+    const randomBgm = bgmFiles[Math.floor(Math.random() * bgmFiles.length)];
+    bgmAudio.src = randomBgm;
+    bgmAudio.play().catch((error) => {
+      console.log('BGM 재생 차단됨:', error);
+    });
+  }
 });
 
 document.getElementById('level-toggle-btn').addEventListener('click', () => {
@@ -48,7 +64,6 @@ function renderCalendar(level) {
       btn.classList.add('completed');
     }
 
-    // UI 개선: span에 각각 클래스를 부여하여 디자인 분리
     btn.innerHTML = `<span class="char">${data.radical.char}</span><span class="name">${data.radical.name}</span>`;
 
     btn.onclick = () => startStudy(data);
@@ -69,8 +84,8 @@ function startStudy(data) {
 
 function loadHanziWriter() {
   document.getElementById('writer-target').innerHTML = '';
-  document.getElementById('next-btn').style.display = 'none';
-  document.getElementById('status-msg').innerText = ''; // 상태 메시지 초기화
+  document.getElementById('next-btn').style.display = 'none'; // 처음엔 다음 버튼 숨김
+  document.getElementById('status-msg').innerText = '';
 
   let targetData =
     currentStudyStep === 0
@@ -97,15 +112,13 @@ function loadHanziWriter() {
     delayBetweenStrokes: 100,
     showHintAfterMisses: 2,
     highlightColor: '#e11d48',
-    drawingWidth: 35, // 💡 펜(획) 굵기 대폭 상향 (기본값 20)
-    strokeWidth: 3, // 기본 그려져 있는 바탕 글씨의 굵기
+    drawingWidth: 35,
+    strokeWidth: 3,
   });
 
-  // 퀴즈 시작 함수 호출
   startQuizMode();
 }
 
-// 💡 퀴즈 모드를 별도 함수로 분리 (힌트 시연 후 재시작을 위함)
 function startQuizMode() {
   writer.quiz({
     onCorrectStroke: function () {
@@ -114,7 +127,7 @@ function startQuizMode() {
     },
     onComplete: function () {
       document.getElementById('status-msg').innerText = '훌륭해요! 👏';
-      document.getElementById('next-btn').style.display = 'block';
+      document.getElementById('next-btn').style.display = 'block'; // 💡 다 쓰면 다음 버튼 등장
     },
   });
 }
@@ -153,10 +166,9 @@ document.getElementById('next-btn').addEventListener('click', () => {
   }
 });
 
-// 💡 힌트 버튼 로직 변경 (시연 후 다시 퀴즈 모드로 복귀)
 document.getElementById('hint-btn').addEventListener('click', () => {
   if (writer) {
-    writer.cancelQuiz(); // 진행 중인 퀴즈를 잠깐 멈춤
+    writer.cancelQuiz();
     document.getElementById('status-msg').innerText = '모범 획순 시연 중...';
 
     writer.animateCharacter({
@@ -164,8 +176,8 @@ document.getElementById('hint-btn').addEventListener('click', () => {
         document.getElementById('status-msg').innerText = '다시 써보세요! ✍️';
         setTimeout(() => {
           document.getElementById('status-msg').innerText = '';
-          startQuizMode(); // 1초 후 퀴즈 모드 재가동
-        }, 1500); // 1.5초 대기
+          startQuizMode();
+        }, 1500);
       },
     });
   }
