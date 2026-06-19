@@ -92,7 +92,7 @@ const praiseList = [
 // 4. DOM 엘리먼트
 // ==========================================
 const introScreen = document.getElementById('intro-screen');
-const mainHeader = document.getElementById('main-header'); // 헤더 제어용
+const mainHeader = document.getElementById('main-header');
 const levelSelector = document.getElementById('level-selector');
 const calendarView = document.getElementById('calendar-view');
 const studyView = document.getElementById('study-view');
@@ -117,7 +117,7 @@ introScreen.addEventListener('click', () => {
   initAudio();
 
   introScreen.style.display = 'none';
-  mainHeader.style.display = 'flex'; // 인트로 종료 시 헤더 표시
+  mainHeader.style.display = 'flex';
   levelSelector.style.display = 'flex';
   calendarView.style.display = 'grid';
 
@@ -184,7 +184,7 @@ window.confirmStudyStart = function (difficulty) {
 // 7. 복습장 뷰 전환 및 상세 선택 로직
 // ==========================================
 document.getElementById('open-review-btn').addEventListener('click', () => {
-  mainHeader.style.display = 'none'; // 💡 복습장 진입 시 헤더 숨김
+  mainHeader.style.display = 'none';
   calendarView.style.display = 'none';
   levelSelector.style.display = 'none';
   reviewListView.style.display = 'block';
@@ -193,7 +193,7 @@ document.getElementById('open-review-btn').addEventListener('click', () => {
 
 document.getElementById('close-review-btn').addEventListener('click', () => {
   reviewListView.style.display = 'none';
-  mainHeader.style.display = 'flex'; // 💡 달력 복귀 시 헤더 복구
+  mainHeader.style.display = 'flex';
   levelSelector.style.display = 'flex';
   calendarView.style.display = 'grid';
 });
@@ -263,7 +263,7 @@ function startReviewWriting(charData, index) {
   isBlindMode = false;
   currentReviewCount = 0;
 
-  mainHeader.style.display = 'none'; // 💡 혹시나 해서 추가 (학습 화면 진입 시 헤더 숨김)
+  mainHeader.style.display = 'none';
   reviewListView.style.display = 'none';
   studyView.style.display = 'flex';
 
@@ -279,7 +279,7 @@ function startStudy(data) {
   isBlindMode = false;
   isReviewMode = false;
 
-  mainHeader.style.display = 'none'; // 💡 일반 학습 진입 시 헤더 숨김
+  mainHeader.style.display = 'none';
   calendarView.style.display = 'none';
   levelSelector.style.display = 'none';
   studyView.style.display = 'flex';
@@ -513,6 +513,37 @@ document.getElementById('back-btn').addEventListener('click', () => {
   }
 });
 
+// 💡 (복구된 핵심 코드) tts-btn 터치/클릭 이벤트 모바일 최적화
+const ttsButton = document.getElementById('tts-btn');
+
+const triggerTTS = (e) => {
+  if (e) e.preventDefault(); // 기본 터치 동작 방지
+
+  if (audioCtx && audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+
+  let targetData =
+    (isReviewMode && reviewTargetIndex === 0) ||
+    (!isReviewMode && currentStudyStep === 0)
+      ? currentDayData.radical
+      : isReviewMode
+        ? reviewTargetData
+        : currentDayData.related[currentStudyStep - 1];
+
+  let textToRead =
+    (isReviewMode && reviewTargetIndex === 0) ||
+    (!isReviewMode && currentStudyStep === 0)
+      ? targetData.cnName
+      : targetData.char;
+
+  playTTS(textToRead);
+};
+
+// 모바일 터치와 데스크탑 클릭 동시 대응
+ttsButton.addEventListener('touchstart', triggerTTS, { passive: false });
+ttsButton.addEventListener('click', triggerTTS);
+
 // ==========================================
 // 10. 공통 함수 (TTS 등)
 // ==========================================
@@ -562,7 +593,7 @@ function playTTS(text) {
 
 function exitStudy() {
   studyView.style.display = 'none';
-  mainHeader.style.display = 'flex'; // 💡 달력 로비 복귀 시 헤더 복구
+  mainHeader.style.display = 'flex';
   levelSelector.style.display = 'flex';
   calendarView.style.display = 'grid';
   renderCalendar(currentLevel);
