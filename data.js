@@ -2,2020 +2,5143 @@ const curriculum = [
   // =====================================
   // 🌱 레벨 1: 기본 부수 (23개)
   // =====================================
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 1 : 사람 인 (人)
+  // ----------------------------------------
   {
-    day: 1,
     level: 1,
-    emoji: '👤',
+    day: 1,
     radical: {
       char: '人',
       name: '사람 인',
       cnName: '人字旁',
-      pinyin: 'rén',
       cnPinyin: 'rén zì páng',
-      desc: '사람',
+      story: '사람이 두 다리를 벌리고 꼿꼿하게 서 있는 모습이에요! 🧍',
     },
     related: [
-      { char: '人', name: '사람 인', pinyin: 'rén' },
-      { char: '从', name: '좇을 종', pinyin: 'cóng' },
-      { char: '众', name: '무리 중', pinyin: 'zhòng' },
-      { char: '今', name: '이제 금', pinyin: 'jīn' },
-      { char: '会', name: '모일 회', pinyin: 'huì' },
+      {
+        char: '从',
+        name: '좇을 종',
+        pinyin: 'cóng',
+        story: '한 사람(人) 뒤를 다른 사람(人)이 졸졸 따라가고 있어요! 🚶‍♂️🚶',
+      },
+      {
+        char: '众',
+        name: '무리 중',
+        pinyin: 'zhòng',
+        story: '사람(人)이 세 명이나 모여 아주 많은 무리를 이뤘어요! 👨‍👩‍👧‍👦',
+      },
+      {
+        char: '今',
+        name: '이제 금',
+        pinyin: 'jīn',
+        story: '사람들(人)이 바로 지금, 한곳에 모여 있는 모습이에요! ⏱️',
+      },
+      {
+        char: '会',
+        name: '모일 회',
+        pinyin: 'huì',
+        story: '사람(人)이 구름(云)처럼 떼 지어 모여서 만나요! 🤝',
+      },
+      {
+        char: '休',
+        name: '쉴 휴',
+        pinyin: 'xiū',
+        story: '사람(人)이 나무(木)에 기대어 달콤하게 쉬는 모습이에요! 🌳',
+      }, // 원본 리스트 5개 맞춤 (人 대신 休 추가)
     ],
   },
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 2 : 입 구 (口)
+  // ----------------------------------------
   {
-    day: 2,
     level: 1,
-    emoji: '👄',
+    day: 2,
     radical: {
       char: '口',
       name: '입 구',
       cnName: '口字旁',
-      pinyin: 'kǒu',
       cnPinyin: 'kǒu zì páng',
-      desc: '입',
+      story: '사람이 입을 크게 벌리고 있는 동그란 모양을 네모나게 그렸어요! 👄',
     },
     related: [
-      { char: '口', name: '입 구', pinyin: 'kǒu' },
-      { char: '吃', name: '먹을 끽', pinyin: 'chī' },
-      { char: '喝', name: '마실 갈', pinyin: 'hē' },
-      { char: '叫', name: '부를 규', pinyin: 'jiào' },
-      { char: '唱', name: '부를 창', pinyin: 'chàng' },
+      {
+        char: '吃',
+        name: '먹을 끽',
+        pinyin: 'chī',
+        story: '입(口)으로 음식을 냠냠 구걸(乞)하듯 맛있게 먹어요! 🍔',
+      },
+      {
+        char: '喝',
+        name: '마실 갈',
+        pinyin: 'hē',
+        story: '입(口)을 벌리고 시원한 물이나 음료수를 꿀꺽꿀꺽 마셔요! 🥤',
+      },
+      {
+        char: '叫',
+        name: '부를 규',
+        pinyin: 'jiào',
+        story: '입(口)을 벌리고 여러 번 얽히게(丩) 크게 소리쳐 불러요! 🗣️',
+      },
+      {
+        char: '唱',
+        name: '부를 창',
+        pinyin: 'chàng',
+        story: '해(日)가 뜬 밝은 날, 입(口)을 벌려 신나게 노래를 불러요! 🎤',
+      },
+      {
+        char: '吐',
+        name: '토할 토',
+        pinyin: 'tǔ',
+        story: '입(口)으로 흙(土)처럼 맛없는 것을 먹어 우웩 뱉어내요! 🤢',
+      }, // 원본 5개 맞춤
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 3 : 나무 목 (木)
+  // ----------------------------------------
   {
-    day: 3,
     level: 1,
-    emoji: '🌳',
+    day: 3,
     radical: {
       char: '木',
       name: '나무 목',
       cnName: '木字旁',
-      pinyin: 'mù',
       cnPinyin: 'mù zì páng',
-      desc: '나무',
+      story: '나무의 줄기와 뻗어나간 가지, 그리고 뿌리의 모양을 그렸어요! 🌳',
     },
     related: [
-      { char: '木', name: '나무 목', pinyin: 'mù' },
-      { char: '林', name: '수풀 림', pinyin: 'lín' },
-      { char: '森', name: '빽빽할 삼', pinyin: 'sēn' },
-      { char: '校', name: '학교 교', pinyin: 'xiào' },
-      { char: '树', name: '나무 수', pinyin: 'shù' },
+      {
+        char: '林',
+        name: '수풀 림',
+        pinyin: 'lín',
+        story: '나무(木)와 나무(木)가 나란히 모여 숲을 이루었어요! 🌳🌲',
+      },
+      {
+        char: '森',
+        name: '빽빽할 삼',
+        pinyin: 'sēn',
+        story: '나무(木)가 무려 세 그루! 숲이 아주 빽빽하게 우거졌네요! 🌲🌳🌲',
+      },
+      {
+        char: '校',
+        name: '학교 교',
+        pinyin: 'xiào',
+        story:
+          '나무(木)로 지은 건물에서 친구들과 사귀며(交) 배우는 학교예요! 🏫',
+      },
+      {
+        char: '树',
+        name: '나무 수',
+        pinyin: 'shù',
+        story: '나무(木)가 흙에 심어져 마디(寸)마다 곧게 자라는 모습이에요! 🌿',
+      },
+      {
+        char: '本',
+        name: '근본 본',
+        pinyin: 'běn',
+        story: '나무(木)의 맨 아래 뿌리에 선(-)을 그어 근본을 뜻해요! 🌱',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 4 : 물 수 (水)
+  // ----------------------------------------
   {
-    day: 4,
     level: 1,
-    emoji: '💧',
+    day: 4,
     radical: {
       char: '水',
       name: '물 수',
       cnName: '水字旁',
-      pinyin: 'shuǐ',
       cnPinyin: 'shuǐ zì páng',
-      desc: '물',
+      story: '위에서 아래로 구불구불 흘러가는 시원한 물결 모양이에요! 💧',
     },
     related: [
-      { char: '水', name: '물 수', pinyin: 'shuǐ' },
-      { char: '永', name: '길 영', pinyin: 'yǒng' },
-      { char: '泉', name: '샘 천', pinyin: 'quán' },
-      { char: '求', name: '구할 구', pinyin: 'qiú' },
-      { char: '泰', name: '클 태', pinyin: 'tài' },
+      {
+        char: '永',
+        name: '길 영',
+        pinyin: 'yǒng',
+        story: '물(水)이 하나로 길게 뻗어 영원히 흘러가는 모습이에요! ♾️',
+      },
+      {
+        char: '泉',
+        name: '샘 천',
+        pinyin: 'quán',
+        story: '하얀(白) 물(水)이 바위틈에서 퐁퐁 솟아나는 맑은 샘물이에요! ⛲',
+      },
+      {
+        char: '求',
+        name: '구할 구',
+        pinyin: 'qiú',
+        story: '털옷을 입고 물(水)을 구하며 간절히 빌고 있는 모습이에요! 🙏',
+      },
+      {
+        char: '泰',
+        name: '클 태',
+        pinyin: 'tài',
+        story: '큰(大) 두 손으로 물(水)을 다스려 천하가 태평하고 편안해요! 😌',
+      },
+      {
+        char: '冰',
+        name: '얼음 빙',
+        pinyin: 'bīng',
+        story: '물(水)이 차갑게 얼어붙어 단단한 얼음(冫)이 되었어요! 🧊',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 5 : 불 화 (火)
+  // ----------------------------------------
   {
-    day: 5,
     level: 1,
-    emoji: '🔥',
+    day: 5,
     radical: {
       char: '火',
       name: '불 화',
       cnName: '火字旁',
-      pinyin: 'huǒ',
       cnPinyin: 'huǒ zì páng',
-      desc: '불',
+      story: '가운데 장작을 두고 불꽃이 활활 타오르는 모습이에요! 🔥',
     },
     related: [
-      { char: '火', name: '불 화', pinyin: 'huǒ' },
-      { char: '灯', name: '등 등', pinyin: 'dēng' },
-      { char: '烧', name: '사를 소', pinyin: 'shāo' },
-      { char: '炒', name: '볶을 초', pinyin: 'chǎo' },
-      { char: '炎', name: '불꽃 염', pinyin: 'yán' },
+      {
+        char: '灯',
+        name: '등 등',
+        pinyin: 'dēng',
+        story: '불(火)을 피워 못(丁)처럼 꼿꼿하게 세워둔 밝은 등불이에요! 💡',
+      },
+      {
+        char: '烧',
+        name: '사를 소',
+        pinyin: 'shāo',
+        story: '불(火)이 높게(尧) 타오르며 모든 것을 뜨겁게 태워요! ⛺',
+      },
+      {
+        char: '炒',
+        name: '볶을 초',
+        pinyin: 'chǎo',
+        story: '적은(少) 양의 재료를 불(火) 위에서 휘리릭 볶아내요! 🍳',
+      },
+      {
+        char: '炎',
+        name: '불꽃 염',
+        pinyin: 'yán',
+        story: '불(火) 위에 또 불(火)이 있으니 아주 뜨거운 불꽃이에요! 🌋',
+      },
+      {
+        char: '烤',
+        name: '구울 고',
+        pinyin: 'kǎo',
+        story: '불(火) 위에 고기를 올려놓고(考) 노릇노릇 맛있게 구워요! 🍖',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 6 : 날 일 (日)
+  // ----------------------------------------
   {
-    day: 6,
     level: 1,
-    emoji: '☀️',
+    day: 6,
     radical: {
       char: '日',
       name: '날 일',
       cnName: '日字旁',
-      pinyin: 'rì',
       cnPinyin: 'rì zì páng',
-      desc: '해',
+      story: '동그란 해의 모습을 네모나게 그렸어요. 햇빛과 시간을 뜻해요! ☀️',
     },
     related: [
-      { char: '日', name: '날 일', pinyin: 'rì' },
-      { char: '明', name: '밝을 명', pinyin: 'míng' },
-      { char: '早', name: '이를 조', pinyin: 'zǎo' },
-      { char: '时', name: '때 시', pinyin: 'shí' },
-      { char: '晚', name: '늦을 만', pinyin: 'wǎn' },
+      {
+        char: '明',
+        name: '밝을 명',
+        pinyin: 'míng',
+        story: '해(日)와 달(月)이 함께 하늘에 떠 있으니 세상이 아주 환해요! ✨',
+      },
+      {
+        char: '早',
+        name: '이를 조',
+        pinyin: 'zǎo',
+        story:
+          '해(日)가 십자가(十) 모양의 나무 위로 갓 떠오른 이른 아침이에요! 🌅',
+      },
+      {
+        char: '时',
+        name: '때 시',
+        pinyin: 'shí',
+        story: '해(日)가 마디(寸)를 재듯 조금씩 움직이며 시간을 알려주어요! ⌚',
+      },
+      {
+        char: '晚',
+        name: '늦을 만',
+        pinyin: 'wǎn',
+        story:
+          '해(日)가 지고 낮을 면(免)하게 되니, 날이 저물어 늦은 저녁이 되었어요! 🌃',
+      },
+      {
+        char: '昨',
+        name: '어제 작',
+        pinyin: 'zuó',
+        story: '해(日)가 지고 잠깐(乍) 잠을 잤더니 어느새 어제가 되었어요! 🌙',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 7 : 달 월 (月)
+  // ----------------------------------------
   {
-    day: 7,
     level: 1,
-    emoji: '🌙',
+    day: 7,
     radical: {
       char: '月',
       name: '달 월',
       cnName: '月字旁',
-      pinyin: 'yuè',
       cnPinyin: 'yuè zì páng',
-      desc: '달',
+      story: '밤하늘에 떠 있는 예쁜 초승달의 모양을 본떠 만들었어요! 🌙',
     },
     related: [
-      { char: '月', name: '달 월', pinyin: 'yuè' },
-      { char: '明', name: '밝을 명', pinyin: 'míng' },
-      { char: '朋', name: '벗 붕', pinyin: 'péng' },
-      { char: '期', name: '기약할 기', pinyin: 'qī' },
-      { char: '朗', name: '밝을 랑', pinyin: 'lǎng' },
+      {
+        char: '明',
+        name: '밝을 명',
+        pinyin: 'míng',
+        story:
+          '달(月)이 해(日)와 함께 하늘에 떠서 세상을 눈부시게 밝혀요! ☀️🌙',
+      },
+      {
+        char: '朋',
+        name: '벗 붕',
+        pinyin: 'péng',
+        story:
+          '달(月)과 달(月)이 나란히 떠 있듯, 꼭 붙어 다니는 친한 친구예요! 👬',
+      },
+      {
+        char: '期',
+        name: '기약할 기',
+        pinyin: 'qī',
+        story: '그(其) 달(月)이 언제 뜰지 기약하며 날짜와 기간을 정해요! 📅',
+      },
+      {
+        char: '朗',
+        name: '밝을 랑',
+        pinyin: 'lǎng',
+        story: '어진(良) 달(月)빛이 온 세상을 밝고 맑게 비춰주네요! 🌕',
+      },
+      {
+        char: '望',
+        name: '바랄 망',
+        pinyin: 'wàng',
+        story: '발돋움(亡)하고 서서 달(月)을 바라보며 간절히 소망해요! 🌠',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 8 : 메 산 (山)
+  // ----------------------------------------
   {
-    day: 8,
     level: 1,
-    emoji: '⛰️',
+    day: 8,
     radical: {
       char: '山',
       name: '메 산',
       cnName: '山字旁',
-      pinyin: 'shān',
       cnPinyin: 'shān zì páng',
-      desc: '산',
+      story: '가운데가 높고 양옆이 낮은 산봉우리의 모습을 그렸어요! ⛰️',
     },
     related: [
-      { char: '山', name: '메 산', pinyin: 'shān' },
-      { char: '岛', name: '섬 도', pinyin: 'dǎo' },
-      { char: '岩', name: '바위 암', pinyin: 'yán' },
-      { char: '岸', name: '언덕 안', pinyin: 'àn' },
-      { char: '峰', name: '봉우리 봉', pinyin: 'fēng' },
+      {
+        char: '岛',
+        name: '섬 도',
+        pinyin: 'dǎo',
+        story:
+          '새(鸟)가 날아가다 쉬어가는 바다 위 외로운 산(山), 바로 섬이에요! 🏝️',
+      },
+      {
+        char: '岩',
+        name: '바위 암',
+        pinyin: 'yán',
+        story: '산(山)에 있는 단단한 돌(石), 아주 크고 거친 바위랍니다! 🪨',
+      },
+      {
+        char: '岸',
+        name: '언덕 안',
+        pinyin: 'àn',
+        story: '산(山)처럼 높이 솟아 물가를 가로막고(干) 있는 언덕이에요! 🏞️',
+      },
+      {
+        char: '峰',
+        name: '봉우리 봉',
+        pinyin: 'fēng',
+        story:
+          '산(山) 위로 뾰족하게 올라온 창(锋의 변형)처럼 뾰족한 봉우리예요! 🏔️',
+      },
+      {
+        char: '岁',
+        name: '해 세',
+        pinyin: 'suì',
+        story:
+          '산(山)처럼 많은 해(夕)가 지나가며 한 살 두 살 나이를 먹어요! 🎂',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 9 : 계집 녀 (女)
+  // ----------------------------------------
   {
-    day: 9,
     level: 1,
-    emoji: '👩',
+    day: 9,
     radical: {
       char: '女',
       name: '계집 녀',
       cnName: '女字旁',
-      pinyin: 'nǚ',
       cnPinyin: 'nǚ zì páng',
-      desc: '여자',
+      story: '여자가 두 손을 앞으로 모으고 다소곳이 무릎을 꿇은 모습이에요! 👩',
     },
     related: [
-      { char: '女', name: '계집 녀', pinyin: 'nǚ' },
-      { char: '好', name: '좋을 호', pinyin: 'hǎo' },
-      { char: '妈', name: '엄마 마', pinyin: 'mā' },
-      { char: '姐', name: '누이 저', pinyin: 'jiě' },
-      { char: '妹', name: '누이 매', pinyin: 'mèi' },
+      {
+        char: '好',
+        name: '좋을 호',
+        pinyin: 'hǎo',
+        story:
+          '여자(女)가 아이(子)를 다정하게 안고 있는 아주 보기 좋은 모습이에요! ❤️',
+      },
+      {
+        char: '妈',
+        name: '어머니 마',
+        pinyin: 'mā',
+        story:
+          '여자(女) 중에서 어릴 때 나를 말(马)처럼 태워주시던 고마운 엄마예요! 👩‍👧',
+      },
+      {
+        char: '姐',
+        name: '누이 저',
+        pinyin: 'jiě',
+        story:
+          '여자(女) 중에서 또(且) 엄마처럼 나를 잘 챙겨주는 언니나 누나예요! 👧',
+      },
+      {
+        char: '妹',
+        name: '누이 매',
+        pinyin: 'mèi',
+        story:
+          '아직 다 자라지 않은(未) 작고 귀여운 여자(女), 여동생이에요! 👧🍼',
+      },
+      {
+        char: '她',
+        name: '그녀 타',
+        pinyin: 'tā',
+        story:
+          "여자(女)를 가리키는 말로, 어조사(也)가 붙어 '그녀'가 되었어요! 👩",
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 10 : 아들 자 (子)
+  // ----------------------------------------
   {
-    day: 10,
     level: 1,
-    emoji: '👶',
+    day: 10,
     radical: {
       char: '子',
       name: '아들 자',
       cnName: '子字旁',
-      pinyin: 'zǐ',
       cnPinyin: 'zǐ zì páng',
-      desc: '아이',
+      story: '포대기에 싸인 어린아이가 두 팔을 벌리고 있는 모습이에요! 👶',
     },
     related: [
-      { char: '子', name: '아들 자', pinyin: 'zǐ' },
-      { char: '字', name: '글자 자', pinyin: 'zì' },
-      { char: '学', name: '배울 학', pinyin: 'xué' },
-      { char: '孩', name: '아이 해', pinyin: 'hái' },
-      { char: '孙', name: '손자 손', pinyin: 'sūn' },
+      {
+        char: '字',
+        name: '글자 자',
+        pinyin: 'zì',
+        story:
+          '집(宀) 안에서 아이(子)가 하나둘 늘어나듯 글자가 점점 불어났어요! 🔠',
+      },
+      {
+        char: '学',
+        name: '배울 학',
+        pinyin: 'xué',
+        story: '아이(子)가 두 손을 모으고 선생님의 가르침을 열심히 배워요! 🏫',
+      },
+      {
+        char: '孩',
+        name: '아이 해',
+        pinyin: 'hái',
+        story:
+          '아이(子)가 돼지(亥)처럼 통통하고 건강하게 자라는 어린아이예요! 🧒',
+      },
+      {
+        char: '孙',
+        name: '손자 손',
+        pinyin: 'sūn',
+        story:
+          '아이(子)의 아이를 뜻하며, 실(系의 변형)처럼 대가 이어지는 손자예요! 👶🔗',
+      },
+      {
+        char: '季',
+        name: '계절 계',
+        pinyin: 'jì',
+        story:
+          '벼(禾)가 자라는 것을 보며 아이(子)가 계절의 변화를 알게 되어요! 🌸❄️',
+      },
     ],
   },
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 11 : 눈 목 (目)
+  // ----------------------------------------
   {
-    day: 11,
     level: 1,
-    emoji: '👀',
+    day: 11,
     radical: {
       char: '目',
       name: '눈 목',
       cnName: '目字旁',
-      pinyin: 'mù',
       cnPinyin: 'mù zì páng',
-      desc: '눈',
+      story: '사람의 눈동자와 눈꺼풀 모양을 세로로 눕혀서 그린 모습이에요! 👀',
     },
     related: [
-      { char: '目', name: '눈 목', pinyin: 'mù' },
-      { char: '看', name: '볼 간', pinyin: 'kàn' },
-      { char: '眼', name: '눈 안', pinyin: 'yǎn' },
-      { char: '睛', name: '눈동자 정', pinyin: 'jīng' },
-      { char: '睡', name: '잘 수', pinyin: 'shuì' },
+      {
+        char: '看',
+        name: '볼 간',
+        pinyin: 'kàn',
+        story: '손(手)을 눈(目) 위에 얹고 멀리 내다보는 모습이에요! 🔭',
+      },
+      {
+        char: '眼',
+        name: '눈 안',
+        pinyin: 'yǎn',
+        story: '눈(目)의 가장자리(艮)로, 우리가 사물을 보는 진짜 눈이에요! 👀',
+      },
+      {
+        char: '睛',
+        name: '눈동자 정',
+        pinyin: 'jīng',
+        story: '눈(目) 속에서 푸른(青) 빛이 나는 맑고 깨끗한 눈동자예요! ✨',
+      },
+      {
+        char: '睡',
+        name: '잘 수',
+        pinyin: 'shuì',
+        story: '눈(目)을 감고 이불을 드리운(垂) 채 쿨쿨 잠을 자요! 😴',
+      },
+      {
+        char: '泪',
+        name: '눈물 루',
+        pinyin: 'lèi',
+        story: '눈(目)에서 물(氵)이 주르륵 흐르는 슬픈 눈물이에요! 😢',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 12 : 귀 이 (耳)
+  // ----------------------------------------
   {
-    day: 12,
     level: 1,
-    emoji: '👂',
+    day: 12,
     radical: {
       char: '耳',
       name: '귀 이',
       cnName: '耳字旁',
-      pinyin: 'ěr',
       cnPinyin: 'ěr zì páng',
-      desc: '귀',
+      story: '사람 귓바퀴의 둥글고 구불구불한 모양을 본떠 그렸어요! 👂',
     },
     related: [
-      { char: '耳', name: '귀 이', pinyin: 'ěr' },
-      { char: '闻', name: '들을 문', pinyin: 'wén' },
-      { char: '聪', name: '밝을 총', pinyin: 'cōng' },
-      { char: '联', name: '이을 련', pinyin: 'lián' },
-      { char: '取', name: '취할 취', pinyin: 'qǔ' },
+      {
+        char: '闻',
+        name: '들을 문',
+        pinyin: 'wén',
+        story: '문(门) 틈 사이로 귀(耳)를 대고 소리를 몰래 엿들어요! 🚪👂',
+      },
+      {
+        char: '聪',
+        name: '총명할 총',
+        pinyin: 'cōng',
+        story: '귀(耳)로 항상(总) 잘 듣고 이해하는 아주 총명한 사람이에요! 💡',
+      },
+      {
+        char: '联',
+        name: '이을 련',
+        pinyin: 'lián',
+        story: '귀(耳)와 귀를 실(丝)로 연결하듯 서로 바짝 이어져 있어요! 🔗',
+      },
+      {
+        char: '取',
+        name: '취할 취',
+        pinyin: 'qǔ',
+        story: '손(又)으로 귀(耳)를 꽉 잡아채서 내 것으로 취해 가져와요! 🖐️',
+      },
+      {
+        char: '耻',
+        name: '부끄러울 치',
+        pinyin: 'chǐ',
+        story: '마음(心)이 찔려 귀(耳)까지 새빨개질 정도로 부끄러워요! 😳',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 13 : 손 수 (手)
+  // ----------------------------------------
   {
-    day: 13,
     level: 1,
-    emoji: '✋',
+    day: 13,
     radical: {
       char: '手',
       name: '손 수',
       cnName: '手字旁',
-      pinyin: 'shǒu',
       cnPinyin: 'shǒu zì páng',
-      desc: '손',
+      story: '다섯 손가락을 쫙 펴고 있는 커다란 손의 모양이에요! ✋',
     },
     related: [
-      { char: '手', name: '손 수', pinyin: 'shǒu' },
-      { char: '拿', name: '잡을 나', pinyin: 'ná' },
-      { char: '拜', name: '절 배', pinyin: 'bài' },
-      { char: '拳', name: '주먹 권', pinyin: 'quán' },
-      { char: '掌', name: '손바닥 장', pinyin: 'zhǎng' },
+      {
+        char: '拿',
+        name: '가질 나',
+        pinyin: 'ná',
+        story: '손(手)을 합쳐서(合) 물건을 꽉 움켜쥐고 내 것으로 가져가요! ✊',
+      },
+      {
+        char: '拜',
+        name: '절 배',
+        pinyin: 'bài',
+        story: '두 손(手)을 아래로 모아 숙이며 어른께 공손하게 절을 해요! 🙏',
+      },
+      {
+        char: '拳',
+        name: '주먹 권',
+        pinyin: 'quán',
+        story: '손(手)을 둥글게 말아(卷) 꽉 쥔 단단한 주먹이에요! 👊',
+      },
+      {
+        char: '掌',
+        name: '손바닥 장',
+        pinyin: 'zhǎng',
+        story: '손(手) 중에서도 높고 평평한(尚) 부분인 손바닥이에요! 🖐️',
+      },
+      {
+        char: '摩',
+        name: '만질 마',
+        pinyin: 'mó',
+        story: '삼(麻)처럼 거친 표면을 손(手)으로 쓱쓱 문지르고 만져요! 👐',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 14 : 발 족 (足)
+  // ----------------------------------------
   {
-    day: 14,
     level: 1,
-    emoji: '👣',
+    day: 14,
     radical: {
       char: '足',
       name: '발 족',
       cnName: '足字旁',
-      pinyin: 'zú',
       cnPinyin: 'zú zì páng',
-      desc: '발',
+      story: '발목부터 발끝까지 튼튼하게 땅을 디딘 발의 모습을 그렸어요! 👣',
     },
     related: [
-      { char: '足', name: '발 족', pinyin: 'zú' },
-      { char: '跑', name: '달릴 포', pinyin: 'pǎo' },
-      { char: '跳', name: '뛸 도', pinyin: 'tiào' },
-      { char: '踢', name: '찰 척', pinyin: 'tī' },
-      { char: '跟', name: '발뒤꿈치 근', pinyin: 'gēn' },
+      {
+        char: '跑',
+        name: '달릴 포',
+        pinyin: 'pǎo',
+        story: '발(足)로 땅을 차며 가방(包)을 멘 채 쌩쌩 달려가요! 🏃',
+      },
+      {
+        char: '跳',
+        name: '뛸 도',
+        pinyin: 'tiào',
+        story: '발(足)로 조짐(兆)을 보이며 훌쩍 위로 뛰어올라요! 🦘',
+      },
+      {
+        char: '踢',
+        name: '찰 척',
+        pinyin: 'tī',
+        story: '발(足)로 축구공을 아주 쉽게(易) 뻥 차버리는 모습이에요! ⚽',
+      },
+      {
+        char: '跟',
+        name: '발뒤꿈치 근',
+        pinyin: 'gēn',
+        story: '발(足)의 뒤쪽 고집스러운(艮) 부분, 바로 발뒤꿈치예요! 🦶',
+      },
+      {
+        char: '踩',
+        name: '밟을 채',
+        pinyin: 'cǎi',
+        story: '발(足)로 예쁜 무늬(采)가 나도록 땅을 꾹꾹 즈려밟아요! 🐾',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 15 : 마음 심 (心)
+  // ----------------------------------------
   {
-    day: 15,
     level: 1,
-    emoji: '❤️',
+    day: 15,
     radical: {
       char: '心',
       name: '마음 심',
       cnName: '心字底',
-      pinyin: 'xīn',
       cnPinyin: 'xīn zì dǐ',
-      desc: '마음',
+      story: '사람의 심장 모양과 피가 흐르는 혈관을 본떠 그렸어요! ❤️',
     },
     related: [
-      { char: '心', name: '마음 심', pinyin: 'xīn' },
-      { char: '想', name: '생각할 상', pinyin: 'xiǎng' },
-      { char: '念', name: '생각 념', pinyin: 'niàn' },
-      { char: '忘', name: '잊을 망', pinyin: 'wàng' },
-      { char: '感', name: '느낄 감', pinyin: 'gǎn' },
+      {
+        char: '想',
+        name: '생각할 상',
+        pinyin: 'xiǎng',
+        story: '마음(心)속에 서로(相)의 모습을 그리며 깊이 생각해요! 💭',
+      },
+      {
+        char: '念',
+        name: '생각할 념',
+        pinyin: 'niàn',
+        story: '지금(今) 이 순간 마음(心)속에 떠오르는 깊은 생각이에요! 🧠',
+      },
+      {
+        char: '忘',
+        name: '잊을 망',
+        pinyin: 'wàng',
+        story:
+          '마음(心)에서 무언가가 죽어(亡) 사라지듯 까맣게 잊어버렸어요! 🤷‍♂️',
+      },
+      {
+        char: '感',
+        name: '느낄 감',
+        pinyin: 'gǎn',
+        story: '다함께(咸) 모여서 마음(心)으로 찌릿하게 감동을 느껴요! 🥺',
+      },
+      {
+        char: '怒',
+        name: '성낼 노',
+        pinyin: 'nù',
+        story:
+          '종(奴)이 화를 내듯 마음(心)속에서 뜨거운 분노가 치밀어 올라요! 😡',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 16 : 비 우 (雨)
+  // ----------------------------------------
   {
-    day: 16,
     level: 1,
-    emoji: '🌧️',
+    day: 16,
     radical: {
       char: '雨',
       name: '비 우',
       cnName: '雨字头',
-      pinyin: 'yǔ',
       cnPinyin: 'yǔ zì tóu',
-      desc: '비',
+      story: '먹구름 아래로 빗방울이 뚝뚝 떨어지는 모습이에요! 🌧️',
     },
     related: [
-      { char: '雨', name: '비 우', pinyin: 'yǔ' },
-      { char: '雪', name: '눈 설', pinyin: 'xuě' },
-      { char: '雷', name: '우레 뢰', pinyin: 'léi' },
-      { char: '雾', name: '안개 무', pinyin: 'wù' },
-      { char: '露', name: '이슬 로', pinyin: 'lù' },
+      {
+        char: '雪',
+        name: '눈 설',
+        pinyin: 'xuě',
+        story:
+          '비(雨)가 꽁꽁 얼어서 손(彐)으로 쥘 수 있는 하얀 눈이 되었어요! ❄️',
+      },
+      {
+        char: '雷',
+        name: '우레 뢰',
+        pinyin: 'léi',
+        story:
+          '비(雨)가 내릴 때 밭(田) 위로 콰광! 하고 치는 무서운 천둥이에요! ⚡',
+      },
+      {
+        char: '雾',
+        name: '안개 무',
+        pinyin: 'wù',
+        story:
+          '비(雨)가 올 듯 습한 날, 일(务)을 가릴 만큼 뽀얗게 낀 안개예요! 🌫️',
+      },
+      {
+        char: '露',
+        name: '이슬 로',
+        pinyin: 'lù',
+        story:
+          '비(雨)가 그친 길(路) 위에 영롱하게 맺힌 맑은 이슬방울이에요! 💧',
+      },
+      {
+        char: '霜',
+        name: '서리 상',
+        pinyin: 'shuāng',
+        story: '비(雨)가 내리다 얼어 서로(相) 엉겨 붙은 차가운 서리예요! 🥶',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 17 : 문 문 (门)
+  // ----------------------------------------
   {
-    day: 17,
     level: 1,
-    emoji: '🚪',
+    day: 17,
     radical: {
       char: '门',
       name: '문 문',
       cnName: '门字框',
-      pinyin: 'mén',
       cnPinyin: 'mén zì kuàng',
-      desc: '문',
+      story: '두 짝으로 된 여닫이문의 모양을 딴딴하게 그렸어요! 🚪',
     },
     related: [
-      { char: '门', name: '문 문', pinyin: 'mén' },
-      { char: '问', name: '물을 문', pinyin: 'wèn' },
-      { char: '间', name: '사이 간', pinyin: 'jiān' },
-      { char: '闭', name: '닫을 폐', pinyin: 'bì' },
-      { char: '闹', name: '시끄러울 뇨', pinyin: 'nào' },
+      {
+        char: '问',
+        name: '물을 문',
+        pinyin: 'wèn',
+        story: '문(门) 밖에서 입(口)을 열고 "계십니까?" 하고 물어봐요! ❓',
+      },
+      {
+        char: '间',
+        name: '사이 간',
+        pinyin: 'jiān',
+        story: '문(门)틈 사이로 해(日)가 반짝하고 비쳐 들어와요! 🌤️',
+      },
+      {
+        char: '闭',
+        name: '닫을 폐',
+        pinyin: 'bì',
+        story: '문(门)에 통나무(才)를 걸어 단단히 꼭 닫아걸었어요! 🔒',
+      },
+      {
+        char: '闹',
+        name: '시끄러울 뇨',
+        pinyin: 'nào',
+        story: '문(门) 안에서 시장(市)처럼 왁자지껄 떠들고 시끄러워요! 📢',
+      },
+      {
+        char: '闲',
+        name: '한가할 한',
+        pinyin: 'xián',
+        story: '문(门) 안에 나무(木)를 심어놓고 여유롭게 쉬며 한가해요! ☕',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 18 : 갓머리 (宀)
+  // ----------------------------------------
   {
-    day: 18,
     level: 1,
-    emoji: '🏠',
+    day: 18,
     radical: {
       char: '宀',
-      name: '갓머리',
+      name: '갓머리 (집)',
       cnName: '宝盖头',
-      pinyin: 'mián',
       cnPinyin: 'bǎo gài tóu',
-      desc: '집',
+      story: '비바람을 막아주는 튼튼한 지붕의 처마 모양이에요! 🏠',
     },
     related: [
-      { char: '家', name: '집 가', pinyin: 'jiā' },
-      { char: '字', name: '글자 자', pinyin: 'zì' },
-      { char: '安', name: '편안 안', pinyin: 'ān' },
-      { char: '完', name: '완전할 완', pinyin: 'wán' },
-      { char: '宝', name: '보배 보', pinyin: 'bǎo' },
+      {
+        char: '家',
+        name: '집 가',
+        pinyin: 'jiā',
+        story:
+          '지붕(宀) 아래에 돼지(豕)를 기르며 옹기종기 모여 사는 우리 집이에요! 👨‍👩‍👧‍👦',
+      },
+      {
+        char: '字',
+        name: '글자 자',
+        pinyin: 'zì',
+        story:
+          '집(宀) 안에서 아이(子)가 불어나듯 글자가 점점 많이 생겨나요! 🔠',
+      },
+      {
+        char: '安',
+        name: '편안할 안',
+        pinyin: 'ān',
+        story:
+          '집(宀) 안에 여자(女)가 다소곳이 앉아 있어 평화롭고 편안해요! 😌',
+      },
+      {
+        char: '完',
+        name: '완전할 완',
+        pinyin: 'wán',
+        story:
+          '집(宀)을 지을 때 으뜸(元)가는 재료로 아주 튼튼하게 완성했어요! 🏗️',
+      },
+      {
+        char: '宝',
+        name: '보배 보',
+        pinyin: 'bǎo',
+        story: '집(宀) 안에 구슬(玉)을 소중하게 보관해둔 귀한 보물이에요! 💎',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 19 : 초두머리 (艹)
+  // ----------------------------------------
   {
-    day: 19,
     level: 1,
-    emoji: '🌿',
+    day: 19,
     radical: {
       char: '艹',
-      name: '초두머리',
+      name: '초두머리 (풀)',
       cnName: '草字头',
-      pinyin: 'cǎo',
       cnPinyin: 'cǎo zì tóu',
-      desc: '풀',
+      story: '땅 위로 파릇파릇 돋아난 두 가닥의 잎사귀 모양이에요! 🌿',
     },
     related: [
-      { char: '花', name: '꽃 화', pinyin: 'huā' },
-      { char: '草', name: '풀 초', pinyin: 'cǎo' },
-      { char: '茶', name: '차 다', pinyin: 'chá' },
-      { char: '菜', name: '나물 채', pinyin: 'cài' },
-      { char: '药', name: '약 약', pinyin: 'yào' },
+      {
+        char: '花',
+        name: '꽃 화',
+        pinyin: 'huā',
+        story: '풀(艹) 중에서 사람(化)의 마음을 예쁘게 변화시키는 꽃이에요! 🌸',
+      },
+      {
+        char: '草',
+        name: '풀 초',
+        pinyin: 'cǎo',
+        story:
+          '풀(艹)이 해(日)를 받고 일찍(早)부터 무럭무럭 자라난 잡초예요! 🌾',
+      },
+      {
+        char: '茶',
+        name: '차 차',
+        pinyin: 'chá',
+        story:
+          '풀(艹) 잎사귀를 따서 사람(人)이 나무(木) 위에서 말려 만든 차예요! 🍵',
+      },
+      {
+        char: '菜',
+        name: '나물 채',
+        pinyin: 'cài',
+        story:
+          '풀(艹)에서 손톱(爫)으로 캐어 나무(木) 바구니에 담은 채소예요! 🥬',
+      },
+      {
+        char: '药',
+        name: '약 약',
+        pinyin: 'yào',
+        story:
+          '풀(艹)로 맺은 약속(约)처럼 아픈 병을 확실히 낫게 해주는 약이에요! 💊',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 20 : 말씀 언 (言)
+  // ----------------------------------------
   {
-    day: 20,
     level: 1,
-    emoji: '🗣️',
+    day: 20,
     radical: {
       char: '言',
       name: '말씀 언',
       cnName: '言字旁',
-      pinyin: 'yán',
       cnPinyin: 'yán zì páng',
-      desc: '말',
+      story: '입에서 소리가 나팔처럼 퍼져 나가는 말의 모양이에요! 🗣️',
     },
     related: [
-      { char: '言', name: '말씀 언', pinyin: 'yán' },
-      { char: '誓', name: '맹세할 서', pinyin: 'shì' },
-      { char: '警', name: '경계할 경', pinyin: 'jǐng' },
-      { char: '誉', name: '기릴 예', pinyin: 'yù' },
-      { char: '詹', name: '이를 첨', pinyin: 'zhān' },
+      {
+        char: '誓',
+        name: '맹세할 서',
+        pinyin: 'shì',
+        story: '말(言)을 할 때 꺾일(折)지언정 반드시 지키겠다고 맹세해요! ✋',
+      },
+      {
+        char: '警',
+        name: '경계할 경',
+        pinyin: 'jǐng',
+        story:
+          '공경하는(敬) 말(言)로 사람들에게 조심하라고 일러주며 경계해요! 🚨',
+      },
+      {
+        char: '誉',
+        name: '기릴 예',
+        pinyin: 'yù',
+        story:
+          '말(言)을 주며(与) 그 사람의 명예를 높이고 멋지게 칭찬해 주어요! 🏆',
+      },
+      {
+        char: '詹',
+        name: '이를 첨',
+        pinyin: 'zhān',
+        story:
+          '사람(人)이 벼랑 끝(厂)에 서서 말(言)을 길고 조리 있게 말해요! 🗣️',
+      },
+      {
+        char: '信',
+        name: '믿을 신',
+        pinyin: 'xìn',
+        story: '사람(人)이 한 번 한 말(言)은 마땅히 믿음이 있어야 해요! 🤝',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 21 : 쇠 금 (金)
+  // ----------------------------------------
   {
-    day: 21,
     level: 1,
-    emoji: '⚙️',
+    day: 21,
     radical: {
       char: '金',
       name: '쇠 금',
       cnName: '金字旁',
-      pinyin: 'jīn',
       cnPinyin: 'jīn zì páng',
-      desc: '쇠',
+      story: '흙 속에 숨겨진 빛나는 사금 두 알을 캐내는 모습이에요! ⚙️',
     },
     related: [
-      { char: '金', name: '쇠 금', pinyin: 'jīn' },
-      { char: '鑫', name: '기쁠 흠', pinyin: 'xīn' },
-      { char: '鉴', name: '거울 감', pinyin: 'jiàn' },
-      { char: '銮', name: '방울 란', pinyin: 'luán' },
-      { char: '鎏', name: '맑을 류', pinyin: 'liú' },
+      {
+        char: '鑫',
+        name: '기쁠 흠',
+        pinyin: 'xīn',
+        story: '금(金)이 세 개나 모여 있으니 재물이 듬뿍 쌓여 아주 기뻐요! 💰',
+      },
+      {
+        char: '鉴',
+        name: '거울 감',
+        pinyin: 'jiàn',
+        story:
+          '금(金)을 둥글고 단단하게(坚) 갈아 얼굴을 비추는 거울로 삼아요! 🪞',
+      },
+      {
+        char: '銮',
+        name: '방울 란',
+        pinyin: 'luán',
+        story:
+          '금(金)으로 만들어 임금님의 마차를 끄는 신비한 새(鸾) 방울이에요! 🔔',
+      },
+      {
+        char: '鎏',
+        name: '맑은금 류',
+        pinyin: 'liú',
+        story: '물(水)처럼 흐르듯 금(金)을 녹여서 표면에 예쁘게 도금했어요! ✨',
+      },
+      {
+        char: '釜',
+        name: '가마 부',
+        pinyin: 'fǔ',
+        story:
+          '쇠(金)를 아비(父)처럼 크고 듬직하게 만들어 밥을 짓는 가마솥이에요! 🍲',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 22 : 밥 식 (食)
+  // ----------------------------------------
   {
-    day: 22,
     level: 1,
-    emoji: '🍚',
+    day: 22,
     radical: {
       char: '食',
       name: '밥 식',
       cnName: '食字旁',
-      pinyin: 'shí',
       cnPinyin: 'shí zì páng',
-      desc: '먹다',
+      story:
+        '그릇 위에 뚜껑을 덮은 맛있는 밥과 반찬이 소복하게 담긴 모습이에요! 🍚',
     },
     related: [
-      { char: '食', name: '밥 식', pinyin: 'shí' },
-      { char: '餐', name: '밥 찬', pinyin: 'cān' },
-      { char: '养', name: '기를 양', pinyin: 'yǎng' },
-      { char: '饕', name: '탐할 도', pinyin: 'tāo' },
-      { char: '餮', name: '탐할 철', pinyin: 'tiè' },
+      {
+        char: '餐',
+        name: '밥 찬',
+        pinyin: 'cān',
+        story:
+          '뼈(歹)가 으스러지도록 일한 후 먹는(食) 아주 꿀맛 같은 밥이에요! 🍱',
+      },
+      {
+        char: '养',
+        name: '기를 양',
+        pinyin: 'yǎng',
+        story: '양(羊)에게 먹이(食)를 듬뿍 주어 무럭무럭 기르고 보살펴요! 🐑',
+      },
+      {
+        char: '饕',
+        name: '탐할 도',
+        pinyin: 'tāo',
+        story:
+          '먹을 것(食)을 보고 호랑이(号)처럼 으르렁거리며 욕심을 몹시 내요! 🤤',
+      },
+      {
+        char: '餮',
+        name: '탐할 철',
+        pinyin: 'tiè',
+        story:
+          '먹을 것(食)을 뼈(歹)까지 씹어 먹을 정도로 게걸스럽게 먹어요! 🍖',
+      },
+      {
+        char: '飨',
+        name: '잔치 향',
+        pinyin: 'xiǎng',
+        story:
+          '고향(乡) 사람들을 불러 모아 음식(食)을 대접하는 성대한 잔치예요! 🥳',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌱 LV.1 - Day 23 : 실 사 (糸)
+  // ----------------------------------------
   {
-    day: 23,
     level: 1,
-    emoji: '🧵',
+    day: 23,
     radical: {
       char: '糸',
       name: '실 사',
       cnName: '绞丝底',
-      pinyin: 'mì',
-      cnPinyin: 'jiǎo sī dǐ',
-      desc: '실',
+      cnPinyin: 'miǎo zì dǐ',
+      story: '가느다란 실 여러 가닥이 실패에 돌돌 엉켜 있는 모습이에요! 🧵',
     },
     related: [
-      { char: '糸', name: '실 사', pinyin: 'mì' },
-      { char: '系', name: '맬 계', pinyin: 'xì' },
-      { char: '素', name: '흴 소', pinyin: 'sù' },
-      { char: '索', name: '찾을 색', pinyin: 'suǒ' },
-      { char: '紧', name: '얽을 긴', pinyin: 'jǐn' },
+      {
+        char: '系',
+        name: '맬 계',
+        pinyin: 'xì',
+        story:
+          '실(糸)을 한 줄기 삐침(丿)으로 쭉 당겨 단단하게 묶고 매달아요! 🎀',
+      },
+      {
+        char: '素',
+        name: '흴 소',
+        pinyin: 'sù',
+        story:
+          '실(糸)이 아주 높고 깨끗하게(丰) 걸려 있는 꾸밈없이 하얀 모습이에요! 🤍',
+      },
+      {
+        char: '索',
+        name: '찾을 색',
+        pinyin: 'suǒ',
+        story:
+          '집(宀) 안에서 실(糸)로 꼰 밧줄을 이리저리 뒤지며 찾고 있어요! 🔍',
+      },
+      {
+        char: '紧',
+        name: '얽을 긴',
+        pinyin: 'jǐn',
+        story:
+          '단단한(坚) 실(糸)로 꽁꽁 묶어서 줄이 아주 팽팽하고 타이트해요! 🪢',
+      },
+      {
+        char: '繁',
+        name: '번성할 번',
+        pinyin: 'fán',
+        story:
+          '머리장식(敏)에 실(糸)을 주렁주렁 매달아 아주 화려하고 번성해요! 🎆',
+      },
     ],
   },
 
-  // =====================================
-  // 🔄 레벨 2: 변신 부수 (17개)
-  // =====================================
+  // ==========================================
+  // 🌿 LV.2 (부수 변형) - Day 1 ~ Day 17
+  // ==========================================
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 1 : 사람인변 (亻)
+  // ----------------------------------------
   {
-    day: 24,
     level: 2,
-    emoji: '👤',
+    day: 24,
     radical: {
       char: '亻',
       name: '사람인변',
       cnName: '单人旁',
-      pinyin: 'rén',
       cnPinyin: 'dān rén páng',
-      desc: '사람(人)',
+      story:
+        '사람 인(人)이 다른 글자 옆에 서기 위해 날씬하게 몸을 움츠린 모습이에요! 👤',
     },
     related: [
-      { char: '你', name: '너 니', pinyin: 'nǐ' },
-      { char: '他', name: '다를 타', pinyin: 'tā' },
-      { char: '们', name: '들 문', pinyin: 'men' },
-      { char: '住', name: '살 주', pinyin: 'zhù' },
-      { char: '做', name: '지을 주', pinyin: 'zuò' },
+      {
+        char: '你',
+        name: '너 니',
+        pinyin: 'nǐ',
+        story: '사람(亻)인 너를 가리키며 다정하게(尔) 부르는 말이에요! 👈',
+      },
+      {
+        char: '他',
+        name: '다를 타',
+        pinyin: 'tā',
+        story:
+          "사람(亻) 중에서 나와 너가 아닌 다른(也) 사람, 바로 '그'를 뜻해요! 🧑",
+      },
+      {
+        char: '们',
+        name: '들 문',
+        pinyin: 'men',
+        story: '사람(亻)들이 문(门) 안팎으로 여럿 모여 있는 무리를 뜻해요! 👨‍👩‍👧‍👦',
+      },
+      {
+        char: '住',
+        name: '살 주',
+        pinyin: 'zhù',
+        story: '사람(亻)이 등불(주인 주, 主)을 밝히고 한곳에 머물러 살아요! 🏠',
+      },
+      {
+        char: '做',
+        name: '지을 주',
+        pinyin: 'zuò',
+        story:
+          '사람(亻)이 옛날(故) 방식대로 부지런히 무언가를 만들고 행동해요! 🛠️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 2 : 삼수변 (氵)
+  // ----------------------------------------
   {
-    day: 25,
     level: 2,
-    emoji: '💧',
+    day: 25,
     radical: {
       char: '氵',
       name: '삼수변',
       cnName: '三点水',
-      pinyin: 'shuǐ',
       cnPinyin: 'sān diǎn shuǐ',
-      desc: '물(水)',
+      story:
+        '물 수(水)가 왼쪽으로 가서 물방울 세 개가 톡톡톡 튀는 모습이 되었어요! 💧',
     },
     related: [
-      { char: '河', name: '강 하', pinyin: 'hé' },
-      { char: '海', name: '바다 해', pinyin: 'hǎi' },
-      { char: '湖', name: '호수 호', pinyin: 'hú' },
-      { char: '洗', name: '씻을 세', pinyin: 'xǐ' },
-      { char: '酒', name: '술 주', pinyin: 'jiǔ' },
+      {
+        char: '河',
+        name: '강 하',
+        pinyin: 'hé',
+        story: '물(氵)이 이리저리 굽이치며(可) 흘러가는 큰 강물이에요! 🏞️',
+      },
+      {
+        char: '海',
+        name: '바다 해',
+        pinyin: 'hǎi',
+        story: '세상의 모든 물(氵)이 매일(每) 모여드는 넓고 큰 바다랍니다! 🐳',
+      },
+      {
+        char: '湖',
+        name: '호수 호',
+        pinyin: 'hú',
+        story:
+          '물(氵)이 옛날(古)부터 달(月)빛을 받으며 고여 있는 맑은 호수예요! 🛶',
+      },
+      {
+        char: '洗',
+        name: '씻을 세',
+        pinyin: 'xǐ',
+        story: '물(氵)로 발가락(먼저 선, 先) 끝까지 깨끗하게 싹싹 씻어요! 🧼',
+      },
+      {
+        char: '酒',
+        name: '술 주',
+        pinyin: 'jiǔ',
+        story: '물(氵)을 항아리(酉)에 담아 오래오래 발효시켜 만든 술이에요! 🍶',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 3 : 재방변 (扌)
+  // ----------------------------------------
   {
-    day: 26,
     level: 2,
-    emoji: '✋',
+    day: 26,
     radical: {
       char: '扌',
       name: '재방변',
       cnName: '提手旁',
-      pinyin: 'shǒu',
       cnPinyin: 'tí shǒu páng',
-      desc: '손(手)',
+      story:
+        '손 수(手)가 글자 왼쪽에 붙으면서 손을 뻗어 위로 치켜든 모습이에요! ✋',
     },
     related: [
-      { char: '打', name: '칠 타', pinyin: 'dǎ' },
-      { char: '找', name: '찾을 조', pinyin: 'zhǎo' },
-      { char: '拉', name: '끌 랍', pinyin: 'lā' },
-      { char: '推', name: '밀 추', pinyin: 'tuī' },
-      { char: '接', name: '이을 접', pinyin: 'jiē' },
+      {
+        char: '打',
+        name: '칠 타',
+        pinyin: 'dǎ',
+        story: '손(扌)으로 못(丁)을 쾅쾅 치거나 찰싹 때리는 모습이에요! 🔨',
+      },
+      {
+        char: '找',
+        name: '찾을 조',
+        pinyin: 'zhǎo',
+        story:
+          '손(扌)에 창(戈)을 들고 풀숲을 뒤지며 무언가를 열심히 찾아요! 🔍',
+      },
+      {
+        char: '拉',
+        name: '끌 납',
+        pinyin: 'lā',
+        story: '손(扌)으로 서 있는(立) 사람을 내 쪽으로 영차 끌어당겨요! 🪢',
+      },
+      {
+        char: '推',
+        name: '밀 추',
+        pinyin: 'tuī',
+        story: '손(扌)으로 새(隹)를 앞으로 쑥 밀어 하늘로 날려 보내요! 🕊️',
+      },
+      {
+        char: '接',
+        name: '이을 접',
+        pinyin: 'jiē',
+        story:
+          '손(扌)을 뻗어 첩(妾)처럼 가까운 사람을 다정하게 맞이하고 이어줘요! 🤝',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 4 : 심방변 (忄)
+  // ----------------------------------------
   {
-    day: 27,
     level: 2,
-    emoji: '❤️',
+    day: 27,
     radical: {
       char: '忄',
       name: '심방변',
       cnName: '竖心旁',
-      pinyin: 'xīn',
       cnPinyin: 'shù xīn páng',
-      desc: '마음(心)',
+      story:
+        '마음 심(心)이 왼쪽으로 가면서 심장이 콩닥콩닥 세로로 서 있는 모습이에요! ❤️',
     },
     related: [
-      { char: '情', name: '뜻 정', pinyin: 'qíng' },
-      { char: '快', name: '쾌할 쾌', pinyin: 'kuài' },
-      { char: '怕', name: '두려워할 파', pinyin: 'pà' },
-      { char: '忙', name: '바플 망', pinyin: 'máng' },
-      { char: '性', name: '성품 성', pinyin: 'xìng' },
+      {
+        char: '情',
+        name: '뜻 정',
+        pinyin: 'qíng',
+        story:
+          '마음(忄)속 깊은 곳에서 푸르게(青) 우러나오는 따뜻한 정이에요! 🥰',
+      },
+      {
+        char: '快',
+        name: '빠를 쾌',
+        pinyin: 'kuài',
+        story:
+          '마음(忄)이 뻥 뚫리게 시원하고, 행동이 쾌도(夬)처럼 아주 빨라요! ⚡',
+      },
+      {
+        char: '怕',
+        name: '두려울 파',
+        pinyin: 'pà',
+        story:
+          '마음(忄)이 하얗게(白) 질릴 정도로 덜덜 떨리며 무섭고 두려워요! 👻',
+      },
+      {
+        char: '忙',
+        name: '바쁠 망',
+        pinyin: 'máng',
+        story: '마음(忄)이 죽을(亡) 만큼 쉴 틈이 없어서 정신없이 바빠요! 🏃‍♂️',
+      },
+      {
+        char: '性',
+        name: '성품 성',
+        pinyin: 'xìng',
+        story:
+          '마음(忄)속에 태어날(生) 때부터 가지고 있는 변하지 않는 성격이에요! 🌱',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 5 : 말씀언변 (讠)
+  // ----------------------------------------
   {
-    day: 28,
     level: 2,
-    emoji: '🗣️',
+    day: 28,
     radical: {
       char: '讠',
       name: '말씀언변',
       cnName: '言字旁',
-      pinyin: 'yán',
       cnPinyin: 'yán zì páng',
-      desc: '말(言)',
+      story: '말씀 언(言)을 아주 빠르고 간단하게 흘려 쓴 예쁜 모양이에요! 🗣️',
     },
     related: [
-      { char: '说', name: '말씀 설', pinyin: 'shuō' },
-      { char: '话', name: '말씀 화', pinyin: 'huà' },
-      { char: '请', name: '청할 청', pinyin: 'qǐng' },
-      { char: '语', name: '말씀 어', pinyin: 'yǔ' },
-      { char: '讲', name: '외울 강', pinyin: 'jiǎng' },
+      {
+        char: '说',
+        name: '말씀 설',
+        pinyin: 'shuō',
+        story:
+          '말(讠)을 기쁘게(兑) 꺼내어 사람들에게 내 생각을 조잘조잘 말해요! 💬',
+      },
+      {
+        char: '话',
+        name: '말씀 화',
+        pinyin: 'huà',
+        story: '말(讠)을 혀(舌)를 굴려 가며 사람들과 재미있게 나눠요! 🎙️',
+      },
+      {
+        char: '请',
+        name: '청할 청',
+        pinyin: 'qǐng',
+        story: '말(讠)을 푸르고(青) 맑은 마음으로 다정하게 부탁하며 청해요! 🙏',
+      },
+      {
+        char: '语',
+        name: '말씀 어',
+        pinyin: 'yǔ',
+        story: '말(讠)을 나(吾)와 네가 함께 주고받으며 쓰는 언어예요! 📖',
+      },
+      {
+        char: '讲',
+        name: '외깰 강',
+        pinyin: 'jiǎng',
+        story:
+          '말(讠)을 우물(井)처럼 깊이 파고들며 조리 있게 설명하고 강연해요! 👨‍🏫',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 6 : 식변 (饣)
+  // ----------------------------------------
   {
-    day: 29,
     level: 2,
-    emoji: '🍚',
+    day: 29,
     radical: {
       char: '饣',
       name: '식변',
       cnName: '食字旁',
-      pinyin: 'shí',
       cnPinyin: 'shí zì páng',
-      desc: '음식(食)',
+      story: '밥 식(食)을 먹기 좋게 간편하고 얄팍한 모양으로 줄여 썼어요! 🍚',
     },
     related: [
-      { char: '饭', name: '밥 반', pinyin: 'fàn' },
-      { char: '饱', name: '배부를 포', pinyin: 'bǎo' },
-      { char: '饮', name: '마실 음', pinyin: 'yǐn' },
-      { char: '馆', name: '집 관', pinyin: 'guǎn' },
-      { char: '饿', name: '주릴 아', pinyin: 'è' },
+      {
+        char: '饭',
+        name: '밥 반',
+        pinyin: 'fàn',
+        story:
+          '음식(饣) 중에서 반대로(反) 뒤집어도 또 먹고 싶은 매일 먹는 밥이에요! 🍛',
+      },
+      {
+        char: '饱',
+        name: '배부를 포',
+        pinyin: 'bǎo',
+        story:
+          '음식(饣)을 가방(包)처럼 배가 불룩해질 때까지 가득 먹어서 배불러요! 🤰',
+      },
+      {
+        char: '饮',
+        name: '마실 음',
+        pinyin: 'yǐn',
+        story:
+          '음식(饣) 중에서 하품(欠)하듯 입을 크게 벌리고 꿀꺽 마시는 음료예요! 🥤',
+      },
+      {
+        char: '馆',
+        name: '집 관',
+        pinyin: 'guǎn',
+        story:
+          '음식(饣)을 벼슬아치(官)처럼 귀한 손님에게 대접하는 여관이나 식당이에요! 🏨',
+      },
+      {
+        char: '饿',
+        name: '주릴 아',
+        pinyin: 'è',
+        story: '음식(饣)을 나(我) 혼자만 못 먹어서 배가 꼬르륵 고파요! 🤤',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 7 : 쇠금변 (钅)
+  // ----------------------------------------
   {
-    day: 30,
     level: 2,
-    emoji: '⚙️',
+    day: 30,
     radical: {
       char: '钅',
       name: '쇠금변',
       cnName: '金字旁',
-      pinyin: 'jīn',
       cnPinyin: 'jīn zì páng',
-      desc: '쇠(金)',
+      story:
+        '쇠 금(金)을 왼쪽에서 쓰기 편하게 반짝이는 갈고리 모양으로 바꿨어요! ⚙️',
     },
     related: [
-      { char: '钱', name: '돈 전', pinyin: 'qián' },
-      { char: '银', name: '은 은', pinyin: 'yín' },
-      { char: '铁', name: '쇠 철', pinyin: 'tiě' },
-      { char: '铜', name: '구리 동', pinyin: 'tóng' },
-      { char: '钟', name: '쇠북 종', pinyin: 'zhōng' },
+      {
+        char: '钱',
+        name: '돈 전',
+        pinyin: 'qián',
+        story:
+          '쇠(钅)로 창(戋)처럼 얇게 동전을 만들어 물건을 사는 돈으로 써요! 🪙',
+      },
+      {
+        char: '银',
+        name: '은 은',
+        pinyin: 'yín',
+        story:
+          '쇠(钅) 중에서 괘씸할(艮) 정도로 하얗고 눈부시게 반짝이는 은이에요! 🥈',
+      },
+      {
+        char: '铁',
+        name: '쇠 철',
+        pinyin: 'tiě',
+        story:
+          '쇠(钅) 중에서 무기를 잃을(失) 정도로 아주 단단하게 만든 강철이에요! 🗡️',
+      },
+      {
+        char: '铜',
+        name: '구리 동',
+        pinyin: 'tóng',
+        story: '쇠(钅) 중에서 황금과 같은(同) 색을 띠는 붉은빛의 구리예요! 🥉',
+      },
+      {
+        char: '钟',
+        name: '종 종',
+        pinyin: 'zhōng',
+        story:
+          '쇠(钅)를 가운데(中)가 텅 비게 만들어서 둥~ 하고 울리는 큰 종이에요! 🔔',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 8 : 실사변 (纟)
+  // ----------------------------------------
   {
-    day: 31,
     level: 2,
-    emoji: '🧵',
+    day: 31,
     radical: {
       char: '纟',
       name: '실사변',
       cnName: '绞丝旁',
-      pinyin: 'mì',
       cnPinyin: 'jiǎo sī páng',
-      desc: '실(糸)',
+      story:
+        '실 사(糸)가 꼬불꼬불 엉켜 있는 모습을 세 줄로 간단하게 그렸어요! 🧵',
     },
     related: [
-      { char: '红', name: '붉을 홍', pinyin: 'hóng' },
-      { char: '绿', name: '푸를 록', pinyin: 'lǜ' },
-      { char: '给', name: '줄 급', pinyin: 'gěi' },
-      { char: '级', name: '등급 급', pinyin: 'jí' },
-      { char: '纸', name: '종이 지', pinyin: 'zhǐ' },
+      {
+        char: '红',
+        name: '붉을 홍',
+        pinyin: 'hóng',
+        story: '실(纟)을 장인(工)이 아주 예쁘고 쨍한 붉은색으로 물들였어요! 🔴',
+      },
+      {
+        char: '绿',
+        name: '푸를 록',
+        pinyin: 'lǜ',
+        story:
+          '실(纟)을 나무껍질(录)로 예쁘게 물들여 싱그러운 초록색이 되었어요! 🟢',
+      },
+      {
+        char: '给',
+        name: '줄 급',
+        pinyin: 'gěi',
+        story:
+          '실(纟)을 합쳐서(合) 튼튼한 옷을 만들어 사람들에게 나누어 주어요! 🎁',
+      },
+      {
+        char: '级',
+        name: '등급 급',
+        pinyin: 'jí',
+        story:
+          '실(纟)의 품질이 미치는(及) 정도에 따라 1등급, 2등급 계단을 나눠요! 📈',
+      },
+      {
+        char: '纸',
+        name: '종이 지',
+        pinyin: 'zhǐ',
+        story:
+          '실(纟)이나 나무껍질을 얇게 펴서 씨름씨름(氏) 말려 만든 종이예요! 📄',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 9 : 개사슴록변 (犭)
+  // ----------------------------------------
   {
-    day: 32,
     level: 2,
-    emoji: '🐶',
+    day: 32,
     radical: {
       char: '犭',
       name: '개사슴록변',
       cnName: '反犬旁',
-      pinyin: 'quǎn',
       cnPinyin: 'fǎn quǎn páng',
-      desc: '동물(犬)',
+      story:
+        '개 견(犬)이 길게 늘어나 네 발 달린 짐승들의 몸통 모양이 되었어요! 🐶',
     },
     related: [
-      { char: '狗', name: '개 구', pinyin: 'gǒu' },
-      { char: '猫', name: '고양이 묘', pinyin: 'māo' },
-      { char: '狼', name: '이리 랑', pinyin: 'láng' },
-      { char: '猴', name: '원숭이 후', pinyin: 'hóu' },
-      { char: '猪', name: '돼지 저', pinyin: 'zhū' },
+      {
+        char: '狗',
+        name: '개 구',
+        pinyin: 'gǒu',
+        story:
+          '동물(犭) 중에서 글귀(句)를 알아듣는 영리하고 친근한 강아지예요! 🐕',
+      },
+      {
+        char: '猫',
+        name: '고양이 묘',
+        pinyin: 'māo',
+        story:
+          '동물(犭) 중에서 밭(田)의 싹(艹)을 망치는 쥐를 잡는 고양이에요! 🐈',
+      },
+      {
+        char: '狼',
+        name: '이리 랑',
+        pinyin: 'láng',
+        story:
+          '동물(犭) 중에서 어진(良) 척하지만 숲속에 사는 아주 무서운 늑대예요! 🐺',
+      },
+      {
+        char: '猴',
+        name: '원숭이 후',
+        pinyin: 'hóu',
+        story: '동물(犭) 중에서 제후(侯)처럼 재주가 많고 똑똑한 원숭이에요! 🐒',
+      },
+      {
+        char: '猪',
+        name: '돼지 저',
+        pinyin: 'zhū',
+        story:
+          '동물(犭) 중에서 놈 자(者)처럼 뚱뚱하고 밥을 잘 먹는 돼지예요! 🐖',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 10 : 보일시변 (礻)
+  // ----------------------------------------
   {
-    day: 33,
     level: 2,
-    emoji: '🙏',
+    day: 33,
     radical: {
       char: '礻',
       name: '보일시변',
       cnName: '示字旁',
-      pinyin: 'shì',
       cnPinyin: 'shì zì páng',
-      desc: '제사·복(示)',
+      story:
+        '보일 시(示)가 변하면서 제단 위에서 신에게 복을 비는 모습이 되었어요! 🙏',
     },
     related: [
-      { char: '神', name: '귀신 신', pinyin: 'shén' },
-      { char: '祖', name: '할아비 조', pinyin: 'zǔ' },
-      { char: '祝', name: '빌 축', pinyin: 'zhù' },
-      { char: '福', name: '복 복', pinyin: 'fú' },
-      { char: '礼', name: '예도 례', pinyin: 'lǐ' },
+      {
+        char: '神',
+        name: '귀신 신',
+        pinyin: 'shén',
+        story:
+          '제단(礻)에 엎드려 번개(申)를 다스리는 신비로운 신에게 기도해요! ⚡',
+      },
+      {
+        char: '祖',
+        name: '할아비 조',
+        pinyin: 'zǔ',
+        story:
+          '제단(礻)에 도마(且)를 놓고 고기를 바치며 조상님께 제사를 지내요! 👴',
+      },
+      {
+        char: '祝',
+        name: '빌 축',
+        pinyin: 'zhù',
+        story:
+          '제단(礻) 앞에서 형(兄)이 입을 벌리고 하늘에 복을 내려달라고 빌어요! 🎇',
+      },
+      {
+        char: '福',
+        name: '복 복',
+        pinyin: 'fú',
+        story:
+          '제단(礻)에 술 한(一) 입(口)과 밭(田)에서 난 음식을 바치고 받는 큰 복이에요! 🍀',
+      },
+      {
+        char: '礼',
+        name: '예도 례',
+        pinyin: 'lǐ',
+        story:
+          '제단(礻) 앞에서 새싹(乚)처럼 고개를 숙이며 바른 예절을 지켜요! 🙇‍♂️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 11 : 선칼도방 (刂)
+  // ----------------------------------------
   {
-    day: 34,
     level: 2,
-    emoji: '🔪',
+    day: 34,
     radical: {
       char: '刂',
       name: '선칼도방',
       cnName: '立刀旁',
-      pinyin: 'dāo',
       cnPinyin: 'lì dāo páng',
-      desc: '칼(刀)',
+      story:
+        '칼 도(刀)가 글자 오른쪽에 붙어 뾰족한 칼 두 자루가 서 있는 모습이에요! 🔪',
     },
     related: [
-      { char: '到', name: '이를 도', pinyin: 'dào' },
-      { char: '别', name: '다를 별', pinyin: 'bié' },
-      { char: '利', name: '이로울 리', pinyin: 'lì' },
-      { char: '刻', name: '새길 각', pinyin: 'kè' },
-      { char: '列', name: '벌일 렬', pinyin: 'liè' },
+      {
+        char: '到',
+        name: '이를 도',
+        pinyin: 'dào',
+        story: '칼(刂)을 차고 목적지(至)에 무사히 도착해서 땅에 다다랐어요! 🏁',
+      },
+      {
+        char: '别',
+        name: '다를 별',
+        pinyin: 'bié',
+        story:
+          '칼(刂)로 뼈(另)와 고기를 싹둑싹둑 잘라서 다르게 나누어 분리해요! ✂️',
+      },
+      {
+        char: '利',
+        name: '이로울 리',
+        pinyin: 'lì',
+        story:
+          '칼(刂)로 다 자란 벼(禾)를 슥슥 베어 수확하니 생활이 이롭고 풍족해요! 🌾',
+      },
+      {
+        char: '刻',
+        name: '새길 각',
+        pinyin: 'kè',
+        story:
+          '칼(刂)로 돼지(亥) 뼈나 나무판에 글자를 아주 정교하게 파서 새겨요! 🪵',
+      },
+      {
+        char: '列',
+        name: '벌일 렬',
+        pinyin: 'liè',
+        story:
+          '칼(刂)로 고기를 뼈(歹)에서 발라내어 쫙 일렬로 예쁘게 늘어놓았어요! 🥩',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 12 : 책받침 (辶)
+  // ----------------------------------------
   {
-    day: 35,
     level: 2,
-    emoji: '🚶',
+    day: 35,
     radical: {
       char: '辶',
       name: '책받침',
       cnName: '走之旁',
-      pinyin: 'chuò',
       cnPinyin: 'zǒu zhī páng',
-      desc: '가다(辵)',
+      story:
+        '사거리(길) 위를 발로 천천히 걸어가며 멈추었다 걷다 하는 모습이에요! 🚶',
     },
     related: [
-      { char: '这', name: '이 저', pinyin: 'zhè' },
-      { char: '过', name: '지날 과', pinyin: 'guò' },
-      { char: '近', name: '가까울 근', pinyin: 'jìn' },
-      { char: '远', name: '멀 원', pinyin: 'yuǎn' },
-      { char: '进', name: '나아갈 진', pinyin: 'jìn' },
+      {
+        char: '这',
+        name: '이 저',
+        pinyin: 'zhè',
+        story:
+          "길(辶)에서 말(言의 변형인 文)을 걸며 가리키는 가까운 '이것'이에요! 👈",
+      },
+      {
+        char: '过',
+        name: '지날 과',
+        pinyin: 'guò',
+        story:
+          '길(辶)을 걸어서 마디(寸) 하나 차이로 목적지를 훌쩍 지나가 버렸어요! ⏩',
+      },
+      {
+        char: '近',
+        name: '가까울 근',
+        pinyin: 'jìn',
+        story:
+          '길(辶)을 걸을 때 도끼(斤)가 닿을 만큼 아주 짧고 가까운 거리예요! 📏',
+      },
+      {
+        char: '远',
+        name: '멀 원',
+        pinyin: 'yuǎn',
+        story:
+          '길(辶)을 아주 오래 걸어 옷(元)이 다 해질 만큼 까마득하게 멀어요! 🔭',
+      },
+      {
+        char: '进',
+        name: '나아갈 진',
+        pinyin: 'jìn',
+        story:
+          '길(辶)을 우물(井) 파듯 한 걸음씩 꾹꾹 밟으며 앞으로 씩씩하게 나아가요! 🚶‍♂️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 13 : 좌부방/우부방 (阝)
+  // ----------------------------------------
   {
-    day: 36,
     level: 2,
-    emoji: '🏘️',
+    day: 36,
     radical: {
       char: '阝',
-      name: '좌/우부방',
+      name: '좌부방·우부방',
       cnName: '双耳旁',
-      pinyin: 'fù',
       cnPinyin: 'shuāng ěr páng',
-      desc: '언덕·마을(阜/邑)',
+      story:
+        '언덕(좌)이나 마을(우)을 뜻하며, 귀 모양 두 개가 위아래로 붙은 것 같아요! 🏘️',
     },
     related: [
-      { char: '队', name: '무리 대', pinyin: 'duì' },
-      { char: '阳', name: '볕 양', pinyin: 'yáng' },
-      { char: '院', name: '집 원', pinyin: 'yuàn' },
-      { char: '都', name: '도읍 도', pinyin: 'dōu' },
-      { char: '那', name: '어찌 나', pinyin: 'nà' },
+      {
+        char: '队',
+        name: '무리 대',
+        pinyin: 'duì',
+        story:
+          '언덕(阝) 아래로 사람(人)들이 줄지어 내려오며 큰 무리를 지었어요! 💂‍♂️',
+      },
+      {
+        char: '阳',
+        name: '볕 양',
+        pinyin: 'yáng',
+        story:
+          '언덕(阝) 너머로 둥근 해(日)가 쨍쨍하게 비추는 따뜻한 양지바른 곳이에요! ☀️',
+      },
+      {
+        char: '院',
+        name: '집 원',
+        pinyin: 'yuàn',
+        story:
+          '언덕(阝)에 튼튼하게 담장(完)을 쳐서 만든 크고 번듯한 마당 있는 집이에요! 🏡',
+      },
+      {
+        char: '都',
+        name: '도읍 도',
+        pinyin: 'dū',
+        story:
+          '사람(者)들이 엄청 많이 모여 사는 크고 화려한 마을(阝), 바로 도시예요! 🏙️',
+      },
+      {
+        char: '那',
+        name: '어찌 나',
+        pinyin: 'nà',
+        story:
+          "고을(阝)에 머무는 달(月)을 가리키며 '저기' 또는 '그것'이라고 불러요! 👉",
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 14 : 옷의변 (衤)
+  // ----------------------------------------
   {
-    day: 37,
     level: 2,
-    emoji: '👕',
+    day: 37,
     radical: {
       char: '衤',
       name: '옷의변',
       cnName: '衣字旁',
-      pinyin: 'yī',
       cnPinyin: 'yī zì páng',
-      desc: '옷(衣)',
+      story:
+        '옷 의(衣)가 왼쪽으로 오면서 옷깃과 소매를 날렵하게 접은 모양이에요! 👕',
     },
     related: [
-      { char: '裤', name: '바지 고', pinyin: 'kù' },
-      { char: '衬', name: '속옷 친', pinyin: 'chèn' },
-      { char: '被', name: '이불 피', pinyin: 'bèi' },
-      { char: '袜', name: '버선 말', pinyin: 'wà' },
-      { char: '裙', name: '치마 군', pinyin: 'qún' },
+      {
+        char: '裤',
+        name: '바지 고',
+        pinyin: 'kù',
+        story:
+          '옷(衤) 중에서 창고(库)처럼 두 다리를 안전하게 쏙 보관하는 바지예요! 👖',
+      },
+      {
+        char: '衬',
+        name: '속옷 친',
+        pinyin: 'chèn',
+        story:
+          '옷(衤) 중에서 마디(寸)처럼 피부에 딱 달라붙어 땀을 흡수하는 속옷이에요! 🎽',
+      },
+      {
+        char: '被',
+        name: '이불 피',
+        pinyin: 'bèi',
+        story:
+          '옷(衤)처럼 내 몸의 겉(皮)을 넓게 덮어주는 따뜻하고 포근한 이불이에요! 🛏️',
+      },
+      {
+        char: '袜',
+        name: '버선 말',
+        pinyin: 'wà',
+        story:
+          '옷(衤) 중에서 발끝(末)에 신어 발을 보호하는 귀여운 양말이에요! 🧦',
+      },
+      {
+        char: '裙',
+        name: '치마 군',
+        pinyin: 'qún',
+        story:
+          '옷(衤)인데 임금(君)님의 옷자락처럼 넓게 둥그렇게 퍼지는 예쁜 치마예요! 👗',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 15 : 연화발 (灬)
+  // ----------------------------------------
   {
-    day: 38,
     level: 2,
-    emoji: '🔥',
+    day: 38,
     radical: {
       char: '灬',
       name: '연화발',
       cnName: '四点底',
-      pinyin: 'huǒ',
       cnPinyin: 'sì diǎn dǐ',
-      desc: '불(火)',
+      story:
+        '불 화(火)가 글자 밑으로 들어가 화끈화끈 타오르는 네 개의 불꽃이 되었어요! 🔥',
     },
     related: [
-      { char: '热', name: '더울 열', pinyin: 'rè' },
-      { char: '煮', name: '삶을 자', pinyin: 'zhǔ' },
-      { char: '然', name: '그러할 연', pinyin: 'rán' },
-      { char: '熟', name: '익을 숙', pinyin: 'shú' },
-      { char: '黑', name: '검을 흑', pinyin: 'hēi' },
+      {
+        char: '热',
+        name: '더울 열',
+        pinyin: 'rè',
+        story:
+          '몸에 땀방울(丸)이 맺히도록 아래에서 불(灬)을 피워 아주아주 더워요! 🥵',
+      },
+      {
+        char: '煮',
+        name: '삶을 자',
+        pinyin: 'zhǔ',
+        story:
+          '불(灬) 위에 그릇(者)을 올려놓고 물을 보글보글 끓이며 요리를 삶아요! 🍲',
+      },
+      {
+        char: '然',
+        name: '그러할 연',
+        pinyin: 'rán',
+        story:
+          '고기(肉)를 개(犬)가 먹기 좋게 불(灬)에 구워주는 것이 당연히 그러해요! 🍖🔥',
+      },
+      {
+        char: '熟',
+        name: '익을 숙',
+        pinyin: 'shú',
+        story:
+          '누구구(孰) 불(灬)로 푹푹 찌면 고기가 아주 부드럽고 맛있게 푹 익어요! 🥘',
+      },
+      {
+        char: '黑',
+        name: '검을 흑',
+        pinyin: 'hēi',
+        story:
+          '마을(里) 밑에서 불(灬)을 때어 그을음이 잔뜩 묻어 새까맣게 변했어요! 🖤',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 16 : 이수변 (冫)
+  // ----------------------------------------
   {
-    day: 39,
     level: 2,
-    emoji: '🧊',
+    day: 39,
     radical: {
       char: '冫',
       name: '이수변',
       cnName: '两点水',
-      pinyin: 'bīng',
       cnPinyin: 'liǎng diǎn shuǐ',
-      desc: '얼음(冰)',
+      story:
+        '물방울이 차갑게 얼어붙어 땡땡한 얼음 조각 두 개가 된 모습이에요! 🧊',
     },
     related: [
-      { char: '冷', name: '찰 랭', pinyin: 'lěng' },
-      { char: '冰', name: '얼음 빙', pinyin: 'bīng' },
-      { char: '冻', name: '얼 동', pinyin: 'dòng' },
-      { char: '净', name: '깨끗할 정', pinyin: 'jìng' },
-      { char: '凉', name: '서늘할 량', pinyin: 'liáng' },
+      {
+        char: '冷',
+        name: '찰 냉',
+        pinyin: 'lěng',
+        story:
+          '얼음(冫)처럼 차가워서 명령(令)을 내리듯 몸을 부들부들 떨게 만들어요! 🥶',
+      },
+      {
+        char: '冰',
+        name: '얼음 빙',
+        pinyin: 'bīng',
+        story:
+          '얼음(冫)이 물(水)과 만나 전체가 꽁꽁 얼어붙어 단단한 빙판이 되었어요! ⛸️',
+      },
+      {
+        char: '冻',
+        name: '얼 동',
+        pinyin: 'dòng',
+        story:
+          '얼음(冫)이 동쪽(东)에서 불어오는 찬 바람을 맞아 딱딱하게 굳어 얼었어요! ❄️',
+      },
+      {
+        char: '净',
+        name: '깨끗할 정',
+        pinyin: 'jìng',
+        story:
+          '얼음(冫)이 녹아 다툴(争) 일 없이 아주 투명하고 깨끗한 맑은 물이 되었어요! 💧',
+      },
+      {
+        char: '凉',
+        name: '서늘할 량',
+        pinyin: 'liáng',
+        story:
+          '얼음(冫) 기운이 서울(京) 하늘에 퍼져 가을바람처럼 기분 좋게 서늘해요! 🍃',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌿 LV.2 - Day 17 : 육달월 (⺼)
+  // ----------------------------------------
   {
-    day: 40,
     level: 2,
-    emoji: '🌙',
+    day: 40,
     radical: {
       char: '⺼',
       name: '육달월',
       cnName: '肉月旁',
-      pinyin: 'ròu',
       cnPinyin: 'ròu yuè páng',
-      desc: '고기·몸(肉)',
+      story:
+        '고기 육(肉)이 다른 글자와 합쳐질 때 달 월(月)과 똑같은 모양으로 변신해요! (사람의 몸을 뜻해요) 🍖',
     },
     related: [
-      { char: '胖', name: '살찔 반', pinyin: 'pàng' },
-      { char: '肚', name: '배 두', pinyin: 'dù' },
-      { char: '脚', name: '다리 각', pinyin: 'jiǎo' },
-      { char: '脸', name: '뺨 렴', pinyin: 'liǎn' },
-      { char: '腿', name: '넓적다리 퇴', pinyin: 'tuǐ' },
+      {
+        char: '胖',
+        name: '살찔 반',
+        pinyin: 'pàng',
+        story:
+          '몸(⺼)이 반쪽(半)씩 둥실둥실 부풀어 올라 살이 아주 포동포동 쪘어요! 🐷',
+      },
+      {
+        char: '肚',
+        name: '배 두',
+        pinyin: 'dù',
+        story:
+          '몸(⺼)의 가운데 흙(土)처럼 볼록하게 튀어나온 둥그스름한 배예요! 🤰',
+      },
+      {
+        char: '脚',
+        name: '다리 각',
+        pinyin: 'jiǎo',
+        story:
+          '몸(⺼)을 단단하게 지탱하며 물리치는(却) 아주 튼튼한 다리와 발이에요! 🦵',
+      },
+      {
+        char: '脸',
+        name: '얼굴 련',
+        pinyin: 'liǎn',
+        story:
+          '몸(⺼)에서 사람들이 모여(佥) 가장 먼저 쳐다보는 곳, 바로 예쁜 얼굴이에요! ☺️',
+      },
+      {
+        char: '腿',
+        name: '넓적다리 퇴',
+        pinyin: 'tuǐ',
+        story:
+          '몸(⺼)에서 물러설(退) 때 뒤로 크게 굽혀지는 튼실한 허벅지 부분이에요! 🏃',
+      },
     ],
   },
+  // ==========================================
+  // 🌳 LV.3 (자연과 사물) - Day 1 ~ Day 20
+  // ==========================================
 
-  // =====================================
-  // 🌿 레벨 3: 자연·사물 부수 (20개)
-  // =====================================
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 1 : 밭 전 (田)
+  // ----------------------------------------
   {
-    day: 41,
     level: 3,
-    emoji: '🌾',
+    day: 41,
     radical: {
       char: '田',
       name: '밭 전',
       cnName: '田字旁',
-      pinyin: 'tián',
       cnPinyin: 'tián zì páng',
-      desc: '밭',
+      story: '논밭을 여러 구역으로 반듯하게 나누어 놓은 바둑판 모양이에요! 🌾',
     },
     related: [
-      { char: '田', name: '밭 전', pinyin: 'tián' },
-      { char: '男', name: '사내 남', pinyin: 'nán' },
-      { char: '界', name: '지경 계', pinyin: 'jiè' },
-      { char: '留', name: '머무를 류', pinyin: 'liú' },
-      { char: '畔', name: '두둑 반', pinyin: 'pàn' },
+      {
+        char: '男',
+        name: '사내 남',
+        pinyin: 'nán',
+        story: '밭(田)에서 힘(力)을 펄펄 쓰며 농사를 짓는 튼튼한 남자예요! 👨‍🌾',
+      },
+      {
+        char: '界',
+        name: '지경 계',
+        pinyin: 'jiè',
+        story: '밭(田)과 밭 사이에 끼어(介) 있는 경계선을 뜻하는 세계예요! 🌐',
+      },
+      {
+        char: '留',
+        name: '머무를 류',
+        pinyin: 'liú',
+        story:
+          '밭(田)에 묘목(卯)을 심고 잘 자라도록 그곳에 머물며 지켜봐요! 🏕️',
+      },
+      {
+        char: '畔',
+        name: '두둑 반',
+        pinyin: 'pàn',
+        story: '밭(田)의 반(半)을 나누어 길을 낸, 밭을 빙 두른 둑이에요! 🛤️',
+      },
+      {
+        char: '奋',
+        name: '떨칠 분',
+        pinyin: 'fèn',
+        story: '큰(大) 새가 밭(田) 위를 힘차게 날아오르며 날개를 떨쳐요! 🦅',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 2 : 돌 석 (石)
+  // ----------------------------------------
   {
-    day: 42,
     level: 3,
-    emoji: '🪨',
+    day: 42,
     radical: {
       char: '石',
       name: '돌 석',
       cnName: '石字旁',
-      pinyin: 'shí',
       cnPinyin: 'shí zì páng',
-      desc: '돌',
+      story: '언덕 아래로 커다란 바위 덩어리가 뚝 떨어져 있는 모습이에요! 🪨',
     },
     related: [
-      { char: '石', name: '돌 석', pinyin: 'shí' },
-      { char: '矿', name: '쇳돌 광', pinyin: 'kuàng' },
-      { char: '码', name: '마노 마', pinyin: 'mǎ' },
-      { char: '破', name: '깨뜨릴 파', pinyin: 'pò' },
-      { char: '硬', name: '굳을 경', pinyin: 'yìng' },
+      {
+        char: '矿',
+        name: '쇳돌 광',
+        pinyin: 'kuàng',
+        story: '돌(石)이 넓은(广) 동굴 속에 잔뜩 묻혀 있는 광산이에요! ⛏️',
+      },
+      {
+        char: '码',
+        name: '마노 마',
+        pinyin: 'mǎ',
+        story:
+          '돌(石)을 말(马)처럼 가지런히 세워 숫자를 세거나 암호를 만들어요! 🔢',
+      },
+      {
+        char: '破',
+        name: '깨질 파',
+        pinyin: 'pò',
+        story: '돌(石)이 가죽(皮)이 찢어지듯 와장창 산산조각 깨져버렸어요! 💥',
+      },
+      {
+        char: '硬',
+        name: '굳을 경',
+        pinyin: 'yìng',
+        story: '돌(石)이 한층 더(更) 단단해져서 아주 굳고 딱딱해요! 🧱',
+      },
+      {
+        char: '硕',
+        name: '클 석',
+        pinyin: 'shuò',
+        story: '돌(石)덩이처럼 머리(页)가 아주 크고 훌륭한 석사님이에요! 🎓',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 3 : 대 죽 (竹/⺮)
+  // ----------------------------------------
   {
-    day: 43,
     level: 3,
-    emoji: '🎋',
+    day: 43,
     radical: {
       char: '竹',
       name: '대 죽',
       cnName: '竹字头',
-      pinyin: 'zhú',
       cnPinyin: 'zhú zì tóu',
-      desc: '대나무',
+      story: '대나무의 마디와 아래로 축 늘어진 뾰족한 댓잎을 본떠 그렸어요! 🎋',
     },
     related: [
-      { char: '竹', name: '대 죽', pinyin: 'zhú' },
-      { char: '笑', name: '웃을 소', pinyin: 'xiào' },
-      { char: '笔', name: '붓 필', pinyin: 'bǐ' },
-      { char: '第', name: '차례 제', pinyin: 'dì' },
-      { char: '等', name: '무리 등', pinyin: 'děng' },
+      {
+        char: '笑',
+        name: '웃을 소',
+        pinyin: 'xiào',
+        story: '대나무(⺮)가 바람에 요염하게(夭) 흔들리듯 꺄르르 웃어요! 😂',
+      },
+      {
+        char: '笔',
+        name: '붓 필',
+        pinyin: 'bǐ',
+        story: '대나무(⺮) 끝에 짐승의 털(毛)을 묶어서 만든 멋진 붓이에요! 🖌️',
+      },
+      {
+        char: '第',
+        name: '차례 제',
+        pinyin: 'dì',
+        story:
+          '대나무(⺮)를 아우(弟)가 형의 뒤를 따르듯 차례대로 세워놓았어요! 🥇',
+      },
+      {
+        char: '等',
+        name: '무리 등',
+        pinyin: 'děng',
+        story: '대나무(⺮) 문서를 관청(寺)에 가지런히 모아 등급을 매겨요! 📊',
+      },
+      {
+        char: '答',
+        name: '대답할 답',
+        pinyin: 'dá',
+        story: '대나무(⺮) 통이 서로 합쳐지듯(合) 딱 맞게 대답을 해요! 🙋‍♂️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 4 : 조개 패 (贝)
+  // ----------------------------------------
   {
-    day: 44,
     level: 3,
-    emoji: '🐚',
+    day: 44,
     radical: {
       char: '贝',
       name: '조개 패',
       cnName: '贝字旁',
-      pinyin: 'bèi',
       cnPinyin: 'bèi zì páng',
-      desc: '조개·돈',
+      story:
+        '입을 살짝 벌린 예쁜 조개의 모습! 옛날에는 조개를 돈으로 썼어요. 🐚',
     },
     related: [
-      { char: '贝', name: '조개 패', pinyin: 'bèi' },
-      { char: '财', name: '재물 재', pinyin: 'cái' },
-      { char: '货', name: '재물 화', pinyin: 'huò' },
-      { char: '贵', name: '귀할 귀', pinyin: 'guì' },
-      { char: '贺', name: '하례할 하', pinyin: 'hè' },
+      {
+        char: '财',
+        name: '재물 재',
+        pinyin: 'cái',
+        story: '돈(贝)을 재주껏(才) 잘 모아서 부자가 되는 귀한 재물이에요! 💰',
+      },
+      {
+        char: '货',
+        name: '재물 화',
+        pinyin: 'huò',
+        story:
+          '돈(贝)이 될 만한 변화무쌍한(化) 물건들, 바로 상품과 화물이에요! 📦',
+      },
+      {
+        char: '贵',
+        name: '귀할 귀',
+        pinyin: 'guì',
+        story:
+          '돈(贝)을 흙(土) 속에 묻어두고 소중하게 보관할 만큼 아주 귀해요! 💎',
+      },
+      {
+        char: '贺',
+        name: '하례할 하',
+        pinyin: 'hè',
+        story:
+          '돈(贝)과 선물을 더해서(加) 기쁜 일을 진심으로 축하해 주어요! 🎉',
+      },
+      {
+        char: '购',
+        name: '살 구',
+        pinyin: 'gòu',
+        story: '돈(贝)을 우물무늬(勾) 엮듯 주고 맘에 드는 물건을 사요! 🛒',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 5 : 말 마 (马)
+  // ----------------------------------------
   {
-    day: 45,
     level: 3,
-    emoji: '🐴',
+    day: 45,
     radical: {
       char: '马',
       name: '말 마',
       cnName: '马字旁',
-      pinyin: 'mǎ',
       cnPinyin: 'mǎ zì páng',
-      desc: '말',
+      story: '긴 얼굴과 갈기를 흩날리며 네 다리로 달리는 늠름한 말이에요! 🐴',
     },
     related: [
-      { char: '马', name: '말 마', pinyin: 'mǎ' },
-      { char: '妈', name: '엄마 마', pinyin: 'mā' },
-      { char: '吗', name: '의문 마', pinyin: 'ma' },
-      { char: '骑', name: '말탈 기', pinyin: 'qí' },
-      { char: '骂', name: '꾸짖을 매', pinyin: 'mà' },
+      {
+        char: '妈',
+        name: '어머니 마',
+        pinyin: 'mā',
+        story:
+          '여자(女) 중에 나를 말(马)처럼 업어 키워주신 사랑하는 엄마예요! 👩‍👧',
+      },
+      {
+        char: '吗',
+        name: '의문 마',
+        pinyin: 'ma',
+        story: '입(口)으로 말(马)처럼 다다다닥 질문을 쏟아내며 물어봐요! ❓',
+      },
+      {
+        char: '骑',
+        name: '말탈 기',
+        pinyin: 'qí',
+        story: '말(马)을 기이하게(奇) 잘 다루며 멋지게 올라타고 달려요! 🏇',
+      },
+      {
+        char: '骂',
+        name: '꾸짖을 매',
+        pinyin: 'mà',
+        story: '말(马)처럼 큰 소리로 두 입(口口)을 모아 따끔하게 꾸짖어요! 😠',
+      },
+      {
+        char: '驾',
+        name: '멍에 가',
+        pinyin: 'jià',
+        story: '말(马)에 더하여(加) 수레를 묶고 직접 운전하며 나아가요! 🚗',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 6 : 새 조 (鸟)
+  // ----------------------------------------
   {
-    day: 46,
     level: 3,
-    emoji: '🐦',
+    day: 46,
     radical: {
       char: '鸟',
       name: '새 조',
       cnName: '鸟字旁',
-      pinyin: 'niǎo',
       cnPinyin: 'niǎo zì páng',
-      desc: '새',
+      story: '뾰족한 부리와 예쁜 깃털을 가진 새가 앉아 있는 모습이에요! 🐦',
     },
     related: [
-      { char: '鸟', name: '새 조', pinyin: 'niǎo' },
-      { char: '鸡', name: '닭 계', pinyin: 'jī' },
-      { char: '鸭', name: '오리 압', pinyin: 'yā' },
-      { char: '鹅', name: '거위 아', pinyin: 'é' },
-      { char: '鸽', name: '비둘기 합', pinyin: 'gē' },
+      {
+        char: '鸡',
+        name: '닭 계',
+        pinyin: 'jī',
+        story: '새(鸟) 중에서 또(又) 알을 낳고 또 낳는 부지런한 닭이에요! 🐔',
+      },
+      {
+        char: '鸭',
+        name: '오리 압',
+        pinyin: 'yā',
+        story:
+          '새(鸟) 중에서 껍질(甲)처럼 단단한 부리를 가진 꽥꽥 오리예요! 🦆',
+      },
+      {
+        char: '鹅',
+        name: '거위 아',
+        pinyin: 'é',
+        story: '새(鸟) 중에서 나(我)를 따라오며 목을 길게 빼는 거위예요! 🦢',
+      },
+      {
+        char: '鸽',
+        name: '비둘기 합',
+        pinyin: 'gē',
+        story: '새(鸟) 중에서 모여서 합창하듯(合) 구구구 우는 비둘기예요! 🕊️',
+      },
+      {
+        char: '鸣',
+        name: '울 명',
+        pinyin: 'míng',
+        story: '새(鸟)가 입(口)을 예쁘게 벌리고 짹짹 맑은 소리로 울어요! 🎶',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 7 : 물고기 어 (鱼)
+  // ----------------------------------------
   {
-    day: 47,
     level: 3,
-    emoji: '🐟',
+    day: 47,
     radical: {
       char: '鱼',
       name: '물고기 어',
       cnName: '鱼字旁',
-      pinyin: 'yú',
       cnPinyin: 'yú zì páng',
-      desc: '물고기',
+      story: '뾰족한 머리와 비늘, 그리고 찰랑거리는 꼬리를 가진 물고기예요! 🐟',
     },
     related: [
-      { char: '鱼', name: '물고기 어', pinyin: 'yú' },
-      { char: '鲜', name: '고기 선', pinyin: 'xiān' },
-      { char: '鲸', name: '고래 경', pinyin: 'jīng' },
-      { char: '鲤', name: '잉어 리', pinyin: 'lǐ' },
-      { char: '鲍', name: '절인고기 포', pinyin: 'bào' },
+      {
+        char: '鲜',
+        name: '고울 선',
+        pinyin: 'xiān',
+        story: '물고기(鱼)와 양고기(羊)가 어우러져 아주 신선하고 맛있어요! 🍣',
+      },
+      {
+        char: '鲸',
+        name: '고래 경',
+        pinyin: 'jīng',
+        story:
+          '물고기(鱼) 중에서 서울(京)만큼이나 어마어마하게 큰 고래예요! 🐳',
+      },
+      {
+        char: '鲤',
+        name: '잉어 리',
+        pinyin: 'lǐ',
+        story: '물고기(鱼) 중에서 마을(里) 연못에 사는 수염 난 잉어예요! 🎏',
+      },
+      {
+        char: '鲍',
+        name: '전복 포',
+        pinyin: 'bào',
+        story:
+          '물고기(鱼)와 함께 사는 껍질로 가방(包)을 싼 쫄깃한 전복이에요! 🦪',
+      },
+      {
+        char: '鲨',
+        name: '상어 사',
+        pinyin: 'shā',
+        story:
+          '모래(沙)가 많은 얕은 바다까지 헤엄쳐오는 무서운 물고기(鱼), 상어예요! 🦈',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 8 : 소 우 (牛)
+  // ----------------------------------------
   {
-    day: 48,
     level: 3,
-    emoji: '🐮',
+    day: 48,
     radical: {
       char: '牛',
       name: '소 우',
       cnName: '牛字旁',
-      pinyin: 'niú',
       cnPinyin: 'niú zì páng',
-      desc: '소',
+      story: '머리에 뾰족한 뿔이 두 개 솟아 있는 듬직한 소의 뿔 모양이에요! 🐮',
     },
     related: [
-      { char: '牛', name: '소 우', pinyin: 'niú' },
-      { char: '物', name: '만물 물', pinyin: 'wù' },
-      { char: '特', name: '특별할 특', pinyin: 'tè' },
-      { char: '牧', name: '칠 목', pinyin: 'mù' },
-      { char: '牵', name: '끌 견', pinyin: 'qiān' },
+      {
+        char: '物',
+        name: '만물 물',
+        pinyin: 'wù',
+        story:
+          '소(牛)는 깃발(勿)을 세울 만큼 사람들이 좋아하는 중요한 물건이었어요! 📦',
+      },
+      {
+        char: '特',
+        name: '특별할 특',
+        pinyin: 'tè',
+        story:
+          '소(牛) 무리 중에서 관청(寺)에 바칠 만큼 아주 크고 특별한 소예요! ✨',
+      },
+      {
+        char: '牧',
+        name: '칠 목',
+        pinyin: 'mù',
+        story:
+          '소(牛)를 채찍(攵)으로 툭툭 치며 푸른 초원에서 방목해 길러요! 🐄',
+      },
+      {
+        char: '牵',
+        name: '이끌 견',
+        pinyin: 'qiān',
+        story: '큰(大) 끈을 소(牛)의 코에 꿰어 앞으로 뚜벅뚜벅 끌고 가요! 🪢',
+      },
+      {
+        char: '牢',
+        name: '우리 뢰',
+        pinyin: 'láo',
+        story:
+          '소(牛)가 도망가지 못하게 집(宀) 안에 단단히 가둬둔 우리예요! 🛖',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 9 : 양 양 (羊)
+  // ----------------------------------------
   {
-    day: 49,
     level: 3,
-    emoji: '🐑',
+    day: 49,
     radical: {
       char: '羊',
       name: '양 양',
       cnName: '羊字旁',
-      pinyin: 'yáng',
       cnPinyin: 'yáng zì páng',
-      desc: '양',
+      story: '둥글게 말린 뿔과 포슬포슬한 털을 가진 순한 양의 얼굴이에요! 🐑',
     },
     related: [
-      { char: '羊', name: '양 양', pinyin: 'yáng' },
-      { char: '美', name: '아름다울 미', pinyin: 'měi' },
-      { char: '群', name: '무리 군', pinyin: 'qún' },
-      { char: '鲜', name: '고운 선', pinyin: 'xiān' },
-      { char: '羚', name: '영양 령', pinyin: 'líng' },
+      {
+        char: '美',
+        name: '아름다울 미',
+        pinyin: 'měi',
+        story:
+          '양(羊)이 아주 크고(大) 통통하게 살찐 모습이 참 아름답고 예뻐요! 🥰',
+      },
+      {
+        char: '群',
+        name: '무리 군',
+        pinyin: 'qún',
+        story:
+          '임금(君)을 따르는 백성들처럼, 양(羊)들이 떼를 지어 다니는 무리예요! 🐏🐏',
+      },
+      {
+        char: '鲜',
+        name: '고울 선',
+        pinyin: 'xiān',
+        story:
+          '물고기(鱼)와 양(羊)고기를 함께 먹으면 맛이 아주 신선하고 끝내줘요! (복습) 🍽️',
+      },
+      {
+        char: '羚',
+        name: '영양 령',
+        pinyin: 'líng',
+        story:
+          '양(羊) 중에서 명령(令)을 내리면 빠르게 달리는 날쌘 영양이에요! 🦌',
+      },
+      {
+        char: '盖',
+        name: '덮을 개',
+        pinyin: 'gài',
+        story: '양(羊)털로 만든 따뜻한 천으로 그릇(皿)을 푹 덮어놓았어요! 🧺',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 10 : 구슬옥변/왕 왕 (王)
+  // ----------------------------------------
   {
-    day: 50,
     level: 3,
-    emoji: '💎',
+    day: 50,
     radical: {
       char: '王',
-      name: '구슬옥변',
+      name: '구슬 옥(변)',
       cnName: '王字旁',
-      pinyin: 'wáng',
       cnPinyin: 'wáng zì páng',
-      desc: '옥',
+      story:
+        '본래 구슬 세 개를 실로 꿴 모양(玉)인데, 글자 옆에 쓰일 때 王으로 바뀌어요! 💎',
     },
     related: [
-      { char: '王', name: '임금 왕', pinyin: 'wáng' },
-      { char: '玩', name: '희롱할 완', pinyin: 'wán' },
-      { char: '班', name: '나눌 반', pinyin: 'bān' },
-      { char: '现', name: '나타날 현', pinyin: 'xiàn' },
-      { char: '理', name: '다스릴 리', pinyin: 'lǐ' },
+      {
+        char: '玩',
+        name: '희롱할 완',
+        pinyin: 'wán',
+        story:
+          '구슬(王)을 으뜸(元)가는 보물처럼 여기며 손에서 재미있게 가지고 놀아요! 🪀',
+      },
+      {
+        char: '班',
+        name: '나눌 반',
+        pinyin: 'bān',
+        story:
+          '구슬(王)을 칼(刂)로 똑같이 나누어 같은 반 친구들에게 골고루 주어요! 🏫',
+      },
+      {
+        char: '现',
+        name: '나타날 현',
+        pinyin: 'xiàn',
+        story:
+          '구슬(王)의 반짝이는 빛을 눈(见)으로 직접 보게 되어 현실로 나타나요! ✨',
+      },
+      {
+        char: '理',
+        name: '다스릴 리',
+        pinyin: 'lǐ',
+        story:
+          '구슬(王)의 무늬를 마을(里)의 길처럼 가지런하게 잘 다듬고 정리해요! 📏',
+      },
+      {
+        char: '球',
+        name: '공 구',
+        pinyin: 'qiú',
+        story: '구슬(王)처럼 둥글고 구하려(求) 쫓아다니는 동그란 공이에요! ⚽',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 11 : 수레 거 (车)
+  // ----------------------------------------
   {
-    day: 51,
     level: 3,
-    emoji: '🚗',
+    day: 51,
     radical: {
       char: '车',
-      name: '수레 거',
+      name: '수레 거(차)',
       cnName: '车字旁',
-      pinyin: 'chē',
       cnPinyin: 'chē zì páng',
-      desc: '수레',
+      story:
+        '바퀴 두 개와 사람이 타는 자리가 있는 옛날 수레를 위에서 본 모양이에요! 🚗',
     },
     related: [
-      { char: '车', name: '수레 거', pinyin: 'chē' },
-      { char: '轮', name: '바퀴 륜', pinyin: 'lún' },
-      { char: '转', name: '구를 전', pinyin: 'zhuǎn' },
-      { char: '轻', name: '가벼울 경', pinyin: 'qīng' },
-      { char: '辆', name: '수레 량', pinyin: 'liàng' },
+      {
+        char: '轮',
+        name: '바퀴 륜',
+        pinyin: 'lún',
+        story:
+          '수레(车)가 둥근 창고(仑) 모양으로 뱅글뱅글 굴러가는 바퀴예요! 🛞',
+      },
+      {
+        char: '转',
+        name: '구를 전',
+        pinyin: 'zhuǎn',
+        story:
+          '수레(车)바퀴가 오로지(专) 한 방향으로 빙글빙글 회전하며 굴러가요! 🔄',
+      },
+      {
+        char: '轻',
+        name: '가벼울 경',
+        pinyin: 'qīng',
+        story:
+          '수레(车)가 지하수(巠)가 솟듯 아주 빠르고 사뿐하게 움직여서 가벼워요! 🪶',
+      },
+      {
+        char: '辆',
+        name: '수레 량',
+        pinyin: 'liàng',
+        story: '수레(车) 두 개(两)를 나란히 묶어서 차를 세는 단위로 써요! 🚙🚕',
+      },
+      {
+        char: '载',
+        name: '실을 재',
+        pinyin: 'zài',
+        story:
+          '수레(车) 위에 창(戈)처럼 기다란 물건들을 흙(土) 쌓듯 가득 실어요! 🚚',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 12 : 배 주 (舟)
+  // ----------------------------------------
   {
-    day: 52,
     level: 3,
-    emoji: '🚢',
+    day: 52,
     radical: {
       char: '舟',
       name: '배 주',
       cnName: '舟字旁',
-      pinyin: 'zhōu',
       cnPinyin: 'zhōu zì páng',
-      desc: '배',
+      story: '통나무를 파내어 길쭉하게 만든 조그만 나룻배의 모양이에요! 🚢',
     },
     related: [
-      { char: '舟', name: '배 주', pinyin: 'zhōu' },
-      { char: '船', name: '배 선', pinyin: 'chuán' },
-      { char: '航', name: '배 항', pinyin: 'háng' },
-      { char: '般', name: '일반 반', pinyin: 'bān' },
-      { char: '舰', name: '싸움배 함', pinyin: 'jiàn' },
+      {
+        char: '船',
+        name: '배 선',
+        pinyin: 'chuán',
+        story:
+          '배(舟)를 타고 여덟(八) 명의 입(口) 즉, 사람들이 잔뜩 타는 큰 배예요! 🛳️',
+      },
+      {
+        char: '航',
+        name: '배 항',
+        pinyin: 'háng',
+        story:
+          '배(舟)가 항구(亢)를 떠나 드넓은 바다로 힘차게 항해를 시작해요! 🌊',
+      },
+      {
+        char: '般',
+        name: '일반 반',
+        pinyin: 'bān',
+        story:
+          '배(舟)를 창(殳)으로 저어 방향을 돌리듯, 흔하게 빙빙 도는 일반적인 모습이에요! 🔄',
+      },
+      {
+        char: '舰',
+        name: '싸움배 함',
+        pinyin: 'jiàn',
+        story:
+          '배(舟)에서 볼 수(见) 있게 대포를 달아 놓은 무서운 군함이에요! ⚓',
+      },
+      {
+        char: '盘',
+        name: '소반 반',
+        pinyin: 'pán',
+        story:
+          '배(舟)처럼 납작한 그릇(皿)에 음식을 넓게 담아내는 쟁반이에요! 🍽️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 13 : 깃 우 (羽)
+  // ----------------------------------------
   {
-    day: 53,
     level: 3,
-    emoji: '🪶',
+    day: 53,
     radical: {
       char: '羽',
       name: '깃 우',
       cnName: '羽字旁',
-      pinyin: 'yǔ',
       cnPinyin: 'yǔ zì páng',
-      desc: '깃털',
+      story: '새의 양쪽 날개에 부드러운 깃털이 겹겹이 나 있는 모양이에요! 🪶',
     },
     related: [
-      { char: '羽', name: '깃 우', pinyin: 'yǔ' },
-      { char: '翅', name: '날개 시', pinyin: 'chì' },
-      { char: '翔', name: '날 상', pinyin: 'xiáng' },
-      { char: '翠', name: '푸를 취', pinyin: 'cuì' },
-      { char: '翼', name: '날개 익', pinyin: 'yì' },
+      {
+        char: '翅',
+        name: '날개 시',
+        pinyin: 'chì',
+        story:
+          '깃털(羽)이 달린 새가 날개를 펼치고 가지(支)처럼 위로 뻗어 올렸어요! 🦅',
+      },
+      {
+        char: '翔',
+        name: '날 상',
+        pinyin: 'xiáng',
+        story:
+          '양(羊) 떼처럼 많은 새가 깃털(羽)을 펄럭이며 빙빙 돌며 하늘을 날아요! ✈️',
+      },
+      {
+        char: '翠',
+        name: '푸를 취',
+        pinyin: 'cuì',
+        story:
+          '깃털(羽)이 군사(卒)들의 제복처럼 아주 선명하고 푸른 비취색이에요! 🦚',
+      },
+      {
+        char: '翼',
+        name: '날개 익',
+        pinyin: 'yì',
+        story:
+          '깃털(羽)로 다를 이(异)처럼 양쪽으로 다르게 뻗어 몸을 받치는 큰 날개예요! 🦋',
+      },
+      {
+        char: '翻',
+        name: '뒤집을 번',
+        pinyin: 'fān',
+        story:
+          '깃털(羽)을 퍼덕이며 짐승(番)이 몸을 빙글 뒤집으며 펄쩍 뛰어요! 🤸‍♂️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 14 : 그물 망 (网/罒)
+  // ----------------------------------------
   {
-    day: 54,
     level: 3,
-    emoji: '🕸️',
+    day: 54,
     radical: {
       char: '网',
       name: '그물 망',
       cnName: '网字头',
-      pinyin: 'wǎng',
       cnPinyin: 'wǎng zì tóu',
-      desc: '그물',
+      story:
+        '물고기나 새를 잡기 위해 끈을 십자 모양으로 촘촘히 엮은 그물이에요! (罒로 주로 쓰여요) 🕸️',
     },
     related: [
-      { char: '网', name: '그물 망', pinyin: 'wǎng' },
-      { char: '罗', name: '벌일 라', pinyin: 'luó' },
-      { char: '罚', name: '벌할 벌', pinyin: 'fá' },
-      { char: '罪', name: '허물 죄', pinyin: 'zuì' },
-      { char: '罩', name: '덮을 조', pinyin: 'zhào' },
+      {
+        char: '罗',
+        name: '벌일 라',
+        pinyin: 'luó',
+        story:
+          '그물(罒) 아래에 실(夕)을 매달아 새를 잡으려고 넓게 쫙 벌려놓았어요! 🥅',
+      },
+      {
+        char: '罚',
+        name: '벌할 벌',
+        pinyin: 'fá',
+        story:
+          '그물(罒)로 죄인을 잡아 말(言)로 꾸짖고 칼(刂)로 따끔하게 벌을 주어요! ⚖️',
+      },
+      {
+        char: '罪',
+        name: '허물 죄',
+        pinyin: 'zuì',
+        story:
+          '그물(罒)에 걸린 것처럼 잘못(非)을 저질러 꼼짝 못 하는 죄를 지었어요! 🔗',
+      },
+      {
+        char: '罩',
+        name: '가리개 조',
+        pinyin: 'zhào',
+        story: '그물(罒)을 탁자(卓) 위에 씌워서 음식을 덮어두는 가리개예요! 🍲',
+      },
+      {
+        char: '置',
+        name: '둘 치',
+        pinyin: 'zhì',
+        story: '그물(罒)로 잡은 것을 똑바르게(直) 제자리에 착 올려 두어요! 📥',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 15 : 콩 두 (豆)
+  // ----------------------------------------
   {
-    day: 55,
     level: 3,
-    emoji: '🫘',
+    day: 55,
     radical: {
       char: '豆',
       name: '콩 두',
       cnName: '豆字旁',
-      pinyin: 'dòu',
       cnPinyin: 'dòu zì páng',
-      desc: '콩',
+      story:
+        '제사 지낼 때 음식을 높이 담아 올리던 굽이 높은 나무 그릇 모양이에요! 나중에 콩이란 뜻이 되었어요. 🫘',
     },
     related: [
-      { char: '豆', name: '콩 두', pinyin: 'dòu' },
-      { char: '短', name: '짧을 단', pinyin: 'duǎn' },
-      { char: '登', name: '오를 등', pinyin: 'dēng' },
-      { char: '鼓', name: '북 고', pinyin: 'gǔ' },
-      { char: '豌', name: '완두 완', pinyin: 'wān' },
+      {
+        char: '短',
+        name: '짧을 단',
+        pinyin: 'duǎn',
+        story:
+          '제기 그릇(豆) 옆에 화살(矢)을 놓아보니 화살이 그릇보다 짧아요! 📏',
+      },
+      {
+        char: '登',
+        name: '오를 등',
+        pinyin: 'dēng',
+        story:
+          '두 발(癶)로 성큼성큼 걸어 제기 그릇(豆)을 올려놓은 높은 곳으로 올라가요! 🧗‍♂️',
+      },
+      {
+        char: '鼓',
+        name: '북 고',
+        pinyin: 'gǔ',
+        story:
+          '그릇(豆)처럼 둥근 북을 나뭇가지(支)로 둥둥 치며 소리를 내요! 🥁',
+      },
+      {
+        char: '豌',
+        name: '완두 완',
+        pinyin: 'wān',
+        story:
+          '콩(豆) 중에서 동글동글 굽은(宛) 꼬투리 안에 든 귀여운 완두콩이에요! 🫛',
+      },
+      {
+        char: '丰',
+        name: '풍성할 풍',
+        pinyin: 'fēng',
+        story:
+          '그릇(豆) 위에 풀과 곡식이 겹겹이 꽂혀 아주 풍성한 모습이에요! 🌾',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 16 : 오이 과 (瓜)
+  // ----------------------------------------
   {
-    day: 56,
     level: 3,
-    emoji: '🍈',
+    day: 56,
     radical: {
       char: '瓜',
       name: '오이 과',
       cnName: '瓜字旁',
-      pinyin: 'guā',
       cnPinyin: 'guā zì páng',
-      desc: '참외·오이',
+      story:
+        '덩굴 한가운데 탐스럽고 커다란 오이나 수박, 참외가 주렁주렁 매달린 모습이에요! 🍈',
     },
     related: [
-      { char: '瓜', name: '오이 과', pinyin: 'guā' },
-      { char: '狐', name: '여우 호', pinyin: 'hú' },
-      { char: '孤', name: '외로울 고', pinyin: 'gū' },
-      { char: '瓢', name: '박 표', pinyin: 'piáo' },
-      { char: '瓣', name: '꽃잎 판', pinyin: 'bàn' },
+      {
+        char: '狐',
+        name: '여우 호',
+        pinyin: 'hú',
+        story:
+          '개(犭)처럼 생겼는데 덩굴에 열린 참외(瓜)를 몰래 따 먹는 얄미운 여우예요! 🦊',
+      },
+      {
+        char: '孤',
+        name: '외로울 고',
+        pinyin: 'gū',
+        story:
+          '아이(子)가 덩굴(瓜)에서 떨어진 열매처럼 홀로 남아 너무 외로워요! 🥺',
+      },
+      {
+        char: '瓢',
+        name: '표주박 표',
+        pinyin: 'piáo',
+        story:
+          '바람(票)에 말린 조롱박(瓜)을 반으로 뚝 잘라 물을 푸는 바가지로 만들었어요! 🥄',
+      },
+      {
+        char: '瓣',
+        name: '꽃잎 판',
+        pinyin: 'bàn',
+        story:
+          '오이(瓜)의 씨앗이 양쪽으로 갈라지듯(辛辛) 겹겹이 피어난 꽃잎이에요! 🌸',
+      },
+      {
+        char: '瓤',
+        name: '속 살 양',
+        pinyin: 'ráng',
+        story:
+          '오이(瓜)나 수박의 껍질을 까면 양보(襄)하듯 드러나는 붉고 달콤한 속살이에요! 🍉',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 17 : 삼 마 (麻)
+  // ----------------------------------------
   {
-    day: 57,
     level: 3,
-    emoji: '🌱',
+    day: 57,
     radical: {
       char: '麻',
       name: '삼 마',
       cnName: '麻字头',
-      pinyin: 'má',
       cnPinyin: 'má zì tóu',
-      desc: '삼',
+      story:
+        '집(广) 안에서 까끌까끌한 삼베(林) 껍질을 벗겨 실을 뽑고 있는 모습이에요! 🌱',
     },
     related: [
-      { char: '麻', name: '삼 마', pinyin: 'má' },
-      { char: '磨', name: '갈 마', pinyin: 'mó' },
-      { char: '魔', name: '마귀 마', pinyin: 'mó' },
-      { char: '摩', name: '만질 마', pinyin: 'mó' },
-      { char: '麾', name: '대장기 휘', pinyin: 'huī' },
+      {
+        char: '磨',
+        name: '갈 마',
+        pinyin: 'mó',
+        story:
+          '삼베(麻)처럼 거칠게 돌(石)을 쓱싹쓱싹 마찰시키며 뾰족하게 갈아요! 🪨',
+      },
+      {
+        char: '魔',
+        name: '마귀 마',
+        pinyin: 'mó',
+        story:
+          '삼베(麻)옷을 입고 귀신(鬼)처럼 나타나 사람을 헷갈리게 하는 마귀예요! 🧟',
+      },
+      {
+        char: '摩',
+        name: '만질 마',
+        pinyin: 'mó',
+        story:
+          '삼베(麻)의 까끌까끌한 표면을 손(手)으로 살살 문지르며 만져봐요! ✋',
+      },
+      {
+        char: '麾',
+        name: '대장기 휘',
+        pinyin: 'huī',
+        story:
+          '삼베(麻)로 만든 커다란 털(毛) 깃발을 흔들며 대장이 군대를 지휘해요! 🚩',
+      },
+      {
+        char: '嘛',
+        name: '어조사 마',
+        pinyin: 'ma',
+        story:
+          '입(口)을 벌리고 삼(麻)을 씹듯 가볍게 덧붙여 말하는 추임새예요! 💬',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 18 : 벼 화 (禾)
+  // ----------------------------------------
   {
-    day: 58,
     level: 3,
-    emoji: '🌾',
+    day: 58,
     radical: {
       char: '禾',
       name: '벼 화',
       cnName: '禾字旁',
-      pinyin: 'hé',
       cnPinyin: 'hé zì páng',
-      desc: '벼',
+      story:
+        '벼 이삭이 알알이 여물어서 무거워져 고개를 푹 숙이고 있는 모습이에요! 🌾',
     },
     related: [
-      { char: '禾', name: '벼 화', pinyin: 'hé' },
-      { char: '和', name: '화할 화', pinyin: 'hé' },
-      { char: '秋', name: '가을 추', pinyin: 'qiū' },
-      { char: '种', name: '씨 종', pinyin: 'zhǒng' },
-      { char: '科', name: '과정 과', pinyin: 'kē' },
+      {
+        char: '和',
+        name: '화할 화',
+        pinyin: 'hé',
+        story:
+          '벼(禾)와 같은 곡식을 입(口)으로 다 같이 나눠 먹으니 아주 평화롭고 화목해요! 🕊️',
+      },
+      {
+        char: '秋',
+        name: '가을 추',
+        pinyin: 'qiū',
+        story:
+          '벼(禾)가 익어 추수하고 남은 줄기를 불(火)로 태우는 쌀쌀한 가을이에요! 🍂',
+      },
+      {
+        char: '种',
+        name: '씨 종',
+        pinyin: 'zhǒng',
+        story:
+          '벼(禾) 씨앗이 흙(中) 속에 들어가 싹을 틔울 준비를 하는 씨앗이에요! 🌱',
+      },
+      {
+        char: '科',
+        name: '과목 과',
+        pinyin: 'kē',
+        story:
+          '벼(禾)를 말(斗)로 되어서 품질에 따라 차곡차곡 종류별로 나누는 과목이에요! 📚',
+      },
+      {
+        char: '香',
+        name: '향기 향',
+        pinyin: 'xiāng',
+        story:
+          '벼(禾)가 햇빛(日)을 받아 구수하게 밥 짓는 냄새가 나며 향기로워요! 🍚',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 19 : 쌀 미 (米)
+  // ----------------------------------------
   {
-    day: 59,
     level: 3,
-    emoji: '🍚',
+    day: 59,
     radical: {
       char: '米',
       name: '쌀 미',
       cnName: '米字旁',
-      pinyin: 'mǐ',
       cnPinyin: 'mǐ zì páng',
-      desc: '쌀',
+      story:
+        '벼 이삭에서 털어낸 하얗고 작은 쌀알들이 흩어져 있는 모습이에요! 🍚',
     },
     related: [
-      { char: '米', name: '쌀 미', pinyin: 'mǐ' },
-      { char: '粉', name: '가루 분', pinyin: 'fěn' },
-      { char: '粮', name: '양식 량', pinyin: 'liáng' },
-      { char: '粥', name: '죽 죽', pinyin: 'zhōu' },
-      { char: '糖', name: '사탕 당', pinyin: 'táng' },
-    ],
-  },
-  {
-    day: 60,
-    level: 3,
-    emoji: '🏡',
-    radical: {
-      char: '广',
-      name: '엄 호',
-      cnName: '广字旁',
-      pinyin: 'guǎng',
-      cnPinyin: 'guǎng zì páng',
-      desc: '집',
-    },
-    related: [
-      { char: '广', name: '넓을 광', pinyin: 'guǎng' },
-      { char: '店', name: '가게 점', pinyin: 'diàn' },
-      { char: '床', name: '평상 상', pinyin: 'chuáng' },
-      { char: '府', name: '마을 부', pinyin: 'fǔ' },
-      { char: '座', name: '자리 좌', pinyin: 'zuò' },
+      {
+        char: '粉',
+        name: '가루 분',
+        pinyin: 'fěn',
+        story:
+          '쌀(米)을 칼(나눌 분, 分)로 아주 잘게 쪼개고 갈아서 만든 뽀얀 가루예요! 🍞',
+      },
+      {
+        char: '粮',
+        name: '양식 량',
+        pinyin: 'liáng',
+        story:
+          '쌀(米)이 어질고(良) 좋은 음식이라 오랫동안 보관하며 먹는 양식이에요! 🌾',
+      },
+      {
+        char: '粥',
+        name: '죽 죽',
+        pinyin: 'zhōu',
+        story:
+          '활(弓)처럼 휜 두 솥 사이에 쌀(米)을 넣고 물을 넉넉히 부어 푹 끓인 죽이에요! 🥣',
+      },
+      {
+        char: '糖',
+        name: '엿 당',
+        pinyin: 'táng',
+        story:
+          '쌀(米)을 당나라(唐)에서 유행하던 방식으로 졸여서 만든 달콤한 사탕이에요! 🍬',
+      },
+      {
+        char: '糕',
+        name: '떡 고',
+        pinyin: 'gāo',
+        story:
+          '쌀(米)을 새끼 양(羔)처럼 부드럽고 폭신하게 쪄서 만든 떡과 케이크예요! 🍰',
+      },
     ],
   },
 
-  // =====================================
-  // 🚶 레벨 4: 행동 부수 (20개)
-  // =====================================
+  // ----------------------------------------
+  // 🌳 LV.3 - Day 20 : 엄 호 (广)
+  // ----------------------------------------
   {
-    day: 61,
+    level: 3,
+    day: 60,
+    radical: {
+      char: '广',
+      name: '엄 호 (집)',
+      cnName: '广字旁',
+      cnPinyin: 'guǎng zì páng',
+      story:
+        '벽이 없이 지붕만 넓게 덮여 있는 크고 탁 트인 건물의 처마 모양이에요! 🏡',
+    },
+    related: [
+      {
+        char: '店',
+        name: '가게 점',
+        pinyin: 'diàn',
+        story:
+          '집(广) 안에 점(占)을 보듯 물건을 진열해 놓고 사람들에게 파는 가게예요! 🏪',
+      },
+      {
+        char: '床',
+        name: '평상 상',
+        pinyin: 'chuáng',
+        story:
+          '집(广) 안에 나무(木)로 네모나고 널찍하게 짠 평상이나 침대예요! 🛏️',
+      },
+      {
+        char: '府',
+        name: '마을 부',
+        pinyin: 'fǔ',
+        story:
+          '집(广) 안에서 문서를 주며(付) 나랏일을 처리하는 큰 관청 마을이에요! 🏛️',
+      },
+      {
+        char: '座',
+        name: '자리 좌',
+        pinyin: 'zuò',
+        story:
+          '넓은 집(广) 안에 사람(坐)들이 편안하게 앉을 수 있도록 마련된 자리예요! 🪑',
+      },
+      {
+        char: '库',
+        name: '창고 고',
+        pinyin: 'kù',
+        story:
+          '큰 집(广) 안에 수레(车)나 물건들을 안전하게 잔뜩 쌓아두는 창고예요! 🏭',
+      },
+    ],
+  },
+  // ==========================================
+  // 🏃 LV.4 (행동과 도구) - Day 1 ~ Day 20
+  // ==========================================
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 1 : 다닐 행 (行)
+  // ----------------------------------------
+  {
     level: 4,
-    emoji: '🚶',
+    day: 61,
     radical: {
       char: '行',
       name: '다닐 행',
       cnName: '行字旁',
-      pinyin: 'xíng',
       cnPinyin: 'xíng zì páng',
-      desc: '가다',
+      story:
+        '넓은 네거리(사거리) 길의 모양으로, 사람들이 씩씩하게 걸어가는 모습이에요! 🚶',
     },
     related: [
-      { char: '行', name: '다닐 행', pinyin: 'xíng' },
-      { char: '街', name: '거리 가', pinyin: 'jiē' },
-      { char: '衍', name: '넘칠 연', pinyin: 'yǎn' },
-      { char: '衡', name: '저울 형', pinyin: 'héng' },
-      { char: '衔', name: '재갈 함', pinyin: 'xián' },
+      {
+        char: '街',
+        name: '거리 가',
+        pinyin: 'jiē',
+        story: '길(行) 한가운데 흙(土)이 겹겹이 쌓인 넓고 복잡한 거리예요! 🛣️',
+      },
+      {
+        char: '衍',
+        name: '넘칠 연',
+        pinyin: 'yǎn',
+        story: '길(行)에 물(氵)이 콸콸 흘러넘치듯 파생되고 넓게 퍼져나가요! 🌊',
+      },
+      {
+        char: '衡',
+        name: '저울대 형',
+        pinyin: 'héng',
+        story:
+          '길(行) 가운데 뿔 달린 짐승을 세워두고 저울처럼 수평을 똑바로 맞춰요! ⚖️',
+      },
+      {
+        char: '衔',
+        name: '머금을 함',
+        pinyin: 'xián',
+        story:
+          '길(行)을 걷는 말의 입에 쇠(金)로 만든 재갈을 딱 물려 머금게 했어요! 🐴',
+      },
+      {
+        char: '衙',
+        name: '마을 아',
+        pinyin: 'yá',
+        story:
+          '길(行)에서 나(吾)처럼 높은 관리가 나랏일을 보던 관아 건물이에요! 🏛️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 2 : 달릴 주 (走)
+  // ----------------------------------------
   {
-    day: 62,
     level: 4,
-    emoji: '🏃',
+    day: 62,
     radical: {
       char: '走',
       name: '달릴 주',
       cnName: '走字旁',
-      pinyin: 'zǒu',
       cnPinyin: 'zǒu zì páng',
-      desc: '달리다',
+      story:
+        '사람(土)이 발(止)을 힘차게 뻗으며 앞으로 쌩쌩 달려가는 모습이에요! 🏃',
     },
     related: [
-      { char: '走', name: '달릴 주', pinyin: 'zǒu' },
-      { char: '起', name: '일어날 기', pinyin: 'qǐ' },
-      { char: '越', name: '넘을 월', pinyin: 'yuè' },
-      { char: '赶', name: '쫓을 간', pinyin: 'gǎn' },
-      { char: '趣', name: '뜻 취', pinyin: 'qù' },
+      {
+        char: '起',
+        name: '일어날 기',
+        pinyin: 'qǐ',
+        story: '달려가기(走) 위해 내 몸(己)을 벌떡 일으켜 세우고 출발해요! 🆙',
+      },
+      {
+        char: '越',
+        name: '넘을 월',
+        pinyin: 'yuè',
+        story:
+          '달려가서(走) 창(戉)을 든 적들을 훌쩍 뛰어넘고 앞질러가요!  hurdles 🏃‍♂️',
+      },
+      {
+        char: '赶',
+        name: '쫓을 간',
+        pinyin: 'gǎn',
+        story:
+          '달려가며(走) 앞서가는 사람을 땀나게(干) 맹렬히 쫓아가요! 땀방울이 뚝뚝! 💦',
+      },
+      {
+        char: '趣',
+        name: '뜻 취',
+        pinyin: 'qù',
+        story:
+          '달려가서(走) 꽉 쥐고(取) 싶을 만큼 아주 흥미롭고 재미있는 일이에요! 🤩',
+      },
+      {
+        char: '超',
+        name: '뛰어넘을 초',
+        pinyin: 'chāo',
+        story:
+          '달려가서(走) 남들보다 입(口)이 떡 벌어지게(召) 아주 멀리 뛰어넘었어요! 🦸‍♂️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 3 : 그칠 지 (止)
+  // ----------------------------------------
   {
-    day: 63,
     level: 4,
-    emoji: '✋',
+    day: 63,
     radical: {
       char: '止',
       name: '그칠 지',
       cnName: '止字旁',
-      pinyin: 'zhǐ',
       cnPinyin: 'zhǐ zì páng',
-      desc: '멈추다',
+      story:
+        '발바닥과 발가락의 모양으로, 걷다가 땅에 발을 딱! 붙이고 멈춘 모습이에요. ✋',
     },
     related: [
-      { char: '止', name: '그칠 지', pinyin: 'zhǐ' },
-      { char: '正', name: '바를 정', pinyin: 'zhèng' },
-      { char: '此', name: '이 차', pinyin: 'cǐ' },
-      { char: '步', name: '걸음 보', pinyin: 'bù' },
-      { char: '武', name: '굳셀 무', pinyin: 'wǔ' },
+      {
+        char: '正',
+        name: '바를 정',
+        pinyin: 'zhèng',
+        story:
+          '발(止)을 딱 멈추고 선(一)에 맞춰 아주 올바르고 반듯하게 서 있어요! 📏',
+      },
+      {
+        char: '此',
+        name: '이 차',
+        pinyin: 'cǐ',
+        story:
+          "발(止)을 멈추고 숟가락(匕)으로 바로 '여기 있는 이것'을 콕 가리켜요! 📍",
+      },
+      {
+        char: '步',
+        name: '걸음 보',
+        pinyin: 'bù',
+        story:
+          '오른발(止)과 왼발(少의 변형)을 번갈아 척척 내딛으며 걸어가요! 👣',
+      },
+      {
+        char: '武',
+        name: '굳셀 무',
+        pinyin: 'wǔ',
+        story: '발(止)을 멈추고 창(戈)을 꽉 쥔 채 굳세게 무술을 연마해요! 🥋',
+      },
+      {
+        char: '企',
+        name: '꾀할 기',
+        pinyin: 'qǐ',
+        story:
+          '사람(人)이 발(止)돋움을 하고 서서 먼 곳을 보며 일을 계획해요! 🏢',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 4 : 또 우 (又)
+  // ----------------------------------------
   {
-    day: 64,
     level: 4,
-    emoji: '🤚',
+    day: 64,
     radical: {
       char: '又',
       name: '또 우',
       cnName: '又字旁',
-      pinyin: 'yòu',
       cnPinyin: 'yòu zì páng',
-      desc: '손',
+      story:
+        "오른손을 내민 모습으로, 손을 또 쓰고 또 쓴다고 해서 '또'라는 뜻이 되었어요! 🤚",
     },
     related: [
-      { char: '又', name: '또 우', pinyin: 'yòu' },
-      { char: '双', name: '쌍 쌍', pinyin: 'shuāng' },
-      { char: '友', name: '벗 우', pinyin: 'yǒu' },
-      { char: '取', name: '취할 취', pinyin: 'qǔ' },
-      { char: '受', name: '받을 수', pinyin: 'shòu' },
+      {
+        char: '双',
+        name: '쌍 쌍',
+        pinyin: 'shuāng',
+        story:
+          '손(又)이 두 개나 나란히 모여 있으니 완벽한 한 쌍이 되었어요! ✌️',
+      },
+      {
+        char: '友',
+        name: '벗 우',
+        pinyin: 'yǒu',
+        story:
+          '손(又)과 손을 왼쪽(十의 변형) 오른쪽으로 맞잡은 아주 친한 친구예요! 🤝',
+      },
+      {
+        char: '取',
+        name: '취할 취',
+        pinyin: 'qǔ',
+        story:
+          '손(又)을 내밀어 적의 귀(耳)를 잡아채서 내 것으로 딱 취했어요! 🤏',
+      },
+      {
+        char: '受',
+        name: '받을 수',
+        pinyin: 'shòu',
+        story:
+          '위아래로 손(爫, 又)을 내밀어 물건(冖)을 조심스레 주고받아요! 🎁',
+      },
+      {
+        char: '变',
+        name: '변할 변',
+        pinyin: 'biàn',
+        story:
+          '머리(亦) 모양을 손(又)으로 쓱쓱 만져서 마술처럼 확 변화시켰어요! 🪄',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 5 : 손톱 조 (爪/爫)
+  // ----------------------------------------
   {
-    day: 65,
     level: 4,
-    emoji: '🐾',
+    day: 65,
     radical: {
       char: '爪',
       name: '손톱 조',
       cnName: '爪字头',
-      pinyin: 'zhǎo',
       cnPinyin: 'zhǎo zì tóu',
-      desc: '손톱',
+      story: '손을 위에서 아래로 뻗어 물건을 꽉 움켜쥐는 손톱의 모습이에요! 🐾',
     },
     related: [
-      { char: '爪', name: '손톱 조', pinyin: 'zhǎo' },
-      { char: '采', name: '캘 채', pinyin: 'cǎi' },
-      { char: '受', name: '받을 수', pinyin: 'shòu' },
-      { char: '爱', name: '사랑 애', pinyin: 'ài' },
-      { char: '爵', name: '벼슬 작', pinyin: 'jué' },
+      {
+        char: '采',
+        name: '캘 채',
+        pinyin: 'cǎi',
+        story:
+          '손(爫)을 위에서 뻗어 나무(木)에 달린 예쁜 열매를 똑! 하고 캐내요. 🍎',
+      },
+      {
+        char: '受',
+        name: '받을 수',
+        pinyin: 'shòu',
+        story:
+          '손(爫)과 손(又)으로 물건을 주고받는 훈훈한 모습이에요! (복습) 🤲',
+      },
+      {
+        char: '爱',
+        name: '사랑 애',
+        pinyin: 'ài',
+        story:
+          '손(爫)을 내밀어 친구(友)를 덮어(冖) 안아주는 따뜻한 사랑이에요! ❤️',
+      },
+      {
+        char: '爵',
+        name: '벼슬 작',
+        pinyin: 'jué',
+        story:
+          '손(爫)으로 귀한 술잔을 쥐고 있는 높은 벼슬아치의 모습이에요! 🍷',
+      },
+      {
+        char: '妥',
+        name: '타당할 타',
+        pinyin: 'tuǒ',
+        story:
+          '손(爫)으로 여자(女)를 조심스럽게 감싸주니 아주 안전하고 타당해요! 🛡️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 6 : 등글월문 (攵/攴)
+  // ----------------------------------------
   {
-    day: 66,
     level: 4,
-    emoji: '👊',
+    day: 66,
     radical: {
       char: '攵',
       name: '등글월문',
       cnName: '反文旁',
-      pinyin: 'pū',
       cnPinyin: 'fǎn wén páng',
-      desc: '치다',
+      story:
+        '손에 나뭇가지나 채찍을 들고 톡톡 치거나 두드리는 액션 부수예요! 👊',
     },
     related: [
-      { char: '放', name: '놓을 방', pinyin: 'fàng' },
-      { char: '教', name: '가르칠 교', pinyin: 'jiào' },
-      { char: '故', name: '연고 고', pinyin: 'gù' },
-      { char: '改', name: '고칠 개', pinyin: 'gǎi' },
-      { char: '收', name: '거둘 수', pinyin: 'shōu' },
+      {
+        char: '放',
+        name: '놓을 방',
+        pinyin: 'fàng',
+        story:
+          '손으로 톡 쳐서(攵) 모난(方) 곳에 있던 새를 넓은 하늘로 확 놓아주어요! 🕊️',
+      },
+      {
+        char: '教',
+        name: '가르칠 교',
+        pinyin: 'jiào',
+        story:
+          '아이(子)가 효도(孝)하도록 손으로 톡톡 치며(攵) 바르게 가르쳐요! 👨‍🏫',
+      },
+      {
+        char: '故',
+        name: '연고 고',
+        pinyin: 'gù',
+        story:
+          '옛날(古)부터 전해 내려오던 일을 손(攵)으로 두드려 다시 꺼낸 사연이에요! 📜',
+      },
+      {
+        char: '改',
+        name: '고칠 개',
+        pinyin: 'gǎi',
+        story:
+          '내 몸(己)의 나쁜 버릇을 손(攵)으로 때려서라도 바르게 싹 고쳐요! 🔧',
+      },
+      {
+        char: '收',
+        name: '거둘 수',
+        pinyin: 'shōu',
+        story:
+          '손으로 쳐서(攵) 엉킨 것(丩)을 풀고 잘 익은 곡식을 창고에 싹 거두어들여요! 🌾',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 7 : 몽둥이 수 (殳)
+  // ----------------------------------------
   {
-    day: 67,
     level: 4,
-    emoji: '⚔️',
+    day: 67,
     radical: {
       char: '殳',
       name: '몽둥이 수',
       cnName: '殳字旁',
-      pinyin: 'shū',
       cnPinyin: 'shū zì páng',
-      desc: '무기',
+      story:
+        '손(又)에 길다란 몽둥이를 꽉 쥐고 무언가를 치거나 내리꽂는 무기예요! ⚔️',
     },
     related: [
-      { char: '殳', name: '몽둥이 수', pinyin: 'shū' },
-      { char: '段', name: '조각 단', pinyin: 'duàn' },
-      { char: '殿', name: '전각 전', pinyin: 'diàn' },
-      { char: '毁', name: '헐 훼', pinyin: 'huǐ' },
-      { char: '毅', name: '굳셀 의', pinyin: 'yì' },
+      {
+        char: '段',
+        name: '구분할 단',
+        pinyin: 'duàn',
+        story:
+          '바위틈에서 물이 솟듯(彖의 변형), 몽둥이(殳)로 쳐서 여러 조각으로 단계를 구분해요! 🪜',
+      },
+      {
+        char: '殿',
+        name: '전각 전',
+        pinyin: 'diàn',
+        story:
+          '몽둥이(殳)를 든 호위병이 엉덩이(尸)를 붙이고 지키는 크고 웅장한 궁궐이에요! 🏯',
+      },
+      {
+        char: '毁',
+        name: '헐 훼',
+        pinyin: 'huǐ',
+        story:
+          '절구통(臼)과 흙(土)을 몽둥이(殳)로 쾅쾅 내리쳐서 전부 박살 내고 헐어버렸어요! 💥',
+      },
+      {
+        char: '毅',
+        name: '굳셀 의',
+        pinyin: 'yì',
+        story:
+          '돼지(豕)처럼 돌진하며 몽둥이(殳)를 든 굳세고 용감한 전사예요! 🐗',
+      },
+      {
+        char: '殴',
+        name: '때릴 구',
+        pinyin: 'ōu',
+        story:
+          '상자(区) 속에 숨은 도둑을 몽둥이(殳)로 퍽퍽 소리 나게 때려잡아요! 🥊',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 8 : 활 궁 (弓)
+  // ----------------------------------------
   {
-    day: 68,
     level: 4,
-    emoji: '🏹',
+    day: 68,
     radical: {
       char: '弓',
       name: '활 궁',
       cnName: '弓字旁',
-      pinyin: 'gōng',
       cnPinyin: 'gōng zì páng',
-      desc: '활',
+      story: '구불구불 탄력 있게 휘어진 멋진 활의 모양을 쏙 빼닮았어요! 🏹',
     },
     related: [
-      { char: '弓', name: '활 궁', pinyin: 'gōng' },
-      { char: '张', name: '베풀 장', pinyin: 'zhāng' },
-      { char: '强', name: '강할 강', pinyin: 'qiáng' },
-      { char: '弹', name: '탄알 탄', pinyin: 'tán' },
-      { char: '引', name: '끌 인', pinyin: 'yǐn' },
+      {
+        char: '张',
+        name: '베풀 장',
+        pinyin: 'zhāng',
+        story:
+          '활(弓)에 길다란(长) 시위를 팽팽하게 당겨서 활을 좍 베풀어 펼쳐요! 🏹',
+      },
+      {
+        char: '强',
+        name: '강할 강',
+        pinyin: 'qiáng',
+        story:
+          '활(弓)을 비단벌레(虽)처럼 질기고 단단하게 쏘아 올리는 아주 강한 힘이에요! 💪',
+      },
+      {
+        char: '弹',
+        name: '탄알 탄/칠 탄',
+        pinyin: 'dàn / tán',
+        story:
+          '활(弓)에 화살 대신 둥근 알(单)을 넣고 튕겨서 쏘는 탄알이에요! 🎱',
+      },
+      {
+        char: '引',
+        name: '끌 인',
+        pinyin: 'yǐn',
+        story:
+          '활(弓)시위를 선(丨)처럼 일직선으로 팽팽하게 쭈욱 끌어당겨요! 🧵',
+      },
+      {
+        char: '弯',
+        name: '굽을 만',
+        pinyin: 'wān',
+        story: '활(弓)처럼 이리저리(亦) 휘어지고 둥글게 굽은 모양이에요! 🪃',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 9 : 창 과 (戈)
+  // ----------------------------------------
   {
-    day: 69,
     level: 4,
-    emoji: '🗡️',
+    day: 69,
     radical: {
       char: '戈',
       name: '창 과',
       cnName: '戈字旁',
-      pinyin: 'gē',
       cnPinyin: 'gē zì páng',
-      desc: '창',
+      story: '긴 자루 끝에 날카로운 낫 모양의 칼날이 달린 옛날 창 무기예요! 🗡️',
     },
     related: [
-      { char: '戈', name: '창 과', pinyin: 'gē' },
-      { char: '战', name: '싸울 전', pinyin: 'zhàn' },
-      { char: '成', name: '이룰 성', pinyin: 'chéng' },
-      { char: '我', name: '나 아', pinyin: 'wǒ' },
-      { char: '戏', name: '놀희 희', pinyin: 'xì' },
+      {
+        char: '战',
+        name: '싸울 전',
+        pinyin: 'zhàn',
+        story: '창(戈)을 쥐고 점령(占)하기 위해 치열하게 싸우는 전쟁터예요! ⚔️',
+      },
+      {
+        char: '成',
+        name: '이룰 성',
+        pinyin: 'chéng',
+        story:
+          '창(戈)을 들고 적을 무찔러 마침내 못(丁)을 박듯 확실하게 승리를 이루어 냈어요! 🏆',
+      },
+      {
+        char: '我',
+        name: '나 아',
+        pinyin: 'wǒ',
+        story:
+          "손바닥(手의 변형)에 창(戈)을 굳게 쥐고 나의 부족을 지키는 늠름한 '나'예요! 🛡️",
+      },
+      {
+        char: '戏',
+        name: '희롱할 희',
+        pinyin: 'xì',
+        story:
+          '창(戈)을 들고 또(又) 요리조리 휘두르며 재미있게 장난치고 놀아요! 🎭',
+      },
+      {
+        char: '截',
+        name: '끊을 절',
+        pinyin: 'jié',
+        story:
+          '새(隹)가 날아가는 것을 창(戈)으로 휙 던져서 길을 뚝 끊어버렸어요! 🚫',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 10 : 붓 율 (聿)
+  // ----------------------------------------
   {
-    day: 70,
     level: 4,
-    emoji: '🖌️',
+    day: 70,
     radical: {
       char: '聿',
       name: '붓 율',
       cnName: '聿字旁',
-      pinyin: 'yù',
       cnPinyin: 'yù zì páng',
-      desc: '붓',
+      story:
+        '손으로 붓을 똑바로 쥐고 종이 위에 글씨를 멋지게 쓰는 모습이에요! 🖌️',
     },
     related: [
-      { char: '聿', name: '붓 율', pinyin: 'yù' },
-      { char: '律', name: '법칙 률', pinyin: 'lǜ' },
-      { char: '建', name: '세울 건', pinyin: 'jiàn' },
-      { char: '健', name: '굳셀 건', pinyin: 'jiàn' },
-      { char: '肆', name: '방자할 사', pinyin: 'sì' },
+      {
+        char: '律',
+        name: '법칙 률',
+        pinyin: 'lǜ',
+        story:
+          '사람(彳)들이 지켜야 할 규칙을 붓(聿)으로 꼼꼼하게 적어 놓은 법이에요! 📜',
+      },
+      {
+        char: '建',
+        name: '세울 건',
+        pinyin: 'jiàn',
+        story:
+          '길(廴)을 가며 붓(聿)으로 도면을 그리고 뚝딱뚝딱 건물을 세워요! 🏗️',
+      },
+      {
+        char: '健',
+        name: '굳셀 건',
+        pinyin: 'jiàn',
+        story:
+          '사람(亻)이 건물을 세울(建) 정도로 아주 튼튼하고 굳센 건강한 몸을 가졌어요! 🏋️',
+      },
+      {
+        char: '肆',
+        name: '방자할 사',
+        pinyin: 'sì',
+        story:
+          '길다란(长) 붓(聿)을 제멋대로 휙휙 휘두르며 글씨를 방자하게 써요! 🎨',
+      },
+      {
+        char: '肃',
+        name: '엄숙할 숙',
+        pinyin: 'sù',
+        story:
+          '붓(聿)을 연못(渊의 변형) 위에 가지런히 놓고 몸과 마음을 아주 엄숙하게 가다듬어요! 🤫',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 11 : 몸 신 (身)
+  // ----------------------------------------
   {
-    day: 71,
     level: 4,
-    emoji: '🧍',
+    day: 71,
     radical: {
       char: '身',
       name: '몸 신',
       cnName: '身字旁',
-      pinyin: 'shēn',
       cnPinyin: 'shēn zì páng',
-      desc: '몸',
+      story: '배가 불룩하게 나온 사람의 옆모습을 그려 신체와 몸을 뜻해요! 🧍',
     },
     related: [
-      { char: '身', name: '몸 신', pinyin: 'shēn' },
-      { char: '射', name: '쏠 사', pinyin: 'shè' },
-      { char: '躲', name: '숨을 타', pinyin: 'duǒ' },
-      { char: '躺', name: '누울 당', pinyin: 'tǎng' },
-      { char: '躯', name: '몸 구', pinyin: 'qū' },
+      {
+        char: '射',
+        name: '쏠 사',
+        pinyin: 'shè',
+        story:
+          '몸(身)을 단단히 고정하고 마디(寸)를 맞춰 활을 멀리 쏘는 모습이에요! 🎯',
+      },
+      {
+        char: '躲',
+        name: '숨을 타',
+        pinyin: 'duǒ',
+        story:
+          '몸(身)을 꽃봉오리(朵)처럼 돌돌 말아 작게 만들어서 들키지 않게 쏙 숨어요! 🙈',
+      },
+      {
+        char: '躺',
+        name: '누울 당',
+        pinyin: 'tǎng',
+        story:
+          '몸(身)을 마루(尚) 위에 편안하게 쭉 뻗고 누워서 쿨쿨 쉬고 있어요! 🛌',
+      },
+      {
+        char: '躯',
+        name: '몸 구',
+        pinyin: 'qū',
+        story:
+          '상자(区)처럼 뼈와 살이 가득 담겨 있는 우리의 소중한 몸집이에요! 📦',
+      },
+      {
+        char: '躬',
+        name: '몸 궁',
+        pinyin: 'gōng',
+        story:
+          '몸(身)을 활(弓)처럼 둥글게 굽혀서 사람들에게 공손하게 인사해요! 🙇',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 12 : 도끼 근 (斤)
+  // ----------------------------------------
   {
-    day: 72,
     level: 4,
-    emoji: '🪓',
+    day: 72,
     radical: {
       char: '斤',
       name: '도끼 근',
       cnName: '斤字旁',
-      pinyin: 'jīn',
       cnPinyin: 'jīn zì páng',
-      desc: '도끼',
+      story: '단단한 나무를 찍어 넘길 때 쓰는 날카롭고 무거운 도끼예요! 🪓',
     },
     related: [
-      { char: '斤', name: '도끼 근', pinyin: 'jīn' },
-      { char: '斩', name: '벨 참', pinyin: 'zhǎn' },
-      { char: '断', name: '끊을 단', pinyin: 'duàn' },
-      { char: '新', name: '새 신', pinyin: 'xīn' },
-      { char: '斯', name: '이 사', pinyin: 'sī' },
+      {
+        char: '斩',
+        name: '벨 참',
+        pinyin: 'zhǎn',
+        story:
+          '수레(车)가 지나가듯 도끼(斤)로 크고 두꺼운 물건을 무섭게 싹둑 베어버려요! ⚔️',
+      },
+      {
+        char: '断',
+        name: '끊을 단',
+        pinyin: 'duàn',
+        story:
+          '얽힌 실(继의 변형)타래를 도끼(斤)로 한 번에 내리쳐서 툭! 끊어버렸어요. ✂️',
+      },
+      {
+        char: '新',
+        name: '새 신',
+        pinyin: 'xīn',
+        story:
+          '나무(木) 위에 서서(立) 도끼(斤)로 껍질을 막 깎아낸 반짝반짝 새 물건이에요! ✨',
+      },
+      {
+        char: '斯',
+        name: '이 사',
+        pinyin: 'sī',
+        story:
+          "바구니(其)에 담긴 물건을 도끼(斤)로 쪼개며 '이것'이 어떠냐고 물어봐요. 🧺",
+      },
+      {
+        char: '斥',
+        name: '물리칠 척',
+        pinyin: 'chì',
+        story:
+          '도끼(斤)에 점(丶)을 찍어 피를 묻히며 적들을 멀리 물리치고 쫓아내요! 🛑',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 13 : 하품 흠 (欠)
+  // ----------------------------------------
   {
-    day: 73,
     level: 4,
-    emoji: '🥱',
+    day: 73,
     radical: {
       char: '欠',
       name: '하품 흠',
       cnName: '欠字旁',
-      pinyin: 'qiàn',
       cnPinyin: 'qiàn zì páng',
-      desc: '하품하다',
+      story: '사람이 피곤해서 입을 커어어~ 벌리고 길게 하품하는 모습이에요! 🥱',
     },
     related: [
-      { char: '欠', name: '하품 흠', pinyin: 'qiàn' },
-      { char: '次', name: '버금 차', pinyin: 'cì' },
-      { char: '欢', name: '기쁠 환', pinyin: 'huān' },
-      { char: '欧', name: '토할 구', pinyin: 'ōu' },
-      { char: '歌', name: '노래 가', pinyin: 'gē' },
+      {
+        char: '次',
+        name: '버금 차',
+        pinyin: 'cì',
+        story:
+          '얼음(冫)처럼 차가운 입김을 하품(欠)하듯 불어 내는 두 번째 순서예요! 🥈',
+      },
+      {
+        char: '欢',
+        name: '기쁠 환',
+        pinyin: 'huān',
+        story:
+          '손(又)을 뻗고 입을 크게 벌려 하품(欠)하듯 아하하! 하고 기쁘게 웃어요! 😄',
+      },
+      {
+        char: '欧',
+        name: '토할 구 / 유럽 오',
+        pinyin: 'ōu',
+        story:
+          '구석(区)에 숨어서 하품(欠)을 하며 속을 게워 내거나, 서쪽 유럽을 뜻해요! 🌍',
+      },
+      {
+        char: '歌',
+        name: '노래 가',
+        pinyin: 'gē',
+        story:
+          '형(哥)이 입을 크게 벌리고 하품(欠)하듯 시원하게 랄랄라 노래를 불러요! 🎤',
+      },
+      {
+        char: '欺',
+        name: '속일 기',
+        pinyin: 'qī',
+        story:
+          '그것(其)이 진짜인 것처럼 입을 열고(欠) 감언이설로 남을 깜빡 속여요! 🤥',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 14 : 뒤져올 치 (夂/攵)
+  // ----------------------------------------
   {
-    day: 74,
     level: 4,
-    emoji: '🚶‍♂️',
+    day: 74,
     radical: {
       char: '夂',
-      name: '뒤져올치',
+      name: '뒤져올 치',
       cnName: '折文旁',
-      pinyin: 'zhǐ',
       cnPinyin: 'zhé wén páng',
-      desc: '천천히 걷다',
+      story:
+        '발을 질질 끌며 다른 사람보다 천천히 느릿느릿 걸어가는 모습이에요! 🚶‍♂️',
     },
     related: [
-      { char: '夂', name: '뒤져올 치', pinyin: 'zhǐ' },
-      { char: '各', name: '각각 각', pinyin: 'gè' },
-      { char: '冬', name: '겨울 동', pinyin: 'dōng' },
-      { char: '备', name: '갖출 비', pinyin: 'bèi' },
-      { char: '复', name: '회복할 복', pinyin: 'fù' },
+      {
+        char: '各',
+        name: '각각 각',
+        pinyin: 'gè',
+        story:
+          '천천히 걸어와서(夂) 입(口)으로 자기 주장을 각각 다르게 말해요! 💬',
+      },
+      {
+        char: '冬',
+        name: '겨울 동',
+        pinyin: 'dōng',
+        story:
+          '천천히 걸어온(夂) 한 해의 끝자락, 얼음(冫)이 어는 추운 겨울이에요! ☃️',
+      },
+      {
+        char: '备',
+        name: '갖출 비',
+        pinyin: 'bèi',
+        story:
+          '밭(田)에 천천히(夂) 나가기 전에 도구를 완벽하게 준비하고 갖추었어요! 🎒',
+      },
+      {
+        char: '复',
+        name: '회복할 복',
+        pinyin: 'fù',
+        story:
+          '해가 지고(日) 천천히 걸어(夂) 다시 제자리로 돌아와 몸을 회복해요! 🔋',
+      },
+      {
+        char: '处',
+        name: '곳 처',
+        pinyin: 'chù',
+        story:
+          '책상(几)에 기대어 천천히(夂) 쉬면서 머무르는 특별한 장소나 곳이에요! 🛋️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 15 : 마디 촌 (寸)
+  // ----------------------------------------
   {
-    day: 75,
     level: 4,
-    emoji: '📏',
+    day: 75,
     radical: {
       char: '寸',
       name: '마디 촌',
       cnName: '寸字旁',
-      pinyin: 'cùn',
       cnPinyin: 'cùn zì páng',
-      desc: '재다',
+      story:
+        '손목 맥박이 뛰는 곳까지의 길이를 나타내는 아주 짧은 한 마디예요! 📏',
     },
     related: [
-      { char: '寸', name: '마디 촌', pinyin: 'cùn' },
-      { char: '对', name: '대할 대', pinyin: 'duì' },
-      { char: '寺', name: '절 사', pinyin: 'sì' },
-      { char: '封', name: '봉할 봉', pinyin: 'fēng' },
-      { char: '导', name: '이끌 도', pinyin: 'dǎo' },
+      {
+        char: '对',
+        name: '대할 대',
+        pinyin: 'duì',
+        story:
+          '손(又)으로 짧은 마디(寸)를 가리키며 짝을 맞춰 마주 보고 대답해요! ✅',
+      },
+      {
+        char: '寺',
+        name: '절 사',
+        pinyin: 'sì',
+        story:
+          '흙(土)을 마디(寸) 단위로 꼼꼼하게 다져서 지은 경건한 사찰이나 관청이에요! 🛕',
+      },
+      {
+        char: '封',
+        name: '봉할 봉',
+        pinyin: 'fēng',
+        story:
+          '흙(圭)을 덮고 마디(寸) 단위로 꾹꾹 눌러 문서를 아무도 못 보게 봉인해요! ✉️',
+      },
+      {
+        char: '导',
+        name: '이끌 도',
+        pinyin: 'dǎo',
+        story:
+          '뱀(巳)처럼 굽은 길을 손가락 한 마디(寸)로 방향을 짚어주며 이끌어줘요! 🧭',
+      },
+      {
+        char: '寻',
+        name: '찾을 심',
+        pinyin: 'xún',
+        story:
+          '손(彐)으로 더듬거리며 한 마디(寸)씩 한 마디씩 아주 꼼꼼하게 물건을 찾아요! 🔎',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 16 : 지탱할 지 (支)
+  // ----------------------------------------
   {
-    day: 76,
     level: 4,
-    emoji: '🌿',
+    day: 76,
     radical: {
       char: '支',
       name: '지탱할 지',
       cnName: '支字旁',
-      pinyin: 'zhī',
       cnPinyin: 'zhī zì páng',
-      desc: '가지치다',
+      story:
+        '대나무나 나뭇가지(十)를 손(又)으로 꽉 쥐고 든든하게 받치고 있는 모습이에요! 🌿',
     },
     related: [
-      { char: '支', name: '지탱할 지', pinyin: 'zhī' },
-      { char: '枝', name: '가지 지', pinyin: 'zhī' },
-      { char: '技', name: '재주 기', pinyin: 'jì' },
-      { char: '歧', name: '갈림길 기', pinyin: 'qí' },
-      { char: '鼓', name: '북 고', pinyin: 'gǔ' },
+      {
+        char: '枝',
+        name: '가지 지',
+        pinyin: 'zhī',
+        story:
+          '나무(木)에서 옆으로 쭉쭉 뻗어 나와 나무 전체를 지탱하는(支) 나뭇가지예요! 🌳',
+      },
+      {
+        char: '技',
+        name: '재주 기',
+        pinyin: 'jì',
+        story:
+          '손(扌)으로 물건을 받치는(支) 것처럼 아주 능숙하고 훌륭한 기술과 재주예요! 🤹',
+      },
+      {
+        char: '歧',
+        name: '갈림길 기',
+        pinyin: 'qí',
+        story:
+          '발(止)로 걷다가 나뭇가지(支)처럼 여러 갈래로 쩍 갈라진 갈림길을 만났어요! 🛣️',
+      },
+      {
+        char: '鼓',
+        name: '북 고',
+        pinyin: 'gǔ',
+        story:
+          '둥근 그릇(豆) 모양의 악기를 나뭇가지(支)로 둥둥 치며 신나는 소리를 내요! 🥁',
+      },
+      {
+        char: '翅',
+        name: '날개 시',
+        pinyin: 'chì',
+        story:
+          '깃털(羽)이 달린 새의 날개가 나뭇가지(支)처럼 옆으로 쫙 뻗어 날아올라요! 🦅',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 17 : 날 비 (飞)
+  // ----------------------------------------
   {
-    day: 77,
     level: 4,
-    emoji: '🕊️',
+    day: 77,
     radical: {
       char: '飞',
       name: '날 비',
       cnName: '飞字旁',
-      pinyin: 'fēi',
       cnPinyin: 'fēi zì páng',
-      desc: '날다',
+      story:
+        '새가 양 날개를 활짝 펴고 바람을 타며 하늘로 푸드덕 날아가는 모습이에요! 🕊️',
     },
     related: [
-      { char: '飞', name: '날 비', pinyin: 'fēi' },
-      { char: '机', name: '틀 기', pinyin: 'jī' },
-      { char: '风', name: '바람 풍', pinyin: 'fēng' },
-      { char: '飘', name: '회오리 표', pinyin: 'piāo' },
-      { char: '飙', name: '폭풍 표', pinyin: 'biāo' },
+      {
+        char: '机',
+        name: '기계 기',
+        pinyin: 'jī',
+        story:
+          '나무(木)로 만든 베틀(几)처럼 하늘을 나는(飞) 멋진 기계, 바로 비행기예요! ✈️',
+      },
+      {
+        char: '风',
+        name: '바람 풍',
+        pinyin: 'fēng',
+        story:
+          '벌레(虫)가 날려갈(飞) 정도로 휙휙 불어오는 시원하고 강한 바람이에요! 🌬️',
+      },
+      {
+        char: '飘',
+        name: '나부낄 표',
+        pinyin: 'piāo',
+        story:
+          '바람(风)에 쪽지(票)가 펄럭펄럭 날리며(飞) 공중에 가볍게 나부껴요! 🍂',
+      },
+      {
+        char: '飙',
+        name: '폭풍 표',
+        pinyin: 'biāo',
+        story:
+          '개(犬) 세 마리가 정신없이 짖을 정도로 휙휙(飞) 부는 엄청난 폭풍우예요! 🌪️',
+      },
+      {
+        char: '翔',
+        name: '날 상',
+        pinyin: 'xiáng',
+        story:
+          '양(羊) 떼처럼 많은 새가 깃털(羽)을 펴고 하늘 위를 훨훨 날아다녀요! ☁️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 18 : 쓸 용 (用)
+  // ----------------------------------------
   {
-    day: 78,
     level: 4,
-    emoji: '🛠️',
+    day: 78,
     radical: {
       char: '用',
       name: '쓸 용',
       cnName: '用字旁',
-      pinyin: 'yòng',
       cnPinyin: 'yòng zì páng',
-      desc: '쓰다',
+      story:
+        '나무를 얼기설기 엮어 만든 울타리나 바구니 모양으로, 무엇이든 유용하게 써요! 🛠️',
     },
     related: [
-      { char: '用', name: '쓸 용', pinyin: 'yòng' },
-      { char: '甩', name: '버릴 무', pinyin: 'shuǎi' },
-      { char: '甫', name: '클 보', pinyin: 'fǔ' },
-      { char: '甬', name: '길 용', pinyin: 'yǒng' },
-      { char: '痛', name: '아플 통', pinyin: 'tòng' },
+      {
+        char: '甩',
+        name: '내던질 수',
+        pinyin: 'shuǎi',
+        story:
+          '쓰고(用) 있던 물건의 끈(乚)을 휙 하고 멀리 쿨하게 내던져버렸어요! 🗑️',
+      },
+      {
+        char: '甫',
+        name: '클 보',
+        pinyin: 'fǔ',
+        story:
+          '밭에 씨앗을 뿌리고 도구(用)를 써서 작물이 아주 크게(丶) 잘 자랐어요! 🌱',
+      },
+      {
+        char: '甬',
+        name: '길 용',
+        pinyin: 'yǒng',
+        story:
+          '사람들이 유용하게(用) 꽃봉오리(マ)처럼 솟은 종을 쳐서 시간을 알리는 곳이에요! 🔔',
+      },
+      {
+        char: '痛',
+        name: '아플 통',
+        pinyin: 'tòng',
+        story:
+          '병(疒)에 걸려 몸을 쓸(用) 때마다 통통 쑤시듯 너무 고통스럽고 아파요! 🤕',
+      },
+      {
+        char: '拥',
+        name: '안을 옹',
+        pinyin: 'yōng',
+        story: '손(扌)을 써서(用) 사랑하는 사람을 포근하게 와락 끌어안아요! 🤗',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 19 : 힘 력 (力)
+  // ----------------------------------------
   {
-    day: 79,
     level: 4,
-    emoji: '💪',
+    day: 79,
     radical: {
       char: '力',
       name: '힘 력',
       cnName: '力字旁',
-      pinyin: 'lì',
       cnPinyin: 'lì zì páng',
-      desc: '힘쓰다',
+      story:
+        '팔에 알통이 불끈 솟아올라 힘을 꽉 주고 있는 튼튼한 팔뚝 모습이에요! 💪',
     },
     related: [
-      { char: '力', name: '힘 력', pinyin: 'lì' },
-      { char: '办', name: '힘쓸 판', pinyin: 'bàn' },
-      { char: '加', name: '더할 가', pinyin: 'jiā' },
-      { char: '动', name: '움직일 동', pinyin: 'dòng' },
-      { char: '男', name: '사내 남', pinyin: 'nán' },
+      {
+        char: '办',
+        name: '힘쓸 판',
+        pinyin: 'bàn',
+        story:
+          '양쪽에 땀방울(八)을 뻘뻘 흘려가며 온 힘(力)을 다해 일을 처리해요! 땀 뻘뻘! 💦',
+      },
+      {
+        char: '加',
+        name: '더할 가',
+        pinyin: 'jiā',
+        story:
+          '힘(力)이 달릴 때 입(口)으로 으쌰으쌰 응원을 얹어 힘을 더해주어요! 📣',
+      },
+      {
+        char: '动',
+        name: '움직일 동',
+        pinyin: 'dòng',
+        story:
+          '무거운 구름(云)을 힘(力)껏 으랏차차 밀어서 저 멀리 움직이게 해요! ☁️',
+      },
+      {
+        char: '男',
+        name: '사내 남',
+        pinyin: 'nán',
+        story:
+          '밭(田)에서 쟁기를 끌며 힘(力)을 펄펄 쓰는 튼튼하고 듬직한 남자예요! 👨‍🌾',
+      },
+      {
+        char: '功',
+        name: '공 공',
+        pinyin: 'gōng',
+        story:
+          '장인(工)처럼 뛰어난 솜씨로 젖 먹던 힘(力)까지 내어 큰 공로를 세웠어요! 🏅',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🏃 LV.4 - Day 20 : 미칠 급 (及)
+  // ----------------------------------------
   {
-    day: 80,
     level: 4,
-    emoji: '🤲',
+    day: 80,
     radical: {
       char: '及',
       name: '미칠 급',
       cnName: '及字旁',
-      pinyin: 'jí',
       cnPinyin: 'jí zì páng',
-      desc: '미치다',
+      story:
+        '앞서가는 사람(人)의 옷자락을 뒤에서 손(又)으로 확 낚아채서 따라잡은 모습이에요! 🤲',
     },
     related: [
-      { char: '及', name: '미칠 급', pinyin: 'jí' },
-      { char: '级', name: '등급 급', pinyin: 'jí' },
-      { char: '吸', name: '마실 흡', pinyin: 'xī' },
-      { char: '极', name: '다할 극', pinyin: 'jí' },
-      { char: '汲', name: '길을 급', pinyin: 'jí' },
+      {
+        char: '级',
+        name: '등급 급',
+        pinyin: 'jí',
+        story:
+          '실(纟)의 품질이 어디까지 도달(及)했는지에 따라 1급, 2급 등급을 나누어요! 🥇',
+      },
+      {
+        char: '吸',
+        name: '마실 흡',
+        pinyin: 'xī',
+        story:
+          '입(口)으로 공기를 끝까지 미치도록(及) 허파 속 깊이 쓰읍~ 빨아들여 마셔요! 😮‍💨',
+      },
+      {
+        char: '极',
+        name: '다할 극',
+        pinyin: 'jí',
+        story:
+          '나무(木) 막대기가 닿을 수 있는 가장 꼭대기(及) 끝부분, 한계의 극치예요! 🏔️',
+      },
+      {
+        char: '汲',
+        name: '길을 급',
+        pinyin: 'jí',
+        story:
+          '우물 깊은 곳까지 닿도록(及) 두레박을 내려 물(氵)을 찰랑찰랑 길어 올려요! 🪣',
+      },
+      {
+        char: '笈',
+        name: '책상자 급',
+        pinyin: 'jí',
+        story:
+          '대나무(⺮)로 엮어 만들어 등에 지고 목적지에 다다를(及) 때까지 메고 다니는 책상자예요! 🎒',
+      },
+    ],
+  },
+  // ==========================================
+  // 🌟 LV.5 (추상·상태·특수) - Day 1 ~ Day 20
+  // ==========================================
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 1 : 날 일 (日)
+  // ----------------------------------------
+  {
+    level: 5,
+    day: 81,
+    radical: {
+      char: '日',
+      name: '날 일',
+      cnName: '日字旁',
+      cnPinyin: 'rì zì páng',
+      story:
+        '동그란 태양 안에 흑점 하나가 반짝이는 모습으로, 해와 시간을 뜻해요! ☀️',
+    },
+    related: [
+      {
+        char: '晴',
+        name: '맑을 청',
+        pinyin: 'qíng',
+        story: '해(日)가 푸르게(青) 빛나는 아주 맑고 화창한 날씨예요! 🌤️',
+      },
+      {
+        char: '暖',
+        name: '따뜻할 난',
+        pinyin: 'nuǎn',
+        story: '해(日)가 떠서 사람을 포근하게(爰) 감싸주니 아주 따뜻해요! 🧣',
+      },
+      {
+        char: '晚',
+        name: '늦을 만',
+        pinyin: 'wǎn',
+        story:
+          '해(日)가 지고 토끼(免)가 나올 만큼 어둑어둑 늦은 저녁이에요! 🌙',
+      },
+      {
+        char: '昨',
+        name: '어제 작',
+        pinyin: 'zuó',
+        story: '해(日)가 이미 지어(乍) 사라져버린 지나간 날, 바로 어제예요! 🔙',
+      },
+      {
+        char: '暗',
+        name: '어두울 암',
+        pinyin: 'àn',
+        story:
+          '해(日)가 소리(音) 없이 사라지고 구름에 가려져 캄캄하고 어두워요! 🌑',
+      },
     ],
   },
 
-  // =====================================
-  // 💭 레벨 5: 상태·감각·신체 부수 (20개)
-  // =====================================
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 2 : 달 월 (月)
+  // ----------------------------------------
   {
-    day: 81,
     level: 5,
-    emoji: '🎵',
-    radical: {
-      char: '音',
-      name: '소리 음',
-      cnName: '音字旁',
-      pinyin: 'yīn',
-      cnPinyin: 'yīn zì páng',
-      desc: '소리',
-    },
-    related: [
-      { char: '音', name: '소리 음', pinyin: 'yīn' },
-      { char: '意', name: '뜻 의', pinyin: 'yì' },
-      { char: '暗', name: '어두울 암', pinyin: 'àn' },
-      { char: '韵', name: '운치 운', pinyin: 'yùn' },
-      { char: '章', name: '글 장', pinyin: 'zhāng' },
-    ],
-  },
-  {
     day: 82,
-    level: 5,
-    emoji: '🌈',
     radical: {
-      char: '色',
-      name: '빛 색',
-      cnName: '色字旁',
-      pinyin: 'sè',
-      cnPinyin: 'sè zì páng',
-      desc: '색',
+      char: '月',
+      name: '달 월',
+      cnName: '月字旁',
+      cnPinyin: 'yuè zì páng',
+      story: '밤하늘을 밝게 비추는 초승달의 모양으로, 밤이나 기간을 뜻해요! 🌙',
     },
     related: [
-      { char: '色', name: '빛 색', pinyin: 'sè' },
-      { char: '艳', name: '고울 염', pinyin: 'yàn' },
-      { char: '绝', name: '끊을 절', pinyin: 'jué' },
-      { char: '艴', name: '성낼 불', pinyin: 'fú' },
-      { char: '艵', name: '합할 병', pinyin: 'pǐng' },
+      {
+        char: '期',
+        name: '기약할 기',
+        pinyin: 'qī',
+        story:
+          '달(月)이 차고 기우는(其) 것을 보며 날짜를 세고 약속을 기약해요! 📅',
+      },
+      {
+        char: '朗',
+        name: '밝을 랑',
+        pinyin: 'lǎng',
+        story: '어질고(良) 좋은 달(月)빛이 온 세상을 환하고 맑게 비추어요! 🌕',
+      },
+      {
+        char: '望',
+        name: '바랄 망',
+        pinyin: 'wàng',
+        story:
+          '까치발을 하고 서서 저 멀리 달(月)을 쳐다보며 소원을 간절히 바라요! 🙏',
+      },
+      {
+        char: '朝',
+        name: '아침 조',
+        pinyin: 'zhāo',
+        story:
+          '해와 달(月)이 교대하며 이슬(十,日,十)이 맺히는 상쾌한 아침이에요! 🌅',
+      },
+      {
+        char: '朔',
+        name: '초하루 삭',
+        pinyin: 'shuò',
+        story:
+          '거꾸로(屰) 돌아 달(月)이 처음으로 다시 시작되는 매월 1일이에요! 🗓️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 3 : 저녁 석 (夕)
+  // ----------------------------------------
   {
+    level: 5,
     day: 83,
-    level: 5,
-    emoji: '🌸',
     radical: {
-      char: '香',
-      name: '향기 향',
-      cnName: '香字旁',
-      pinyin: 'xiāng',
-      cnPinyin: 'xiāng zì páng',
-      desc: '향기',
+      char: '夕',
+      name: '저녁 석',
+      cnName: '夕字旁',
+      cnPinyin: 'xī zì páng',
+      story:
+        '달(月)이 반쯤 구름에 가려져 있는 어둑어둑한 저녁 무렵의 모습이에요! 🌆',
     },
     related: [
-      { char: '香', name: '향기 향', pinyin: 'xiāng' },
-      { char: '馨', name: '향기 형', pinyin: 'xīn' },
-      { char: '馥', name: '향기 복', pinyin: 'fù' },
-      { char: '馡', name: '향기 비', pinyin: 'fēi' },
-      { char: '馫', name: '향기 흥', pinyin: 'xīn' },
+      {
+        char: '夜',
+        name: '밤 야',
+        pinyin: 'yè',
+        story:
+          '사람(亻)이 저녁(夕)이 되어 옷을 덮고(亠) 잠을 자는 한밤중이에요! 🌃',
+      },
+      {
+        char: '梦',
+        name: '꿈 몽',
+        pinyin: 'mèng',
+        story:
+          '숲(林) 속에서 저녁(夕)에 잠들어 눈앞에 신비로운 꿈이 펼쳐져요! 💭',
+      },
+      {
+        char: '多',
+        name: '많을 다',
+        pinyin: 'duō',
+        story:
+          '저녁(夕)이 지나고 또 저녁(夕)이 올 만큼 시간이 겹쳐 아주 많아요! ➕',
+      },
+      {
+        char: '岁',
+        name: '해 세',
+        pinyin: 'suì',
+        story:
+          '산(山)처럼 많은 저녁(夕)이 겹겹이 쌓여 한 해, 두 해 나이가 들어요! 🎂',
+      },
+      {
+        char: '够',
+        name: '넉넉할 구',
+        pinyin: 'gòu',
+        story:
+          '저녁(夕)에 개(狗의 句)에게 밥을 듬뿍 주니 배가 넉넉하고 충분해요! 💯',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 4 : 에운담 (囗)
+  // ----------------------------------------
   {
+    level: 5,
     day: 84,
-    level: 5,
-    emoji: '🌱',
     radical: {
-      char: '生',
-      name: '날 생',
-      cnName: '生字旁',
-      pinyin: 'shēng',
-      cnPinyin: 'shēng zì páng',
-      desc: '삶',
+      char: '囗',
+      name: '에운담',
+      cnName: '国字框',
+      cnPinyin: 'guó zì kuàng',
+      story:
+        '사방을 꽉 막아 빙 둘러친 울타리나 성벽의 튼튼한 테두리 모양이에요! 🔲',
     },
     related: [
-      { char: '生', name: '날 생', pinyin: 'shēng' },
-      { char: '性', name: '성품 성', pinyin: 'xìng' },
-      { char: '星', name: '별 성', pinyin: 'xīng' },
-      { char: '姓', name: '성 성', pinyin: 'xìng' },
-      { char: '牲', name: '희생 생', pinyin: 'shēng' },
+      {
+        char: '国',
+        name: '나라 국',
+        pinyin: 'guó',
+        story:
+          '테두리(囗) 안에 구슬(玉)처럼 귀한 백성과 왕이 사는 나라예요! 🗺️',
+      },
+      {
+        char: '园',
+        name: '동산 원',
+        pinyin: 'yuán',
+        story:
+          '테두리(囗) 안에 으뜸(元)가는 예쁜 꽃과 나무를 심어 놓은 동산이에요! 🏞️',
+      },
+      {
+        char: '围',
+        name: '둘러쌀 위',
+        pinyin: 'wéi',
+        story:
+          '테두리(囗) 안에 우물(韦)을 지키듯 사방을 겹겹이 빙 둘러쌌어요! 🔄',
+      },
+      {
+        char: '团',
+        name: '둥글 단',
+        pinyin: 'tuán',
+        story:
+          '테두리(囗) 안에 재주(才) 있는 사람들이 둥글게 모여 단합해요! 🤝',
+      },
+      {
+        char: '圆',
+        name: '둥글 원',
+        pinyin: 'yuán',
+        story:
+          '테두리(囗) 안에 인원(员)들이 모여 앉은 아주 동그란 원 모양이에요! ⭕',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 5 : 구멍 혈 (穴)
+  // ----------------------------------------
   {
+    level: 5,
     day: 85,
-    level: 5,
-    emoji: '👴',
     radical: {
-      char: '老',
-      name: '늙을 로',
-      cnName: '老字头',
-      pinyin: 'lǎo',
-      cnPinyin: 'lǎo zì tóu',
-      desc: '늙다',
+      char: '穴',
+      name: '구멍 혈',
+      cnName: '穴宝盖',
+      cnPinyin: 'xué bǎo gài',
+      story:
+        '지붕(宀) 양쪽에 흙을 파내어(八) 사람이 사는 깊은 동굴 모양을 그렸어요! 🕳️',
     },
     related: [
-      { char: '老', name: '늙을 로', pinyin: 'lǎo' },
-      { char: '考', name: '생각할 고', pinyin: 'kǎo' },
-      { char: '者', name: '놈 자', pinyin: 'zhě' },
-      { char: '孝', name: '효도 효', pinyin: 'xiào' },
-      { char: '耆', name: '늙은이 기', pinyin: 'qí' },
+      {
+        char: '空',
+        name: '빌 공',
+        pinyin: 'kōng',
+        story:
+          '구멍(穴)을 파고 장인(工)이 안을 텅텅 비워내어 아주 넓고 텅 비었어요! 🌌',
+      },
+      {
+        char: '穿',
+        name: '뚫을 천',
+        pinyin: 'chuān',
+        story:
+          '동굴(穴) 안에 이빨(牙)을 가진 쥐가 벽을 갉아 구멍을 뻥 뚫었어요! 🪡',
+      },
+      {
+        char: '突',
+        name: '갑자기 돌',
+        pinyin: 'tū',
+        story:
+          '구멍(穴) 속에서 개(犬)가 갑자기 왈왈! 하고 툭 튀어나와 깜짝 놀랐어요! 🐕',
+      },
+      {
+        char: '窗',
+        name: '창문 창',
+        pinyin: 'chuāng',
+        story:
+          '구멍(穴)을 뚫어 해(日)빛이 쏟아져 들어오게 만든 밝은 창문이에요! 🪟',
+      },
+      {
+        char: '穷',
+        name: '다할 궁',
+        pinyin: 'qióng',
+        story:
+          '구멍(穴) 속에서 힘(力)을 다 써버려 더 이상 나아갈 길이 없고 가난해요! 😥',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 6 : 민엄호 (厂)
+  // ----------------------------------------
   {
+    level: 5,
     day: 86,
-    level: 5,
-    emoji: '🧍',
     radical: {
-      char: '立',
-      name: '설 립',
-      cnName: '立字旁',
-      pinyin: 'lì',
-      cnPinyin: 'lì zì páng',
-      desc: '서다',
+      char: '厂',
+      name: '민엄호',
+      cnName: '厂字旁',
+      cnPinyin: 'chǎng zì páng',
+      story:
+        '산기슭의 깎아지른 절벽이나 지붕 한쪽만 있는 넓은 창고 모양이에요! 🏭',
     },
     related: [
-      { char: '立', name: '설 립', pinyin: 'lì' },
-      { char: '站', name: '우두커니 참', pinyin: 'zhàn' },
-      { char: '童', name: '아이 동', pinyin: 'tóng' },
-      { char: '端', name: '바를 단', pinyin: 'duān' },
-      { char: '章', name: '글 장', pinyin: 'zhāng' },
+      {
+        char: '原',
+        name: '언덕 원',
+        pinyin: 'yuán',
+        story:
+          '절벽(厂) 아래 맑은 샘물(泉)이 퐁퐁 솟아나는 넓은 들판과 언덕이에요! ⛰️',
+      },
+      {
+        char: '历',
+        name: '지낼 력',
+        pinyin: 'lì',
+        story:
+          '절벽(厂)처럼 큰 역사의 흐름 속에서 힘(力)차게 지나온 날들이에요! ⏳',
+      },
+      {
+        char: '压',
+        name: '누를 압',
+        pinyin: 'yā',
+        story:
+          '절벽(厂) 위에서 흙(土)무더기가 우르르 떨어져 무겁게 꾹 눌러요! ⏬',
+      },
+      {
+        char: '厌',
+        name: '싫어할 염',
+        pinyin: 'yàn',
+        story:
+          '절벽(厂) 아래 개(犬)가 갇혀 나가고 싶어 으르렁거리며 몹시 싫어해요! 🙅',
+      },
+      {
+        char: '厢',
+        name: '행랑 상',
+        pinyin: 'xiāng',
+        story:
+          '넓은 집(厂) 안에서 서로(相) 마주 보고 있는 곁채나 행랑방이에요! 🚪',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 7 : 주검 시 (尸)
+  // ----------------------------------------
   {
+    level: 5,
     day: 87,
-    level: 5,
-    emoji: '🙋',
     radical: {
-      char: '自',
-      name: '스스로 자',
-      cnName: '自字旁',
-      pinyin: 'zì',
-      cnPinyin: 'zì zì páng',
-      desc: '스스로',
+      char: '尸',
+      name: '주검 시',
+      cnName: '尸字头',
+      cnPinyin: 'shī zì tóu',
+      story:
+        '사람이 다리를 쭉 뻗고 누워 있거나 엉덩이를 붙이고 앉은 지붕을 뜻해요! 🛋️',
     },
     related: [
-      { char: '自', name: '스스로 자', pinyin: 'zì' },
-      { char: '息', name: '쉴 식', pinyin: 'xī' },
-      { char: '臭', name: '냄새 취', pinyin: 'chòu' },
-      { char: '鼻', name: '코 비', pinyin: 'bí' },
-      { char: '臬', name: '법 녈', pinyin: 'niè' },
+      {
+        char: '局',
+        name: '판 국',
+        pinyin: 'jú',
+        story:
+          '지붕(尸) 아래서 글귀(句)를 짜맞추듯 사람들이 모여 일을 처리하는 부서예요! 🏢',
+      },
+      {
+        char: '屋',
+        name: '집 옥',
+        pinyin: 'wū',
+        story:
+          '지붕(尸) 아래 화살(至)이 날아오지 않도록 튼튼하게 지은 안락한 집이에요! 🏠',
+      },
+      {
+        char: '展',
+        name: '펼 전',
+        pinyin: 'zhǎn',
+        story:
+          '지붕(尸) 아래에 예쁜 옷(衣)들을 나란히 쫙 펼쳐두고 구경하게 전시해요! 🖼️',
+      },
+      {
+        char: '层',
+        name: '층 층',
+        pinyin: 'céng',
+        story:
+          '지붕(尸) 아래 구름(云)처럼 겹겹이 포개져 있는 높은 건물의 층수예요! 🏢',
+      },
+      {
+        char: '居',
+        name: '살 거',
+        pinyin: 'jū',
+        story:
+          '지붕(尸) 아래 오래(古) 머물며 편안하게 자리를 잡고 살아가는 곳이에요! 🏘️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 8 : 지게 호 (户)
+  // ----------------------------------------
   {
+    level: 5,
     day: 88,
-    level: 5,
-    emoji: '❌',
     radical: {
-      char: '非',
-      name: '아닐 비',
-      cnName: '非字旁',
-      pinyin: 'fēi',
-      cnPinyin: 'fēi zì páng',
-      desc: '아니다',
+      char: '户',
+      name: '지게 호',
+      cnName: '户字旁',
+      cnPinyin: 'hù zì páng',
+      story: '한 쪽으로만 여닫는 외짝 문의 모양으로, 방이나 가구를 뜻해요! 🚪',
     },
     related: [
-      { char: '非', name: '아닐 비', pinyin: 'fēi' },
-      { char: '靠', name: '기댈 고', pinyin: 'kào' },
-      { char: '悲', name: '슬플 비', pinyin: 'bēi' },
-      { char: '辈', name: '세대 배', pinyin: 'bèi' },
-      { char: '斐', name: '문채 비', pinyin: 'fěi' },
+      {
+        char: '房',
+        name: '방 방',
+        pinyin: 'fáng',
+        story:
+          '문(户)을 열고 들어가면 네모난(方) 공간이 나오는 아늑한 방이에요! 🛏️',
+      },
+      {
+        char: '所',
+        name: '바 소',
+        pinyin: 'suǒ',
+        story:
+          '문(户)을 도끼(斤)로 찍어 튼튼하게 만들고 사람들이 머무는 중요한 장소예요! 📍',
+      },
+      {
+        char: '扁',
+        name: '작을 편',
+        pinyin: 'biǎn',
+        story:
+          '문(户)에 매달린 책(册)처럼 얇고 납작하게 눌려 있는 작은 모양이에요! 🥞',
+      },
+      {
+        char: '扇',
+        name: '부채 선',
+        pinyin: 'shàn',
+        story:
+          '문(户)에 달린 새의 깃털(羽)처럼 팔랑팔랑 흔들어 시원한 바람을 내는 부채예요! 🪭',
+      },
+      {
+        char: '启',
+        name: '열 계',
+        pinyin: 'qǐ',
+        story:
+          '문(户)을 활짝 열고 입(口)을 떼어 지혜로운 생각으로 사람들을 깨우쳐 주어요! 💡',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 9 : 그릇 명 (皿)
+  // ----------------------------------------
   {
+    level: 5,
     day: 89,
-    level: 5,
-    emoji: '⚪',
     radical: {
-      char: '白',
-      name: '흰 백',
-      cnName: '白字旁',
-      pinyin: 'bái',
-      cnPinyin: 'bái zì páng',
-      desc: '희다',
+      char: '皿',
+      name: '그릇 명',
+      cnName: '皿字底',
+      cnPinyin: 'mǐn zì dǐ',
+      story:
+        '위가 뻥 뚫리고 넓적해서 음식이나 물건을 가득 담을 수 있는 그릇이에요! 🥣',
     },
     related: [
-      { char: '白', name: '흰 백', pinyin: 'bái' },
-      { char: '的', name: '과녁 적', pinyin: 'de' },
-      { char: '百', name: '일백 백', pinyin: 'bǎi' },
-      { char: '皇', name: '임금 황', pinyin: 'huáng' },
-      { char: '皆', name: '다 개', pinyin: 'jiē' },
+      {
+        char: '盘',
+        name: '소반 반',
+        pinyin: 'pán',
+        story:
+          '배(舟)처럼 납작하고 평평한 그릇(皿)으로, 밥이나 과일을 담는 쟁반이에요! 🍽️',
+      },
+      {
+        char: '盆',
+        name: '동이 분',
+        pinyin: 'pén',
+        story:
+          '그릇(皿)을 나눌(分) 만큼 크게 만들어서 물을 넉넉히 담는 대야나 화분이에요! 🪴',
+      },
+      {
+        char: '益',
+        name: '더할 익',
+        pinyin: 'yì',
+        story:
+          '그릇(皿)에 물이나 음식(八)이 찰랑찰랑 넘칠 만큼 더해져서 아주 이로워요! 📈',
+      },
+      {
+        char: '监',
+        name: '볼 감',
+        pinyin: 'jiān',
+        story:
+          '신하(臣)가 물이 담긴 그릇(皿)을 거울처럼 들여다보며 꼼꼼하게 감시해요! 👁️',
+      },
+      {
+        char: '盒',
+        name: '합 건',
+        pinyin: 'hé',
+        story:
+          '그릇(皿)의 위아래가 딱 합쳐져서(合) 뚜껑이 닫히는 귀여운 상자나 도시락이에요! 🍱',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 10 : 닭 유 (酉)
+  // ----------------------------------------
   {
+    level: 5,
     day: 90,
-    level: 5,
-    emoji: '⚫',
     radical: {
-      char: '黑',
-      name: '검을 흑',
-      cnName: '黑字旁',
-      pinyin: 'hēi',
-      cnPinyin: 'hēi zì páng',
-      desc: '검다',
+      char: '酉',
+      name: '닭 유/술 유',
+      cnName: '酉字旁',
+      cnPinyin: 'yǒu zì páng',
+      story:
+        '가운데가 둥글고 목이 좁은 항아리 모양으로, 발효되거나 술이 익는 것을 뜻해요! 🏺',
     },
     related: [
-      { char: '黑', name: '검을 흑', pinyin: 'hēi' },
-      { char: '默', name: '잠잠할 묵', pinyin: 'mò' },
-      { char: '墨', name: '먹 묵', pinyin: 'mò' },
-      { char: '黛', name: '눈썹먹 대', pinyin: 'dài' },
-      { char: '黯', name: '검을 암', pinyin: 'àn' },
+      {
+        char: '醉',
+        name: '취할 취',
+        pinyin: 'zuì',
+        story:
+          '항아리(酉) 속 술을 군사(卒)들이 홀짝홀짝 마시고 얼굴이 빨개져서 취했어요! 🥴',
+      },
+      {
+        char: '醒',
+        name: '깰 성',
+        pinyin: 'xǐng',
+        story:
+          '술(酉)에 취했다가 별(星)이 총총 뜬 밤하늘을 보고 정신이 번쩍 깨어났어요! 🌟',
+      },
+      {
+        char: '酷',
+        name: '독할 혹',
+        pinyin: 'kù',
+        story:
+          '술(酉)을 빚은 지 오래되어(告) 맛이 찌르르할 만큼 아주 지독하고 강렬해요! 🌶️',
+      },
+      {
+        char: '酸',
+        name: '실 산',
+        pinyin: 'suān',
+        story:
+          '술(酉)이 시큼하게(夋) 팍 쉬어버려서 레몬처럼 침이 고이게 신맛이 나요! 🍋',
+      },
+      {
+        char: '醋',
+        name: '초 초',
+        pinyin: 'cù',
+        story:
+          '술(酉)이 옛날(昔)부터 푹 익어서 음식에 뿌려 먹는 새콤한 식초가 되었어요! 🥗',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 11 : 병질 엄 (疒)
+  // ----------------------------------------
   {
+    level: 5,
     day: 91,
-    level: 5,
-    emoji: '🔵',
     radical: {
-      char: '青',
-      name: '푸를 청',
-      cnName: '青字旁',
-      pinyin: 'qīng',
-      cnPinyin: 'qīng zì páng',
-      desc: '푸르다',
+      char: '疒',
+      name: '병질 엄',
+      cnName: '病字旁',
+      cnPinyin: 'bìng zì páng',
+      story:
+        '사람이 병이 나서 침대에 기대어 땀을 뻘뻘 흘리며 누워 있는 모양이에요! 🤒',
     },
     related: [
-      { char: '青', name: '푸를 청', pinyin: 'qīng' },
-      { char: '清', name: '맑을 청', pinyin: 'qīng' },
-      { char: '情', name: '뜻 정', pinyin: 'qíng' },
-      { char: '晴', name: '괼 청', pinyin: 'qíng' },
-      { char: '请', name: '청할 청', pinyin: 'qǐng' },
+      {
+        char: '病',
+        name: '병 병',
+        pinyin: 'bìng',
+        story:
+          '몸(疒)에 남방(丙)의 뜨거운 열기가 들어와 열이 펄펄 나는 몹쓸 병이에요! 💊',
+      },
+      {
+        char: '痛',
+        name: '아플 통',
+        pinyin: 'tòng',
+        story:
+          '병(疒)에 걸려 몸이 길(甬)을 걷는 것처럼 통통 쑤시고 너무 아프고 고통스러워요! 🤕',
+      },
+      {
+        char: '疯',
+        name: '미칠 풍',
+        pinyin: 'fēng',
+        story:
+          '머리(疒)에 바람(风)이 휙 분 것처럼 제정신을 잃고 헤롱헤롱 미쳐버렸어요! 😵‍💫',
+      },
+      {
+        char: '疗',
+        name: '고칠 료',
+        pinyin: 'liáo',
+        story:
+          '병(疒)을 끝내려고(了) 의사 선생님이 약을 주며 병을 깨끗하게 고쳐 주어요! 🩺',
+      },
+      {
+        char: '瘦',
+        name: '여윌 수',
+        pinyin: 'shòu',
+        story:
+          '병(疒)을 오래 앓고 노인(叟)처럼 살이 쏙 빠져서 몸이 아주 삐쩍 말랐어요! 🦴',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 12 : 뼈앙상할 알 (歹)
+  // ----------------------------------------
   {
+    level: 5,
     day: 92,
-    level: 5,
-    emoji: '🔴',
     radical: {
-      char: '赤',
-      name: '붉을 적',
-      cnName: '赤字旁',
-      pinyin: 'chì',
-      cnPinyin: 'chì zì páng',
-      desc: '붉다',
+      char: '歹',
+      name: '뼈앙상할 알',
+      cnName: '歹字旁',
+      cnPinyin: 'dǎi zì páng',
+      story:
+        '살점은 다 떨어지고 뼈만 앙상하게 남은 뼈다귀 모양으로, 나쁜 것을 뜻해요! ☠️',
     },
     related: [
-      { char: '赤', name: '붉을 적', pinyin: 'chì' },
-      { char: '赦', name: '용서할 사', pinyin: 'shè' },
-      { char: '赫', name: '빛날 혁', pinyin: 'hè' },
-      { char: '赭', name: '붉은흙 자', pinyin: 'zhě' },
-      { char: '赧', name: '붉힐 난', pinyin: 'nǎn' },
+      {
+        char: '死',
+        name: '죽을 사',
+        pinyin: 'sǐ',
+        story:
+          '뼈(歹)만 앙상하게 남은 사람(匕)처럼 안타깝게 생명이 다해 죽음을 맞이해요. 🥀',
+      },
+      {
+        char: '坏',
+        name: '무너질 괴',
+        pinyin: 'huài',
+        story:
+          '흙(土)이 아니게(不) 되어 무너지는 坏지만, 나쁜(歹) 의미로 널리 쓰여 망가진 것을 뜻해요! 💥',
+      },
+      {
+        char: '殊',
+        name: '다를 수',
+        pinyin: 'shū',
+        story:
+          '뼈(歹)가 붉을(朱) 정도로 일반적이지 않고 아주 유별나고 특별하게 달라요! ✨',
+      },
+      {
+        char: '残',
+        name: '해칠 잔',
+        pinyin: 'cán',
+        story:
+          '뼈(歹)에 창(戋)이 꽂혀 몸이 상하고 일부만 겨우 잔인하게 남아 있어요! 🩸',
+      },
+      {
+        char: '歼',
+        name: '죽일 섬',
+        pinyin: 'jiān',
+        story:
+          '뼈(歹)가 천(千) 개나 생길 정도로 적들을 한꺼번에 쓸어서 전멸시켰어요! ⚔️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 13 : 매울 신 (辛)
+  // ----------------------------------------
   {
+    level: 5,
     day: 93,
-    level: 5,
-    emoji: '✨',
     radical: {
-      char: '示',
-      name: '보일 시',
-      cnName: '示字旁',
-      pinyin: 'shì',
-      cnPinyin: 'shì zì páng',
-      desc: '보이다',
+      char: '辛',
+      name: '매울 신',
+      cnName: '辛字旁',
+      cnPinyin: 'xīn zì páng',
+      story:
+        '죄인에게 형벌을 주던 뾰족한 칼의 모양으로, 맵고 고생스럽다는 뜻이에요! 🌶️',
     },
     related: [
-      { char: '示', name: '보일 시', pinyin: 'shì' },
-      { char: '票', name: '표 표', pinyin: 'piào' },
-      { char: '禁', name: '금할 금', pinyin: 'jìn' },
-      { char: '祭', name: '제사 제', pinyin: 'jì' },
-      { char: '祟', name: '빌미 수', pinyin: 'suì' },
+      {
+        char: '辣',
+        name: '매울 랄',
+        pinyin: 'là',
+        story:
+          '고추(辛)를 묶음(束)으로 팍팍 넣어서 혀가 얼얼할 정도로 아주 맵고 자극적이에요! 🔥',
+      },
+      {
+        char: '辞',
+        name: '말씀 사',
+        pinyin: 'cí',
+        story:
+          '혀(舌)로 맵고(辛) 따끔하게 상대방을 꾸짖거나 논리적으로 사양하는 말씀이에요! 🗣️',
+      },
+      {
+        char: '辟',
+        name: '피할 피',
+        pinyin: 'pì',
+        story:
+          '형벌(辛)과 죽음(尸)을 피하기 위해 입(口)을 다물고 안전한 곳으로 몸을 피해 숨어요! 🏃‍♂️',
+      },
+      {
+        char: '辨',
+        name: '분별할 변',
+        pinyin: 'biàn',
+        story:
+          '칼(辛)을 양쪽에 두고 칼날(刂)처럼 날카롭게 진짜와 가짜를 정확히 분별해 내요! 🔍',
+      },
+      {
+        char: '辩',
+        name: '말잘할 변',
+        pinyin: 'biàn',
+        story:
+          '칼(辛)을 양쪽에 두고 말(讠)로 날카롭게 논쟁하며 자기 의견을 똑부러지게 변호해요! ⚖️',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 14 : 수건 건 (巾)
+  // ----------------------------------------
   {
-    day: 94,
     level: 5,
-    emoji: '🧠',
+    day: 94,
+    radical: {
+      char: '巾',
+      name: '수건 건',
+      cnName: '巾字旁',
+      cnPinyin: 'jīn zì páng',
+      story:
+        '허리에 찬 띠에 길게 늘어뜨린 수건이나 천 조각이 펄럭이는 모양이에요! 🧣',
+    },
+    related: [
+      {
+        char: '布',
+        name: '베 포',
+        pinyin: 'bù',
+        story:
+          '왼손(左)으로 천(巾)을 쫙 펼쳐서 바닥을 덮거나 널리 퍼뜨려요! 🧵',
+      },
+      {
+        char: '帆',
+        name: '돛 범',
+        pinyin: 'fān',
+        story:
+          '천(巾)을 평범한(凡) 배 위에 높이 매달아 바람을 빵빵하게 받는 커다란 돛이에요! ⛵',
+      },
+      {
+        char: '希',
+        name: '바랄 희',
+        pinyin: 'xī',
+        story:
+          '천(巾)을 사귀듯(爻) 귀하게 엮어서 짠 아주 드물고 희망찬 물건을 바라요! 🌟',
+      },
+      {
+        char: '帐',
+        name: '휘장 장',
+        pinyin: 'zhàng',
+        story:
+          '긴(长) 천(巾)을 위에서 아래로 쫙 늘어뜨려 햇빛이나 바람을 막는 텐트예요! ⛺',
+      },
+      {
+        char: '帮',
+        name: '도울 방',
+        pinyin: 'bāng',
+        story:
+          '풍성한(丰) 고을(阝)의 사람들처럼, 수건(巾)으로 땀을 닦아주며 서로 힘을 보태어 도와요! 🤝',
+      },
+    ],
+  },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 15 : 터럭 삼 (彡)
+  // ----------------------------------------
+  {
+    level: 5,
+    day: 95,
+    radical: {
+      char: '彡',
+      name: '터럭 삼',
+      cnName: '三撇儿',
+      cnPinyin: 'sān piě ér',
+      story:
+        '머리카락이나 짐승의 털 세 가닥이 흩날리는 예쁜 무늬와 빛깔을 뜻해요! 💇‍♀️',
+    },
+    related: [
+      {
+        char: '彩',
+        name: '채색 채',
+        pinyin: 'cǎi',
+        story:
+          '손톱(爫)과 나무(木) 사이를 무늬(彡)로 알록달록 아주 예쁘게 물들이고 채색해요! 🎨',
+      },
+      {
+        char: '影',
+        name: '그림자 영',
+        pinyin: 'yǐng',
+        story:
+          '햇볕(日)을 받은 서울(京)의 건물 옆으로 무늬(彡) 같은 짙은 그림자가 드리워요! 👤',
+      },
+      {
+        char: '彰',
+        name: '밝을 창',
+        pinyin: 'zhāng',
+        story:
+          '문장(章)에 색깔(彡)을 예쁘게 입혀서 사람들에게 눈에 확 띄고 밝게 드러내요! 💡',
+      },
+      {
+        char: '彭',
+        name: '성 팽',
+        pinyin: 'péng',
+        story:
+          '북(壴)을 둥둥 칠 때마다 소리가 무늬(彡)처럼 널리널리 퍼져나가는 팽씨 성이에요! 🥁',
+      },
+      {
+        char: '须',
+        name: '모름지기 수',
+        pinyin: 'xū',
+        story:
+          '얼굴(页) 아래에 멋진 털(彡)이 나 있는 수염처럼, 남자는 마땅히 이래야 한다는 뜻이에요! 🧔',
+      },
+    ],
+  },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 16 : 머리 혈 (页)
+  // ----------------------------------------
+  {
+    level: 5,
+    day: 96,
     radical: {
       char: '页',
       name: '머리 혈',
       cnName: '页字旁',
-      pinyin: 'yè',
       cnPinyin: 'yè zì páng',
-      desc: '머리',
+      story:
+        '사람의 머리통 모양을 크게 그린 부수로, 생각이나 종이의 한 장을 뜻해요! 🧑‍🦲',
     },
     related: [
-      { char: '页', name: '머리 혈', pinyin: 'yè' },
-      { char: '顶', name: '정수리 정', pinyin: 'dǐng' },
-      { char: '项', name: '항목 항', pinyin: 'xiàng' },
-      { char: '顺', name: '순할 순', pinyin: 'shùn' },
-      { char: '题', name: '제목 제', pinyin: 'tí' },
+      {
+        char: '顶',
+        name: '정수리 정',
+        pinyin: 'dǐng',
+        story:
+          '못(丁)처럼 뾰족하게 솟은 머리(页)의 가장 높은 꼭대기, 바로 정수리예요! 🏔️',
+      },
+      {
+        char: '顺',
+        name: '순할 순',
+        pinyin: 'shùn',
+        story:
+          '내(川)가 흐르듯 머리(页)를 끄덕이며 물 흐르듯 순조롭게 말을 잘 들어요! 🌊',
+      },
+      {
+        char: '烦',
+        name: '번거로울 번',
+        pinyin: 'fán',
+        story:
+          '머리(页) 속에서 불(火)이 타오르듯 생각이 복잡하고 짜증 나고 번거로워요! 🤯',
+      },
+      {
+        char: '顿',
+        name: '조아릴 돈',
+        pinyin: 'dùn',
+        story:
+          '진치듯(屯) 머리(页)를 땅에 쿵쿵 부딪치며 엎드려 조아리거나 잠시 멈춰요! 🙇',
+      },
+      {
+        char: '颜',
+        name: '얼굴 안',
+        pinyin: 'yán',
+        story:
+          '언덕(彦)처럼 우뚝 솟은 예쁜 코와 눈이 모여 있는 머리(页)의 앞쪽 얼굴이에요! 😊',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 17 : 볼 견 (见)
+  // ----------------------------------------
   {
-    day: 95,
     level: 5,
-    emoji: '👑',
-    radical: {
-      char: '首',
-      name: '머리 수',
-      cnName: '首字旁',
-      pinyin: 'shǒu',
-      cnPinyin: 'shǒu zì páng',
-      desc: '머리',
-    },
-    related: [
-      { char: '首', name: '머리 수', pinyin: 'shǒu' },
-      { char: '道', name: '길 도', pinyin: 'dào' },
-      { char: '馗', name: '아홉갈래길 규', pinyin: 'kuí' },
-      { char: '馘', name: '괵 괵', pinyin: 'guó' },
-      { char: '馦', name: '향기 향', pinyin: 'xiān' },
-    ],
-  },
-  {
-    day: 96,
-    level: 5,
-    emoji: '🙂',
-    radical: {
-      char: '面',
-      name: '낯 면',
-      cnName: '面字旁',
-      pinyin: 'miàn',
-      cnPinyin: 'miàn zì páng',
-      desc: '얼굴',
-    },
-    related: [
-      { char: '面', name: '낯 면', pinyin: 'miàn' },
-      { char: '脸', name: '뺨 렴', pinyin: 'liǎn' },
-      { char: '靣', name: '낯 면', pinyin: 'miàn' },
-      { char: '麺', name: '국수 면', pinyin: 'miàn' },
-      { char: '腼', name: '부끄러워할 면', pinyin: 'miǎn' },
-    ],
-  },
-  {
     day: 97,
-    level: 5,
-    emoji: '👃',
     radical: {
-      char: '鼻',
-      name: '코 비',
-      cnName: '鼻字旁',
-      pinyin: 'bí',
-      cnPinyin: 'bí zì páng',
-      desc: '코',
+      char: '见',
+      name: '볼 견',
+      cnName: '见字旁',
+      cnPinyin: 'jiàn zì páng',
+      story:
+        '커다란 눈(目)을 가진 사람이 다리를 뻗고 앉아 무언가를 뚫어지게 보는 모습이에요! 👁️',
     },
     related: [
-      { char: '鼻', name: '코 비', pinyin: 'bí' },
-      { char: '鼾', name: '코골 한', pinyin: 'hān' },
-      { char: '鼽', name: '코막힐 구', pinyin: 'qiú' },
-      { char: '鼢', name: '두더지 분', pinyin: 'fén' },
-      { char: '鼩', name: '땃쥐 구', pinyin: 'qú' },
+      {
+        char: '观',
+        name: '볼 관',
+        pinyin: 'guān',
+        story:
+          '황새(又)처럼 눈(见)을 크게 뜨고 아주 멀리 있는 풍경까지 자세히 구경해요! 🔭',
+      },
+      {
+        char: '规',
+        name: '법 규',
+        pinyin: 'guī',
+        story:
+          '사내(夫)들이 똑바로 지키는지 두 눈(见) 부릅뜨고 지켜보는 규칙과 법이에요! 📏',
+      },
+      {
+        char: '视',
+        name: '볼 시',
+        pinyin: 'shì',
+        story:
+          '제단(礻)에 복을 빌 때 신이 눈(见)으로 나를 잘 보살펴 주시는지 유심히 살펴봐요! 📺',
+      },
+      {
+        char: '觉',
+        name: '깨달을 각',
+        pinyin: 'jué',
+        story:
+          '배움(学)을 통해 눈(见)이 번쩍 뜨이며 모르는 것을 아하! 하고 깨달아요! 💡',
+      },
+      {
+        char: '览',
+        name: '볼 람',
+        pinyin: 'lǎn',
+        story:
+          '감시하듯(监) 두 눈(见)으로 높은 곳에서 아래를 두루두루 넓게 훑어보며 관람해요! 🎡',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 18 : 설 립 (立)
+  // ----------------------------------------
   {
+    level: 5,
     day: 98,
-    level: 5,
-    emoji: '👅',
     radical: {
-      char: '舌',
-      name: '혀 설',
-      cnName: '舌字旁',
-      pinyin: 'shé',
-      cnPinyin: 'shé zì páng',
-      desc: '혀',
+      char: '立',
+      name: '설 립',
+      cnName: '立字旁',
+      cnPinyin: 'lì zì páng',
+      story:
+        '사람이 두 팔을 벌리고 땅 위에 꼿꼿하게 서 있는 듬직한 모습이에요! 🧍',
     },
     related: [
-      { char: '舌', name: '혀 설', pinyin: 'shé' },
-      { char: '甜', name: '달 첨', pinyin: 'tián' },
-      { char: '乱', name: '어지러울 란', pinyin: 'luàn' },
-      { char: '辞', name: '말씀 사', pinyin: 'cí' },
-      { char: '舔', name: '핥을 첨', pinyin: 'tiǎn' },
+      {
+        char: '站',
+        name: '설 참',
+        pinyin: 'zhàn',
+        story:
+          '점(占)을 치듯 한 자리에 꼿꼿이 서(立)서 기다리는 버스 정류장이나 기차역이에요! 🚏',
+      },
+      {
+        char: '童',
+        name: '아이 동',
+        pinyin: 'tóng',
+        story:
+          '마을(里) 어귀에 우두커니 서(立)서 장난치기를 기다리는 귀여운 꼬마 아이예요! 👦',
+      },
+      {
+        char: '竞',
+        name: '다툴 경',
+        pinyin: 'jìng',
+        story:
+          '두 사람(兄)이 나란히 서(立)서 누가 더 잘하나 겨루고 엎치락뒤치락 경쟁해요! 🏁',
+      },
+      {
+        char: '竟',
+        name: '마침내 경',
+        pinyin: 'jìng',
+        story:
+          '소리(音)가 끝나듯 꼿꼿이 서서(立) 끝까지 버텨내어 마침내 일을 끝마쳤어요! 🎯',
+      },
+      {
+        char: '亲',
+        name: '친할 친',
+        pinyin: 'qīn',
+        story:
+          '나무(木) 곁에 바짝 서서(立) 부모님처럼 아주 가깝고 친밀하게 보살펴 주어요! 💞',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 19 : [마법의 글자] 푸를 청 (青)
+  // ----------------------------------------
   {
+    level: 5,
     day: 99,
-    level: 5,
-    emoji: '🦴',
     radical: {
-      char: '骨',
-      name: '뼈 골',
-      cnName: '骨字旁',
-      pinyin: 'gǔ',
-      cnPinyin: 'gǔ zì páng',
-      desc: '뼈',
+      char: '青',
+      name: '푸를 청',
+      cnName: '青字旁',
+      cnPinyin: 'qīng zì páng',
+      story:
+        '우물(井) 주위에 돋아난 푸른 풀처럼, 부수와 결합하면 신기하게 글자가 변해요! 🌿',
     },
     related: [
-      { char: '骨', name: '뼈 골', pinyin: 'gǔ' },
-      { char: '骂', name: '꾸짖을 매', pinyin: 'mà' },
-      { char: '骄', name: '교만할 교', pinyin: 'jiāo' },
-      { char: '骰', name: '주사위 투', pinyin: 'tóu' },
-      { char: '髓', name: '골수 수', pinyin: 'suǐ' },
+      {
+        char: '晴',
+        name: '맑을 청',
+        pinyin: 'qíng',
+        story:
+          '푸른(青) 하늘에 쨍쨍한 해(日)가 떠서 구름 한 점 없이 화창하고 맑아요! ☀️',
+      },
+      {
+        char: '清',
+        name: '맑을 청',
+        pinyin: 'qīng',
+        story:
+          '푸른(青) 산에서 흘러나오는 물(氵)이 바닥이 다 보일 만큼 아주 투명하고 맑아요! 💧',
+      },
+      {
+        char: '请',
+        name: '청할 청',
+        pinyin: 'qǐng',
+        story:
+          '푸른(青) 마음으로 사람에게 공손하게 말(讠)을 건네며 부탁하고 청해요! 🙏',
+      },
+      {
+        char: '情',
+        name: '뜻 정',
+        pinyin: 'qíng',
+        story:
+          '푸른(青) 새싹처럼 내 마음(忄)속 깊은 곳에서 우러나오는 따뜻한 정과 감정이에요! 🥰',
+      },
+      {
+        char: '睛',
+        name: '눈동자 정',
+        pinyin: 'jīng',
+        story:
+          '푸른(青) 빛이 맑게 감도는 사람의 눈(目) 속 초롱초롱한 눈동자예요! 👀',
+      },
     ],
   },
+
+  // ----------------------------------------
+  // 🌟 LV.5 - Day 20 : [마법의 글자] 머무를 간 (艮)
+  // ----------------------------------------
   {
-    day: 100,
     level: 5,
-    emoji: '🩸',
+    day: 100,
     radical: {
-      char: '血',
-      name: '피 혈',
-      cnName: '血字旁',
-      pinyin: 'xuè',
-      cnPinyin: 'xuè zì páng',
-      desc: '피',
+      char: '艮',
+      name: '머무를 간',
+      cnName: '艮字旁',
+      cnPinyin: 'gèn zì páng',
+      story:
+        '사람이 뒤를 돌아보는 모습으로, 고집을 부리거나 한곳에 멈춰 있는 성질을 뜻해요! 🛑',
     },
     related: [
-      { char: '血', name: '피 혈', pinyin: 'xuè' },
-      { char: '衅', name: '피바를 흔', pinyin: 'xìn' },
-      { char: '衄', name: '코피 뉵', pinyin: 'nǜ' },
-      { char: '衃', name: '엉긴피 배', pinyin: 'pēi' },
-      { char: '衂', name: '코피 뉵', pinyin: 'nǜ' },
+      {
+        char: '根',
+        name: '뿌리 근',
+        pinyin: 'gēn',
+        story:
+          '나무(木)가 땅속에 고집스럽게(艮) 틀어박혀 영양분을 빨아들이는 튼튼한 뿌리예요! 🌳',
+      },
+      {
+        char: '跟',
+        name: '발뒤꿈치 근',
+        pinyin: 'gēn',
+        story:
+          '발(足) 중에서 끝까지 땅에 버티고(艮) 서 있는 뒤쪽 부분, 뒤꿈치예요! 🦶',
+      },
+      {
+        char: '很',
+        name: '매우 흔',
+        pinyin: 'hěn',
+        story:
+          '사람(彳)이 고집스럽게(艮) 멈추지 않고 계속해서 나아가니 아주, 매우 대단해요! 💯',
+      },
+      {
+        char: '狠',
+        name: '모질 한',
+        pinyin: 'hěn',
+        story:
+          '개(犭)가 고집(艮)을 부리며 으르렁거리고 꽉 물고 놓아주지 않을 만큼 아주 모질어요! 🐺',
+      },
+      {
+        char: '银',
+        name: '은 은',
+        pinyin: 'yín',
+        story:
+          '쇠(钅) 중에서 색깔이 변하지 않고 끝까지(艮) 눈부시게 하얀빛을 내는 은이에요! 🥈',
+      },
     ],
   },
 ];
