@@ -17,9 +17,8 @@
 body,
 html {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* 💡 100vh 대신 100dvh 사용 (모바일 주소창/하단바 제외한 실제 보이는 영역) */
   overflow: hidden;
-  /* 한글과 한자(SC) 폰트 동시 적용 */
   font-family: 'Noto Sans KR', 'Noto Sans SC', sans-serif;
   background-color: var(--bg);
   color: var(--text);
@@ -169,11 +168,10 @@ html {
 
 /* 학습 화면 */
 #study-view {
-  flex: 1;
+  height: 100dvh; /* 전체 높이 꽉 채움 */
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  justify-content: space-between;
+  padding: 15px 20px 20px;
 }
 
 .study-nav {
@@ -240,19 +238,21 @@ html {
   font-weight: 700;
 }
 
-/* 큼직한 한자 캔버스 */
+/* 한자 캔버스 컨테이너 */
 .writer-container {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  min-height: 0; /* 💡 핵심: 화면 세로가 짧을 때 다른 요소들을 밑으로 밀어내지 않고 스스로 줄어듦 */
+  margin: 10px 0;
 }
 
 #writer-target {
-  width: 100%;
-  max-width: 350px;
-  aspect-ratio: 1;
+  /* 크기는 JS에서 높이에 맞춰 동적으로 조절할 것이므로 max-width 삭제 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image:
     linear-gradient(#f0f0f0 2px, transparent 2px),
     linear-gradient(90deg, #f0f0f0 2px, transparent 2px);
@@ -273,9 +273,15 @@ html {
   margin-bottom: 10px;
 }
 
+/* 버튼 그룹을 항상 바닥으로 밀어냄 */
 .btn-group {
   display: flex;
   gap: 15px;
+  margin-top: auto; /* 💡 상단 요소들 크기와 상관없이 항상 바닥에 고정 */
+  padding-bottom: env(
+    safe-area-inset-bottom,
+    10px
+  ); /* 아이폰 하단 홈 바 영역 침범 방지 */
 }
 .action-btn {
   flex: 1;
