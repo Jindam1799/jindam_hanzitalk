@@ -26,9 +26,6 @@ html {
   flex-direction: column;
 }
 
-/* =========================================
-   1. 인트로 화면
-   ========================================= */
 #intro-screen {
   position: absolute;
   top: 0;
@@ -67,9 +64,6 @@ html {
   }
 }
 
-/* =========================================
-   2. 로비 헤더 & 레벨 선택기
-   ========================================= */
 .header {
   padding: 15px 20px;
   background: white;
@@ -108,7 +102,6 @@ html {
   position: relative;
   z-index: 10;
 }
-
 .level-toggle-btn {
   width: 100%;
   padding: 15px;
@@ -123,7 +116,6 @@ html {
   align-items: center;
   box-shadow: 0 2px 5px rgba(225, 29, 72, 0.1);
 }
-
 .level-dropdown-menu {
   position: absolute;
   top: 75px;
@@ -136,7 +128,6 @@ html {
   flex-direction: column;
   overflow: hidden;
 }
-
 .lvl-btn {
   padding: 18px;
   border: none;
@@ -154,9 +145,6 @@ html {
   background: #f8f9fa;
 }
 
-/* =========================================
-   3. 캘린더 (부수 그리드) & 복습장 그리드
-   ========================================= */
 #calendar-view {
   flex: 1;
   display: grid;
@@ -166,7 +154,6 @@ html {
   overflow-y: auto;
   align-content: start;
 }
-
 .day-btn {
   aspect-ratio: 1;
   border-radius: 16px;
@@ -180,7 +167,6 @@ html {
   gap: 5px;
   transition: all 0.2s ease;
 }
-
 .day-btn .char {
   font-size: 2.2rem;
   font-family: 'Noto Sans SC', sans-serif;
@@ -192,7 +178,6 @@ html {
   color: var(--text-muted);
   font-weight: 700;
 }
-
 .day-btn.completed {
   background-color: var(--primary);
   color: white;
@@ -202,9 +187,6 @@ html {
   color: white;
 }
 
-/* =========================================
-   4. 💡 난이도 선택 팝업 모달
-   ========================================= */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -217,7 +199,6 @@ html {
   align-items: center;
   z-index: 1000;
 }
-
 .modal-content {
   background: white;
   width: 90%;
@@ -227,7 +208,6 @@ html {
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-
 .modal-content h2 {
   margin-bottom: 10px;
   font-size: 1.5rem;
@@ -238,14 +218,12 @@ html {
   margin-bottom: 20px;
   font-size: 0.95rem;
 }
-
 .level-buttons {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-bottom: 25px;
 }
-
 .level-btn {
   background: #f8f9fa;
   border: 2px solid #e9ecef;
@@ -257,7 +235,6 @@ html {
   gap: 5px;
   transition: all 0.2s;
 }
-
 .level-btn strong {
   font-size: 1.1rem;
   color: var(--text);
@@ -274,7 +251,6 @@ html {
   opacity: 0.5;
   background: #eee;
 }
-
 .modal-buttons {
   display: flex;
   gap: 10px;
@@ -284,9 +260,6 @@ html {
   padding: 15px;
 }
 
-/* =========================================
-   5. 💡 복습장 화면
-   ========================================= */
 #review-list-view {
   flex: 1;
   padding: 20px;
@@ -305,16 +278,12 @@ html {
   align-content: start;
 }
 
-/* =========================================
-   6. 학습 화면
-   ========================================= */
 #study-view {
   height: 100dvh;
   display: flex;
   flex-direction: column;
   padding: 15px 20px 20px;
 }
-
 .study-nav {
   display: flex;
   justify-content: space-between;
@@ -337,7 +306,6 @@ html {
   border-radius: 20px;
   font-size: 0.9rem;
 }
-
 .study-info {
   text-align: center;
   margin-bottom: 10px;
@@ -373,8 +341,6 @@ html {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-
-/* 💡 핵심: 모바일 크롬/사파리에서 스피커 아이콘(SVG)이 무조건 흰색/빨간색으로 보이도록 강제 지정 */
 .tts-btn svg {
   width: 24px;
   height: 24px;
@@ -382,7 +348,6 @@ html {
   pointer-events: none;
 }
 
-/* 캔버스 컨테이너 (자동 크기 조절 핵심) */
 .writer-container {
   flex: 1;
   display: flex;
@@ -391,7 +356,6 @@ html {
   min-height: 0;
   margin: 10px 0;
 }
-
 #writer-target {
   display: flex;
   justify-content: center;
@@ -415,7 +379,6 @@ html {
   color: var(--primary);
   margin-bottom: 10px;
 }
-
 .btn-group {
   display: flex;
   gap: 15px;
@@ -438,20 +401,15 @@ html {
   display: none;
   box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
 }
-
 .brand-footer {
   display: none;
 }
 
-/* =========================================
-   7. 복습 상세 선택 모달 스타일 추가
-   ========================================= */
 #review-char-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
-
 #review-char-grid .day-btn {
   aspect-ratio: 1;
   border-radius: 12px;
@@ -463,4 +421,40 @@ html {
 #review-char-grid .name {
   font-size: 0.75rem;
   word-break: keep-all;
+}
+
+/* =========================================
+   8. 💡 스토리 팝업 카드 스타일
+   ========================================= */
+.story-card {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  background: #fff0f2;
+  border: 1px solid #ffe4e6;
+  padding: 12px 18px;
+  border-radius: 12px;
+  margin: 0 auto 15px auto;
+  max-width: 350px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.story-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story-icon {
+  font-size: 1.5rem;
+}
+
+#story-text {
+  font-size: 0.95rem;
+  color: #9f1239;
+  line-height: 1.4;
+  word-break: keep-all;
+  font-weight: bold;
 }
