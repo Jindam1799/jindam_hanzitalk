@@ -61,7 +61,6 @@
       <div class="modal-content">
         <h2 id="modal-day-title">Day X 학습 설정</h2>
         <p>오늘의 학습 난이도를 선택해 주세요.</p>
-
         <div class="level-buttons">
           <button class="level-btn" onclick="confirmStudyStart('beginner')">
             <strong>🌱 초급 (기초 한자)</strong>
@@ -76,7 +75,6 @@
             <span>부수 + 자주 쓰는 사자성어</span>
           </button>
         </div>
-
         <div class="modal-buttons" style="justify-content: center">
           <button class="action-btn" id="modal-cancel-btn">뒤로 가기</button>
         </div>
@@ -151,6 +149,11 @@
 
       <div class="writer-container">
         <div id="writer-target"></div>
+      </div>
+
+      <div id="story-card" class="story-card">
+        <span class="story-icon">💡</span>
+        <span id="story-text"></span>
       </div>
 
       <div class="status-msg" id="status-msg"></div>
