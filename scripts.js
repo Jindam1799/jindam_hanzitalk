@@ -84,7 +84,7 @@ function startStudy(data) {
 
 function loadHanziWriter() {
   document.getElementById('writer-target').innerHTML = '';
-  document.getElementById('next-btn').style.display = 'none'; // 처음엔 다음 버튼 숨김
+  document.getElementById('next-btn').style.display = 'none';
   document.getElementById('status-msg').innerText = '';
 
   let targetData =
@@ -101,11 +101,19 @@ function loadHanziWriter() {
 
   playTTS(targetData.char);
 
-  const containerSize = document.getElementById('writer-target').clientWidth;
+  // 💡 수정된 부분: 너비뿐만 아니라 "남은 세로 높이"도 계산해서 그중 작은 값으로 정사각형 크기를 맞춤
+  const container = document.querySelector('.writer-container');
+  let size = Math.min(container.clientWidth, container.clientHeight);
+  if (size > 350) size = 350; // 최대 크기 제한
+
+  // 타겟 박스 크기도 자바스크립트에서 확정해 줌
+  const targetEl = document.getElementById('writer-target');
+  targetEl.style.width = size + 'px';
+  targetEl.style.height = size + 'px';
 
   writer = HanziWriter.create('writer-target', targetData.char, {
-    width: containerSize,
-    height: containerSize,
+    width: size, // 💡 동적으로 계산된 크기 적용
+    height: size, // 💡 동적으로 계산된 크기 적용
     padding: 20,
     showOutline: true,
     strokeAnimationSpeed: 2,
