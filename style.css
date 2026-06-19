@@ -17,7 +17,7 @@
 body,
 html {
   width: 100vw;
-  height: 100dvh; /* 모바일 브라우저 주소창/하단바 제외 영역 꽉 채움 */
+  height: 100dvh;
   overflow: hidden;
   font-family: 'Noto Sans KR', 'Noto Sans SC', sans-serif;
   background-color: var(--bg);
@@ -90,7 +90,7 @@ html {
 }
 .setting-wrapper {
   display: none;
-} /* 테마 색상 선택기는 모바일에선 일단 숨김 */
+}
 
 .review-btn {
   background: #ffe4e6;
@@ -203,7 +203,7 @@ html {
 }
 
 /* =========================================
-   4. 💡 난이도 선택 팝업 모달 (새로 추가됨)
+   4. 💡 난이도 선택 팝업 모달
    ========================================= */
 .modal-overlay {
   position: fixed;
@@ -211,7 +211,7 @@ html {
   left: 0;
   width: 100vw;
   height: 100dvh;
-  background: rgba(0, 0, 0, 0.6); /* 반투명 검은 배경 */
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -285,7 +285,7 @@ html {
 }
 
 /* =========================================
-   5. 💡 복습장 화면 (새로 추가됨)
+   5. 💡 복습장 화면
    ========================================= */
 #review-list-view {
   flex: 1;
@@ -361,17 +361,25 @@ html {
   font-weight: 700;
 }
 .tts-btn {
-  background: none;
-  border: none;
-  width: 35px;
-  height: 35px;
-  fill: var(--primary);
-  padding: 5px;
-  border-radius: 50%;
   background: #ffe4e6;
-  display: flex;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 💡 핵심: 모바일 크롬/사파리에서 스피커 아이콘(SVG)이 무조건 흰색/빨간색으로 보이도록 강제 지정 */
+.tts-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--primary) !important;
+  pointer-events: none;
 }
 
 /* 캔버스 컨테이너 (자동 크기 조절 핵심) */
@@ -431,21 +439,16 @@ html {
   box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
 }
 
-/* 하단 브랜드 푸터 (숨김 처리) */
 .brand-footer {
   display: none;
 }
-
-/* (기존 style.css 내용 전부 유지) */
-
-/* ... (이전 코드 생략) ... */
 
 /* =========================================
    7. 복습 상세 선택 모달 스타일 추가
    ========================================= */
 #review-char-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3칸씩 두 줄로 배치 */
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
