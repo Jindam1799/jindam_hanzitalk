@@ -11,6 +11,7 @@ const curriculum = [
       name: '사람 인',
       cnName: '人字旁',
       pinyin: 'rén',
+      cnPinyin: 'rén zì páng',
       desc: '사람',
     },
     related: [
@@ -30,6 +31,7 @@ const curriculum = [
       name: '입 구',
       cnName: '口字旁',
       pinyin: 'kǒu',
+      cnPinyin: 'kǒu zì páng',
       desc: '입',
     },
     related: [
@@ -49,6 +51,7 @@ const curriculum = [
       name: '나무 목',
       cnName: '木字旁',
       pinyin: 'mù',
+      cnPinyin: 'mù zì páng',
       desc: '나무',
     },
     related: [
@@ -68,6 +71,7 @@ const curriculum = [
       name: '물 수',
       cnName: '水字旁',
       pinyin: 'shuǐ',
+      cnPinyin: 'shuǐ zì páng',
       desc: '물',
     },
     related: [
@@ -87,6 +91,7 @@ const curriculum = [
       name: '불 화',
       cnName: '火字旁',
       pinyin: 'huǒ',
+      cnPinyin: 'huǒ zì páng',
       desc: '불',
     },
     related: [
@@ -106,6 +111,7 @@ const curriculum = [
       name: '날 일',
       cnName: '日字旁',
       pinyin: 'rì',
+      cnPinyin: 'rì zì páng',
       desc: '해',
     },
     related: [
@@ -125,6 +131,7 @@ const curriculum = [
       name: '달 월',
       cnName: '月字旁',
       pinyin: 'yuè',
+      cnPinyin: 'yuè zì páng',
       desc: '달',
     },
     related: [
@@ -144,6 +151,7 @@ const curriculum = [
       name: '메 산',
       cnName: '山字旁',
       pinyin: 'shān',
+      cnPinyin: 'shān zì páng',
       desc: '산',
     },
     related: [
@@ -163,6 +171,7 @@ const curriculum = [
       name: '계집 녀',
       cnName: '女字旁',
       pinyin: 'nǚ',
+      cnPinyin: 'nǚ zì páng',
       desc: '여자',
     },
     related: [
@@ -182,6 +191,7 @@ const curriculum = [
       name: '아들 자',
       cnName: '子字旁',
       pinyin: 'zǐ',
+      cnPinyin: 'zǐ zì páng',
       desc: '아이',
     },
     related: [
@@ -201,6 +211,7 @@ const curriculum = [
       name: '눈 목',
       cnName: '目字旁',
       pinyin: 'mù',
+      cnPinyin: 'mù zì páng',
       desc: '눈',
     },
     related: [
@@ -220,6 +231,7 @@ const curriculum = [
       name: '귀 이',
       cnName: '耳字旁',
       pinyin: 'ěr',
+      cnPinyin: 'ěr zì páng',
       desc: '귀',
     },
     related: [
@@ -239,6 +251,7 @@ const curriculum = [
       name: '손 수',
       cnName: '手字旁',
       pinyin: 'shǒu',
+      cnPinyin: 'shǒu zì páng',
       desc: '손',
     },
     related: [
@@ -258,6 +271,7 @@ const curriculum = [
       name: '발 족',
       cnName: '足字旁',
       pinyin: 'zú',
+      cnPinyin: 'zú zì páng',
       desc: '발',
     },
     related: [
@@ -277,6 +291,7 @@ const curriculum = [
       name: '마음 심',
       cnName: '心字底',
       pinyin: 'xīn',
+      cnPinyin: 'xīn zì dǐ',
       desc: '마음',
     },
     related: [
@@ -296,6 +311,7 @@ const curriculum = [
       name: '비 우',
       cnName: '雨字头',
       pinyin: 'yǔ',
+      cnPinyin: 'yǔ zì tóu',
       desc: '비',
     },
     related: [
@@ -315,6 +331,7 @@ const curriculum = [
       name: '문 문',
       cnName: '门字框',
       pinyin: 'mén',
+      cnPinyin: 'mén zì kuàng',
       desc: '문',
     },
     related: [
@@ -334,6 +351,7 @@ const curriculum = [
       name: '갓머리',
       cnName: '宝盖头',
       pinyin: 'mián',
+      cnPinyin: 'bǎo gài tóu',
       desc: '집',
     },
     related: [
@@ -353,6 +371,7 @@ const curriculum = [
       name: '초두머리',
       cnName: '草字头',
       pinyin: 'cǎo',
+      cnPinyin: 'cǎo zì tóu',
       desc: '풀',
     },
     related: [
@@ -372,6 +391,7 @@ const curriculum = [
       name: '말씀 언',
       cnName: '言字旁',
       pinyin: 'yán',
+      cnPinyin: 'yán zì páng',
       desc: '말',
     },
     related: [
@@ -391,6 +411,7 @@ const curriculum = [
       name: '쇠 금',
       cnName: '金字旁',
       pinyin: 'jīn',
+      cnPinyin: 'jīn zì páng',
       desc: '쇠',
     },
     related: [
@@ -410,6 +431,7 @@ const curriculum = [
       name: '밥 식',
       cnName: '食字旁',
       pinyin: 'shí',
+      cnPinyin: 'shí zì páng',
       desc: '먹다',
     },
     related: [
@@ -429,6 +451,7 @@ const curriculum = [
       name: '실 사',
       cnName: '绞丝底',
       pinyin: 'mì',
+      cnPinyin: 'jiǎo sī dǐ',
       desc: '실',
     },
     related: [
@@ -452,6 +475,7 @@ const curriculum = [
       name: '사람인변',
       cnName: '单人旁',
       pinyin: 'rén',
+      cnPinyin: 'dān rén páng',
       desc: '사람(人)',
     },
     related: [
@@ -471,6 +495,7 @@ const curriculum = [
       name: '삼수변',
       cnName: '三点水',
       pinyin: 'shuǐ',
+      cnPinyin: 'sān diǎn shuǐ',
       desc: '물(水)',
     },
     related: [
@@ -490,6 +515,7 @@ const curriculum = [
       name: '재방변',
       cnName: '提手旁',
       pinyin: 'shǒu',
+      cnPinyin: 'tí shǒu páng',
       desc: '손(手)',
     },
     related: [
@@ -509,6 +535,7 @@ const curriculum = [
       name: '심방변',
       cnName: '竖心旁',
       pinyin: 'xīn',
+      cnPinyin: 'shù xīn páng',
       desc: '마음(心)',
     },
     related: [
@@ -528,6 +555,7 @@ const curriculum = [
       name: '말씀언변',
       cnName: '言字旁',
       pinyin: 'yán',
+      cnPinyin: 'yán zì páng',
       desc: '말(言)',
     },
     related: [
@@ -547,6 +575,7 @@ const curriculum = [
       name: '식변',
       cnName: '食字旁',
       pinyin: 'shí',
+      cnPinyin: 'shí zì páng',
       desc: '음식(食)',
     },
     related: [
@@ -566,6 +595,7 @@ const curriculum = [
       name: '쇠금변',
       cnName: '金字旁',
       pinyin: 'jīn',
+      cnPinyin: 'jīn zì páng',
       desc: '쇠(金)',
     },
     related: [
@@ -585,6 +615,7 @@ const curriculum = [
       name: '실사변',
       cnName: '绞丝旁',
       pinyin: 'mì',
+      cnPinyin: 'jiǎo sī páng',
       desc: '실(糸)',
     },
     related: [
@@ -604,6 +635,7 @@ const curriculum = [
       name: '개사슴록변',
       cnName: '反犬旁',
       pinyin: 'quǎn',
+      cnPinyin: 'fǎn quǎn páng',
       desc: '동물(犬)',
     },
     related: [
@@ -623,6 +655,7 @@ const curriculum = [
       name: '보일시변',
       cnName: '示字旁',
       pinyin: 'shì',
+      cnPinyin: 'shì zì páng',
       desc: '제사·복(示)',
     },
     related: [
@@ -642,6 +675,7 @@ const curriculum = [
       name: '선칼도방',
       cnName: '立刀旁',
       pinyin: 'dāo',
+      cnPinyin: 'lì dāo páng',
       desc: '칼(刀)',
     },
     related: [
@@ -661,6 +695,7 @@ const curriculum = [
       name: '책받침',
       cnName: '走之旁',
       pinyin: 'chuò',
+      cnPinyin: 'zǒu zhī páng',
       desc: '가다(辵)',
     },
     related: [
@@ -680,6 +715,7 @@ const curriculum = [
       name: '좌/우부방',
       cnName: '双耳旁',
       pinyin: 'fù',
+      cnPinyin: 'shuāng ěr páng',
       desc: '언덕·마을(阜/邑)',
     },
     related: [
@@ -699,6 +735,7 @@ const curriculum = [
       name: '옷의변',
       cnName: '衣字旁',
       pinyin: 'yī',
+      cnPinyin: 'yī zì páng',
       desc: '옷(衣)',
     },
     related: [
@@ -718,6 +755,7 @@ const curriculum = [
       name: '연화발',
       cnName: '四点底',
       pinyin: 'huǒ',
+      cnPinyin: 'sì diǎn dǐ',
       desc: '불(火)',
     },
     related: [
@@ -737,6 +775,7 @@ const curriculum = [
       name: '이수변',
       cnName: '两点水',
       pinyin: 'bīng',
+      cnPinyin: 'liǎng diǎn shuǐ',
       desc: '얼음(冰)',
     },
     related: [
@@ -756,6 +795,7 @@ const curriculum = [
       name: '육달월',
       cnName: '肉月旁',
       pinyin: 'ròu',
+      cnPinyin: 'ròu yuè páng',
       desc: '고기·몸(肉)',
     },
     related: [
@@ -779,6 +819,7 @@ const curriculum = [
       name: '밭 전',
       cnName: '田字旁',
       pinyin: 'tián',
+      cnPinyin: 'tián zì páng',
       desc: '밭',
     },
     related: [
@@ -798,6 +839,7 @@ const curriculum = [
       name: '돌 석',
       cnName: '石字旁',
       pinyin: 'shí',
+      cnPinyin: 'shí zì páng',
       desc: '돌',
     },
     related: [
@@ -817,6 +859,7 @@ const curriculum = [
       name: '대 죽',
       cnName: '竹字头',
       pinyin: 'zhú',
+      cnPinyin: 'zhú zì tóu',
       desc: '대나무',
     },
     related: [
@@ -836,6 +879,7 @@ const curriculum = [
       name: '조개 패',
       cnName: '贝字旁',
       pinyin: 'bèi',
+      cnPinyin: 'bèi zì páng',
       desc: '조개·돈',
     },
     related: [
@@ -855,6 +899,7 @@ const curriculum = [
       name: '말 마',
       cnName: '马字旁',
       pinyin: 'mǎ',
+      cnPinyin: 'mǎ zì páng',
       desc: '말',
     },
     related: [
@@ -874,6 +919,7 @@ const curriculum = [
       name: '새 조',
       cnName: '鸟字旁',
       pinyin: 'niǎo',
+      cnPinyin: 'niǎo zì páng',
       desc: '새',
     },
     related: [
@@ -893,6 +939,7 @@ const curriculum = [
       name: '물고기 어',
       cnName: '鱼字旁',
       pinyin: 'yú',
+      cnPinyin: 'yú zì páng',
       desc: '물고기',
     },
     related: [
@@ -912,6 +959,7 @@ const curriculum = [
       name: '소 우',
       cnName: '牛字旁',
       pinyin: 'niú',
+      cnPinyin: 'niú zì páng',
       desc: '소',
     },
     related: [
@@ -931,6 +979,7 @@ const curriculum = [
       name: '양 양',
       cnName: '羊字旁',
       pinyin: 'yáng',
+      cnPinyin: 'yáng zì páng',
       desc: '양',
     },
     related: [
@@ -950,6 +999,7 @@ const curriculum = [
       name: '구슬옥변',
       cnName: '王字旁',
       pinyin: 'wáng',
+      cnPinyin: 'wáng zì páng',
       desc: '옥',
     },
     related: [
@@ -969,6 +1019,7 @@ const curriculum = [
       name: '수레 거',
       cnName: '车字旁',
       pinyin: 'chē',
+      cnPinyin: 'chē zì páng',
       desc: '수레',
     },
     related: [
@@ -988,6 +1039,7 @@ const curriculum = [
       name: '배 주',
       cnName: '舟字旁',
       pinyin: 'zhōu',
+      cnPinyin: 'zhōu zì páng',
       desc: '배',
     },
     related: [
@@ -1007,6 +1059,7 @@ const curriculum = [
       name: '깃 우',
       cnName: '羽字旁',
       pinyin: 'yǔ',
+      cnPinyin: 'yǔ zì páng',
       desc: '깃털',
     },
     related: [
@@ -1026,6 +1079,7 @@ const curriculum = [
       name: '그물 망',
       cnName: '网字头',
       pinyin: 'wǎng',
+      cnPinyin: 'wǎng zì tóu',
       desc: '그물',
     },
     related: [
@@ -1045,6 +1099,7 @@ const curriculum = [
       name: '콩 두',
       cnName: '豆字旁',
       pinyin: 'dòu',
+      cnPinyin: 'dòu zì páng',
       desc: '콩',
     },
     related: [
@@ -1064,6 +1119,7 @@ const curriculum = [
       name: '오이 과',
       cnName: '瓜字旁',
       pinyin: 'guā',
+      cnPinyin: 'guā zì páng',
       desc: '참외·오이',
     },
     related: [
@@ -1083,6 +1139,7 @@ const curriculum = [
       name: '삼 마',
       cnName: '麻字头',
       pinyin: 'má',
+      cnPinyin: 'má zì tóu',
       desc: '삼',
     },
     related: [
@@ -1102,6 +1159,7 @@ const curriculum = [
       name: '벼 화',
       cnName: '禾字旁',
       pinyin: 'hé',
+      cnPinyin: 'hé zì páng',
       desc: '벼',
     },
     related: [
@@ -1121,6 +1179,7 @@ const curriculum = [
       name: '쌀 미',
       cnName: '米字旁',
       pinyin: 'mǐ',
+      cnPinyin: 'mǐ zì páng',
       desc: '쌀',
     },
     related: [
@@ -1140,6 +1199,7 @@ const curriculum = [
       name: '엄 호',
       cnName: '广字旁',
       pinyin: 'guǎng',
+      cnPinyin: 'guǎng zì páng',
       desc: '집',
     },
     related: [
@@ -1163,6 +1223,7 @@ const curriculum = [
       name: '다닐 행',
       cnName: '行字旁',
       pinyin: 'xíng',
+      cnPinyin: 'xíng zì páng',
       desc: '가다',
     },
     related: [
@@ -1182,6 +1243,7 @@ const curriculum = [
       name: '달릴 주',
       cnName: '走字旁',
       pinyin: 'zǒu',
+      cnPinyin: 'zǒu zì páng',
       desc: '달리다',
     },
     related: [
@@ -1201,6 +1263,7 @@ const curriculum = [
       name: '그칠 지',
       cnName: '止字旁',
       pinyin: 'zhǐ',
+      cnPinyin: 'zhǐ zì páng',
       desc: '멈추다',
     },
     related: [
@@ -1220,6 +1283,7 @@ const curriculum = [
       name: '또 우',
       cnName: '又字旁',
       pinyin: 'yòu',
+      cnPinyin: 'yòu zì páng',
       desc: '손',
     },
     related: [
@@ -1239,6 +1303,7 @@ const curriculum = [
       name: '손톱 조',
       cnName: '爪字头',
       pinyin: 'zhǎo',
+      cnPinyin: 'zhǎo zì tóu',
       desc: '손톱',
     },
     related: [
@@ -1258,6 +1323,7 @@ const curriculum = [
       name: '등글월문',
       cnName: '反文旁',
       pinyin: 'pū',
+      cnPinyin: 'fǎn wén páng',
       desc: '치다',
     },
     related: [
@@ -1277,6 +1343,7 @@ const curriculum = [
       name: '몽둥이 수',
       cnName: '殳字旁',
       pinyin: 'shū',
+      cnPinyin: 'shū zì páng',
       desc: '무기',
     },
     related: [
@@ -1296,6 +1363,7 @@ const curriculum = [
       name: '활 궁',
       cnName: '弓字旁',
       pinyin: 'gōng',
+      cnPinyin: 'gōng zì páng',
       desc: '활',
     },
     related: [
@@ -1315,6 +1383,7 @@ const curriculum = [
       name: '창 과',
       cnName: '戈字旁',
       pinyin: 'gē',
+      cnPinyin: 'gē zì páng',
       desc: '창',
     },
     related: [
@@ -1334,6 +1403,7 @@ const curriculum = [
       name: '붓 율',
       cnName: '聿字旁',
       pinyin: 'yù',
+      cnPinyin: 'yù zì páng',
       desc: '붓',
     },
     related: [
@@ -1353,6 +1423,7 @@ const curriculum = [
       name: '몸 신',
       cnName: '身字旁',
       pinyin: 'shēn',
+      cnPinyin: 'shēn zì páng',
       desc: '몸',
     },
     related: [
@@ -1372,6 +1443,7 @@ const curriculum = [
       name: '도끼 근',
       cnName: '斤字旁',
       pinyin: 'jīn',
+      cnPinyin: 'jīn zì páng',
       desc: '도끼',
     },
     related: [
@@ -1391,6 +1463,7 @@ const curriculum = [
       name: '하품 흠',
       cnName: '欠字旁',
       pinyin: 'qiàn',
+      cnPinyin: 'qiàn zì páng',
       desc: '하품하다',
     },
     related: [
@@ -1410,6 +1483,7 @@ const curriculum = [
       name: '뒤져올치',
       cnName: '折文旁',
       pinyin: 'zhǐ',
+      cnPinyin: 'zhé wén páng',
       desc: '천천히 걷다',
     },
     related: [
@@ -1429,6 +1503,7 @@ const curriculum = [
       name: '마디 촌',
       cnName: '寸字旁',
       pinyin: 'cùn',
+      cnPinyin: 'cùn zì páng',
       desc: '재다',
     },
     related: [
@@ -1448,6 +1523,7 @@ const curriculum = [
       name: '지탱할 지',
       cnName: '支字旁',
       pinyin: 'zhī',
+      cnPinyin: 'zhī zì páng',
       desc: '가지치다',
     },
     related: [
@@ -1467,6 +1543,7 @@ const curriculum = [
       name: '날 비',
       cnName: '飞字旁',
       pinyin: 'fēi',
+      cnPinyin: 'fēi zì páng',
       desc: '날다',
     },
     related: [
@@ -1486,6 +1563,7 @@ const curriculum = [
       name: '쓸 용',
       cnName: '用字旁',
       pinyin: 'yòng',
+      cnPinyin: 'yòng zì páng',
       desc: '쓰다',
     },
     related: [
@@ -1505,6 +1583,7 @@ const curriculum = [
       name: '힘 력',
       cnName: '力字旁',
       pinyin: 'lì',
+      cnPinyin: 'lì zì páng',
       desc: '힘쓰다',
     },
     related: [
@@ -1524,6 +1603,7 @@ const curriculum = [
       name: '미칠 급',
       cnName: '及字旁',
       pinyin: 'jí',
+      cnPinyin: 'jí zì páng',
       desc: '미치다',
     },
     related: [
@@ -1547,6 +1627,7 @@ const curriculum = [
       name: '소리 음',
       cnName: '音字旁',
       pinyin: 'yīn',
+      cnPinyin: 'yīn zì páng',
       desc: '소리',
     },
     related: [
@@ -1566,6 +1647,7 @@ const curriculum = [
       name: '빛 색',
       cnName: '色字旁',
       pinyin: 'sè',
+      cnPinyin: 'sè zì páng',
       desc: '색',
     },
     related: [
@@ -1585,6 +1667,7 @@ const curriculum = [
       name: '향기 향',
       cnName: '香字旁',
       pinyin: 'xiāng',
+      cnPinyin: 'xiāng zì páng',
       desc: '향기',
     },
     related: [
@@ -1604,6 +1687,7 @@ const curriculum = [
       name: '날 생',
       cnName: '生字旁',
       pinyin: 'shēng',
+      cnPinyin: 'shēng zì páng',
       desc: '삶',
     },
     related: [
@@ -1623,6 +1707,7 @@ const curriculum = [
       name: '늙을 로',
       cnName: '老字头',
       pinyin: 'lǎo',
+      cnPinyin: 'lǎo zì tóu',
       desc: '늙다',
     },
     related: [
@@ -1642,6 +1727,7 @@ const curriculum = [
       name: '설 립',
       cnName: '立字旁',
       pinyin: 'lì',
+      cnPinyin: 'lì zì páng',
       desc: '서다',
     },
     related: [
@@ -1661,6 +1747,7 @@ const curriculum = [
       name: '스스로 자',
       cnName: '自字旁',
       pinyin: 'zì',
+      cnPinyin: 'zì zì páng',
       desc: '스스로',
     },
     related: [
@@ -1680,6 +1767,7 @@ const curriculum = [
       name: '아닐 비',
       cnName: '非字旁',
       pinyin: 'fēi',
+      cnPinyin: 'fēi zì páng',
       desc: '아니다',
     },
     related: [
@@ -1699,6 +1787,7 @@ const curriculum = [
       name: '흰 백',
       cnName: '白字旁',
       pinyin: 'bái',
+      cnPinyin: 'bái zì páng',
       desc: '희다',
     },
     related: [
@@ -1718,6 +1807,7 @@ const curriculum = [
       name: '검을 흑',
       cnName: '黑字旁',
       pinyin: 'hēi',
+      cnPinyin: 'hēi zì páng',
       desc: '검다',
     },
     related: [
@@ -1737,6 +1827,7 @@ const curriculum = [
       name: '푸를 청',
       cnName: '青字旁',
       pinyin: 'qīng',
+      cnPinyin: 'qīng zì páng',
       desc: '푸르다',
     },
     related: [
@@ -1756,6 +1847,7 @@ const curriculum = [
       name: '붉을 적',
       cnName: '赤字旁',
       pinyin: 'chì',
+      cnPinyin: 'chì zì páng',
       desc: '붉다',
     },
     related: [
@@ -1775,6 +1867,7 @@ const curriculum = [
       name: '보일 시',
       cnName: '示字旁',
       pinyin: 'shì',
+      cnPinyin: 'shì zì páng',
       desc: '보이다',
     },
     related: [
@@ -1794,6 +1887,7 @@ const curriculum = [
       name: '머리 혈',
       cnName: '页字旁',
       pinyin: 'yè',
+      cnPinyin: 'yè zì páng',
       desc: '머리',
     },
     related: [
@@ -1813,6 +1907,7 @@ const curriculum = [
       name: '머리 수',
       cnName: '首字旁',
       pinyin: 'shǒu',
+      cnPinyin: 'shǒu zì páng',
       desc: '머리',
     },
     related: [
@@ -1832,6 +1927,7 @@ const curriculum = [
       name: '낯 면',
       cnName: '面字旁',
       pinyin: 'miàn',
+      cnPinyin: 'miàn zì páng',
       desc: '얼굴',
     },
     related: [
@@ -1851,6 +1947,7 @@ const curriculum = [
       name: '코 비',
       cnName: '鼻字旁',
       pinyin: 'bí',
+      cnPinyin: 'bí zì páng',
       desc: '코',
     },
     related: [
@@ -1870,6 +1967,7 @@ const curriculum = [
       name: '혀 설',
       cnName: '舌字旁',
       pinyin: 'shé',
+      cnPinyin: 'shé zì páng',
       desc: '혀',
     },
     related: [
@@ -1889,6 +1987,7 @@ const curriculum = [
       name: '뼈 골',
       cnName: '骨字旁',
       pinyin: 'gǔ',
+      cnPinyin: 'gǔ zì páng',
       desc: '뼈',
     },
     related: [
@@ -1908,6 +2007,7 @@ const curriculum = [
       name: '피 혈',
       cnName: '血字旁',
       pinyin: 'xuè',
+      cnPinyin: 'xuè zì páng',
       desc: '피',
     },
     related: [
