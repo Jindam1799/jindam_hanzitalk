@@ -1,6 +1,3 @@
-// ==========================================
-// 1. 전역 변수 및 상태 설정
-// ==========================================
 let currentLevel = 1;
 let currentDayData = null;
 let currentStudyStep = 0;
@@ -16,9 +13,6 @@ let progressData = JSON.parse(localStorage.getItem('jindamProgress')) || {};
 let reviewProgressData =
   JSON.parse(localStorage.getItem('jindamReviewProgress')) || {};
 
-// ==========================================
-// 2. 커스텀 알림창 함수 (alert 대체)
-// ==========================================
 function showCustomAlert(title, message, callback) {
   document.getElementById('alert-title').innerText = title;
   document.getElementById('alert-msg').innerText = message;
@@ -31,9 +25,6 @@ function showCustomAlert(title, message, callback) {
   };
 }
 
-// ==========================================
-// 3. 사운드 및 BGM 설정
-// ==========================================
 const bgmFiles = ['bgm1.mp3', 'bgm2.mp3', 'bgm3.mp3', 'bgm4.mp3'];
 const bgmAudio = new Audio();
 bgmAudio.loop = true;
@@ -88,9 +79,6 @@ const praiseList = [
   { cn: '太出色了', kr: '정말 뛰어나요!' },
 ];
 
-// ==========================================
-// 4. DOM 엘리먼트
-// ==========================================
 const introScreen = document.getElementById('intro-screen');
 const mainHeader = document.getElementById('main-header');
 const levelSelector = document.getElementById('level-selector');
@@ -102,9 +90,6 @@ const reviewListView = document.getElementById('review-list-view');
 const reviewGrid = document.getElementById('review-grid');
 const reviewSelectModal = document.getElementById('review-select-modal');
 
-// ==========================================
-// 5. 로비 및 메뉴 이벤트
-// ==========================================
 introScreen.addEventListener('click', () => {
   if (typeof curriculum === 'undefined') {
     showCustomAlert(
@@ -113,14 +98,11 @@ introScreen.addEventListener('click', () => {
     );
     return;
   }
-
   initAudio();
-
   introScreen.style.display = 'none';
   mainHeader.style.display = 'flex';
   levelSelector.style.display = 'flex';
   calendarView.style.display = 'grid';
-
   renderCalendar(currentLevel);
 
   if (bgmAudio.paused && bgmAudio.src) {
@@ -146,19 +128,14 @@ document.querySelectorAll('.lvl-btn').forEach((btn) => {
   });
 });
 
-// ==========================================
-// 6. 달력 렌더링 및 난이도 팝업창
-// ==========================================
 function renderCalendar(level) {
   calendarView.innerHTML = '';
   const levelData = curriculum.filter((item) => item.level === level);
-
   levelData.forEach((data) => {
     const btn = document.createElement('button');
     btn.className = 'day-btn';
     if (progressData[data.day]) btn.classList.add('completed');
     btn.innerHTML = `<span class="char">${data.radical.char}</span><span class="name">${data.radical.name}</span>`;
-
     btn.onclick = () => openSettingModal(data);
     calendarView.appendChild(btn);
   });
@@ -180,9 +157,6 @@ window.confirmStudyStart = function (difficulty) {
   startStudy(currentDayData);
 };
 
-// ==========================================
-// 7. 복습장 뷰 전환 및 상세 선택 로직
-// ==========================================
 document.getElementById('open-review-btn').addEventListener('click', () => {
   mainHeader.style.display = 'none';
   calendarView.style.display = 'none';
@@ -201,13 +175,11 @@ document.getElementById('close-review-btn').addEventListener('click', () => {
 function renderReviewList() {
   reviewGrid.innerHTML = '';
   const masteredDays = curriculum.filter((item) => progressData[item.day]);
-
   if (masteredDays.length === 0) {
     reviewGrid.innerHTML =
       '<p style="text-align: center; width: 100%; margin-top: 50px; color: #666;">아직 마스터한 한자가 없습니다.<br>달력에서 학습을 먼저 진행해 주세요!</p>';
     return;
   }
-
   masteredDays.forEach((data) => {
     const btn = document.createElement('button');
     btn.className = 'day-btn completed';
@@ -229,19 +201,16 @@ function openReviewSelectModal(data) {
     const relatedBtn = createReviewCharBtn(charData, index + 1, data.day);
     charGrid.appendChild(relatedBtn);
   });
-
   reviewSelectModal.style.display = 'flex';
 }
 
 function createReviewCharBtn(charData, index, day) {
   const btn = document.createElement('button');
   btn.className = 'day-btn';
-
   const progressKey = `${day}-${index}`;
   if (reviewProgressData[progressKey]) {
     btn.classList.add('completed');
   }
-
   btn.innerHTML = `<span class="char">${charData.char}</span><span class="name">${charData.name}</span>`;
   btn.onclick = () => {
     reviewSelectModal.style.display = 'none';
@@ -262,28 +231,21 @@ function startReviewWriting(charData, index) {
   isReviewMode = true;
   isBlindMode = false;
   currentReviewCount = 0;
-
   mainHeader.style.display = 'none';
   reviewListView.style.display = 'none';
   studyView.style.display = 'flex';
-
   loadHanziWriter();
 }
 
-// ==========================================
-// 8. 한자 학습 메인 로직
-// ==========================================
 function startStudy(data) {
   currentDayData = data;
   currentStudyStep = 0;
   isBlindMode = false;
   isReviewMode = false;
-
   mainHeader.style.display = 'none';
   calendarView.style.display = 'none';
   levelSelector.style.display = 'none';
   studyView.style.display = 'flex';
-
   loadHanziWriter();
 }
 
@@ -291,6 +253,13 @@ function loadHanziWriter() {
   document.getElementById('writer-target').innerHTML = '';
   document.getElementById('next-btn').style.display = 'none';
   document.getElementById('status-msg').innerText = '';
+
+  // 💡 새로운 단계를 시작할 때마다 스토리 카드 숨김 초기화
+  const storyCard = document.getElementById('story-card');
+  if (storyCard) {
+    storyCard.classList.remove('show');
+    storyCard.style.display = 'none';
+  }
 
   let targetData;
   let textToRead = '';
@@ -329,7 +298,6 @@ function loadHanziWriter() {
   if (isReviewMode) {
     document.getElementById('step-indicator').innerText =
       `집중 훈련: ${currentReviewCount + 1} / 10회차`;
-
     if (isReviewBlind) {
       document.getElementById('status-msg').innerText =
         '가이드 없이 백지에 도전하세요! 🧠';
@@ -345,7 +313,6 @@ function loadHanziWriter() {
     let currentStepIndicator = currentStudyStep * 2 + (isBlindMode ? 2 : 1);
     document.getElementById('step-indicator').innerText =
       `Step ${currentStepIndicator} / ${totalSteps}`;
-
     if (isBlindMode) {
       document.getElementById('status-msg').innerText =
         '가이드 없이 스스로 도전해 보세요! 🧠';
@@ -398,13 +365,28 @@ function startQuizMode() {
     onComplete: function () {
       playSound('tuk');
 
+      // 💡 한자 쓰기를 완료했을 때 스토리 팝업 띄우기
+      let currentTarget = isReviewMode
+        ? reviewTargetData
+        : currentStudyStep === 0
+          ? currentDayData.radical
+          : currentDayData.related[currentStudyStep - 1];
+      if (currentTarget.story) {
+        const storyCard = document.getElementById('story-card');
+        document.getElementById('story-text').innerText = currentTarget.story;
+        storyCard.style.display = 'flex';
+        // 부드러운 전환을 위해 requestAnimationFrame 활용
+        requestAnimationFrame(() => {
+          setTimeout(() => storyCard.classList.add('show'), 10);
+        });
+      }
+
       if (isReviewMode) {
         currentReviewCount++;
         if (currentReviewCount >= targetReviewCount) {
           playTTS('太出色了');
           document.getElementById('status-msg').innerText =
             `완벽해요! 10번 쓰기를 마스터했습니다! 🎉`;
-
           const progressKey = `${currentDayData.day}-${reviewTargetIndex}`;
           reviewProgressData[progressKey] = true;
           localStorage.setItem(
@@ -444,9 +426,6 @@ function startQuizMode() {
   });
 }
 
-// ==========================================
-// 9. 버튼 이벤트 모음
-// ==========================================
 document.getElementById('next-btn').addEventListener('click', () => {
   if (isReviewMode) {
     studyView.style.display = 'none';
@@ -455,7 +434,6 @@ document.getElementById('next-btn').addEventListener('click', () => {
     openReviewSelectModal(currentDayData);
     return;
   }
-
   if (!isBlindMode) {
     isBlindMode = true;
     loadHanziWriter();
@@ -513,16 +491,12 @@ document.getElementById('back-btn').addEventListener('click', () => {
   }
 });
 
-// 💡 (복구된 핵심 코드) tts-btn 터치/클릭 이벤트 모바일 최적화
 const ttsButton = document.getElementById('tts-btn');
-
 const triggerTTS = (e) => {
-  if (e) e.preventDefault(); // 기본 터치 동작 방지
-
+  if (e) e.preventDefault();
   if (audioCtx && audioCtx.state === 'suspended') {
     audioCtx.resume();
   }
-
   let targetData =
     (isReviewMode && reviewTargetIndex === 0) ||
     (!isReviewMode && currentStudyStep === 0)
@@ -530,23 +504,16 @@ const triggerTTS = (e) => {
       : isReviewMode
         ? reviewTargetData
         : currentDayData.related[currentStudyStep - 1];
-
   let textToRead =
     (isReviewMode && reviewTargetIndex === 0) ||
     (!isReviewMode && currentStudyStep === 0)
       ? targetData.cnName
       : targetData.char;
-
   playTTS(textToRead);
 };
-
-// 모바일 터치와 데스크탑 클릭 동시 대응
 ttsButton.addEventListener('touchstart', triggerTTS, { passive: false });
 ttsButton.addEventListener('click', triggerTTS);
 
-// ==========================================
-// 10. 공통 함수 (TTS 등)
-// ==========================================
 let availableVoices = [];
 window.speechSynthesis.onvoiceschanged = () => {
   availableVoices = window.speechSynthesis.getVoices();
@@ -558,11 +525,9 @@ function playTTS(text) {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'zh-CN';
     utterance.rate = 0.8;
-
     if (availableVoices.length === 0) {
       availableVoices = window.speechSynthesis.getVoices();
     }
-
     const zhVoices = availableVoices.filter(
       (v) => v.lang.includes('zh-CN') || v.lang.includes('zh-TW'),
     );
@@ -575,17 +540,14 @@ function playTTS(text) {
       'lilian',
       'google 普通话',
     ];
-
     let selectedVoice = zhVoices.find((voice) =>
       femaleKeywords.some((keyword) =>
         voice.name.toLowerCase().includes(keyword),
       ),
     );
-
     if (!selectedVoice && zhVoices.length > 0) {
       selectedVoice = zhVoices[0];
     }
-
     if (selectedVoice) utterance.voice = selectedVoice;
     window.speechSynthesis.speak(utterance);
   }
