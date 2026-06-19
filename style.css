@@ -17,7 +17,7 @@
 body,
 html {
   width: 100vw;
-  height: 100dvh; /* 💡 100vh 대신 100dvh 사용 (모바일 주소창/하단바 제외한 실제 보이는 영역) */
+  height: 100dvh; /* 모바일 브라우저 주소창/하단바 제외 영역 꽉 채움 */
   overflow: hidden;
   font-family: 'Noto Sans KR', 'Noto Sans SC', sans-serif;
   background-color: var(--bg);
@@ -26,7 +26,9 @@ html {
   flex-direction: column;
 }
 
-/* 인트로 화면 */
+/* =========================================
+   1. 인트로 화면
+   ========================================= */
 #intro-screen {
   position: absolute;
   top: 0;
@@ -65,11 +67,44 @@ html {
   }
 }
 
-/* 레벨 선택기 */
+/* =========================================
+   2. 로비 헤더 & 레벨 선택기
+   ========================================= */
+.header {
+  padding: 15px 20px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+.header h1 {
+  font-size: 1.5rem;
+  color: var(--text);
+}
+.settings-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.setting-wrapper {
+  display: none;
+} /* 테마 색상 선택기는 모바일에선 일단 숨김 */
+
+.review-btn {
+  background: #ffe4e6;
+  color: var(--primary);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
 .level-selector {
   padding: 15px 20px;
   background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 10;
 }
@@ -119,7 +154,9 @@ html {
   background: #f8f9fa;
 }
 
-/* 캘린더 (부수 그리드) */
+/* =========================================
+   3. 캘린더 (부수 그리드) & 복습장 그리드
+   ========================================= */
 #calendar-view {
   flex: 1;
   display: grid;
@@ -127,7 +164,7 @@ html {
   gap: 15px;
   padding: 20px;
   overflow-y: auto;
-  align-content: start; /* 위에서부터 차곡차곡 정렬 */
+  align-content: start;
 }
 
 .day-btn {
@@ -156,7 +193,6 @@ html {
   font-weight: 700;
 }
 
-/* 완료된 칸의 색상 변경 */
 .day-btn.completed {
   background-color: var(--primary);
   color: white;
@@ -166,9 +202,114 @@ html {
   color: white;
 }
 
-/* 학습 화면 */
+/* =========================================
+   4. 💡 난이도 선택 팝업 모달 (새로 추가됨)
+   ========================================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.6); /* 반투명 검은 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+.modal-content p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.level-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.level-btn {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: all 0.2s;
+}
+
+.level-btn strong {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+.level-btn span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.level-btn:not(.locked):active {
+  background: #ffe4e6;
+  border-color: var(--primary);
+}
+.level-btn.locked {
+  opacity: 0.5;
+  background: #eee;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+}
+.modal-buttons .action-btn {
+  flex: 1;
+  padding: 15px;
+}
+
+/* =========================================
+   5. 💡 복습장 화면 (새로 추가됨)
+   ========================================= */
+#review-list-view {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: var(--bg);
+}
+#review-list-view h2 {
+  margin: 15px 0 5px;
+  font-size: 1.8rem;
+  color: var(--text);
+}
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  align-content: start;
+}
+
+/* =========================================
+   6. 학습 화면
+   ========================================= */
 #study-view {
-  height: 100dvh; /* 전체 높이 꽉 채움 */
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   padding: 15px 20px 20px;
@@ -232,24 +373,18 @@ html {
   justify-content: center;
   align-items: center;
 }
-.study-desc {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  font-weight: 700;
-}
 
-/* 한자 캔버스 컨테이너 */
+/* 캔버스 컨테이너 (자동 크기 조절 핵심) */
 .writer-container {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 0; /* 💡 핵심: 화면 세로가 짧을 때 다른 요소들을 밑으로 밀어내지 않고 스스로 줄어듦 */
+  min-height: 0;
   margin: 10px 0;
 }
 
 #writer-target {
-  /* 크기는 JS에서 높이에 맞춰 동적으로 조절할 것이므로 max-width 삭제 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -266,22 +401,18 @@ html {
 
 .status-msg {
   text-align: center;
-  height: 30px;
-  font-size: 1.2rem;
+  height: 25px;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 10px;
 }
 
-/* 버튼 그룹을 항상 바닥으로 밀어냄 */
 .btn-group {
   display: flex;
   gap: 15px;
-  margin-top: auto; /* 💡 상단 요소들 크기와 상관없이 항상 바닥에 고정 */
-  padding-bottom: env(
-    safe-area-inset-bottom,
-    10px
-  ); /* 아이폰 하단 홈 바 영역 침범 방지 */
+  margin-top: auto;
+  padding-bottom: env(safe-area-inset-bottom, 10px);
 }
 .action-btn {
   flex: 1;
@@ -298,4 +429,35 @@ html {
   color: white;
   display: none;
   box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
+}
+
+/* 하단 브랜드 푸터 (숨김 처리) */
+.brand-footer {
+  display: none;
+}
+
+/* (기존 style.css 내용 전부 유지) */
+
+/* ... (이전 코드 생략) ... */
+
+/* =========================================
+   7. 복습 상세 선택 모달 스타일 추가
+   ========================================= */
+#review-char-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3칸씩 두 줄로 배치 */
+  gap: 10px;
+}
+
+#review-char-grid .day-btn {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  padding: 5px;
+}
+#review-char-grid .char {
+  font-size: 1.8rem;
+}
+#review-char-grid .name {
+  font-size: 0.75rem;
+  word-break: keep-all;
 }
