@@ -25,6 +25,13 @@
           <label for="theme-color">성취 색상</label>
           <input type="color" id="theme-color" value="#e11d48" />
         </div>
+        <button
+          class="exam-btn action-btn"
+          id="open-exam-btn"
+          style="padding: 8px 15px; border-radius: 20px"
+        >
+          🎓 시험장
+        </button>
         <button class="review-btn" id="open-review-btn">📝 복습장</button>
       </div>
     </div>
@@ -55,6 +62,35 @@
         학습을 완료한 한자를 선택해 10번 쓰기에 도전하세요!
       </p>
       <div id="review-grid" class="review-grid"></div>
+    </div>
+    <div
+      id="exam-list-view"
+      style="display: none; padding: 20px; overflow-y: auto; flex: 1"
+    >
+      <button class="back-text-btn" id="close-exam-btn">
+        ← 로비로 돌아가기
+      </button>
+      <h2 style="margin: 15px 0 5px; font-size: 1.8rem; color: var(--text)">
+        실전 시험장
+      </h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px">
+        부수를 선택해 룰렛 시험에 도전하세요! (3번의 기회)
+      </p>
+      <div id="exam-grid" class="review-grid"></div>
+    </div>
+
+    <div id="exam-roulette-modal" class="modal-overlay" style="display: none">
+      <div class="modal-content">
+        <h2 id="exam-roulette-title">시험 룰렛</h2>
+        <p id="exam-roulette-msg" style="margin-bottom: 15px">
+          어떤 한자가 나올까요?
+        </p>
+        <div
+          id="exam-char-grid"
+          class="review-grid"
+          style="margin-bottom: 20px"
+        ></div>
+      </div>
     </div>
 
     <div id="setting-modal" class="modal-overlay" style="display: none">
