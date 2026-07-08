@@ -6,7 +6,7 @@ let currentDayData = null;
 let currentStudyStep = 0;
 let isBlindMode = false;
 let isReviewMode = false;
-let isStudyCompleted = false; 
+let isStudyCompleted = false;
 
 let currentReviewCount = 0;
 const targetReviewCount = 10;
@@ -15,7 +15,8 @@ let reviewTargetIndex = 0;
 
 let writer = null;
 let progressData = JSON.parse(localStorage.getItem('jindamProgress')) || {};
-let reviewProgressData = JSON.parse(localStorage.getItem('jindamReviewProgress')) || {};
+let reviewProgressData =
+  JSON.parse(localStorage.getItem('jindamReviewProgress')) || {};
 
 // ==========================================
 // 2. 커스텀 알림창 함수 (예쁜 팝업창)
@@ -23,10 +24,10 @@ let reviewProgressData = JSON.parse(localStorage.getItem('jindamReviewProgress')
 function showCustomAlert(title, message, btnText, callback) {
   document.getElementById('alert-title').innerText = title;
   document.getElementById('alert-msg').innerText = message;
-  
+
   const alertBtn = document.getElementById('alert-btn');
   alertBtn.innerText = btnText || '확인';
-  
+
   const alertModal = document.getElementById('alert-modal');
   alertModal.style.display = 'flex';
 
@@ -46,16 +47,17 @@ let bgmAudio = null;
 let audioCtx = null;
 
 function initAudio() {
-  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (!audioCtx)
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
   if (!bgmAudio) {
     bgmAudio = document.querySelector('audio') || new Audio();
     bgmAudio.volume = 0.3;
-    bgmAudio.loop = false; 
+    bgmAudio.loop = false;
 
     bgmAudio.addEventListener('ended', () => {
       currentBgmIndex++;
-      if (currentBgmIndex >= bgmFiles.length) currentBgmIndex = 0; 
+      if (currentBgmIndex >= bgmFiles.length) currentBgmIndex = 0;
       bgmAudio.src = bgmFiles[currentBgmIndex];
       bgmAudio.play().catch((e) => console.log('BGM 다음 곡 재생 실패:', e));
     });
@@ -108,7 +110,7 @@ const praiseList = [
 // 4. DOM 엘리먼트
 // ==========================================
 const introScreen = document.getElementById('intro-screen');
-const mainHeader = document.getElementById('main-header'); 
+const mainHeader = document.getElementById('main-header');
 const levelSelector = document.getElementById('level-selector');
 const calendarView = document.getElementById('calendar-view');
 const studyView = document.getElementById('study-view');
@@ -123,13 +125,17 @@ const reviewSelectModal = document.getElementById('review-select-modal');
 // ==========================================
 introScreen.addEventListener('click', () => {
   if (typeof curriculum === 'undefined') {
-    showCustomAlert('오류', 'data.js 파일을 찾을 수 없거나 데이터가 비어있습니다!', '확인');
+    showCustomAlert(
+      '오류',
+      'data.js 파일을 찾을 수 없거나 데이터가 비어있습니다!',
+      '확인',
+    );
     return;
   }
-  
+
   initAudio();
   introScreen.style.display = 'none';
-  mainHeader.style.display = 'flex'; 
+  mainHeader.style.display = 'flex';
   levelSelector.style.display = 'flex';
   calendarView.style.display = 'grid';
   renderCalendar(currentLevel);
@@ -141,13 +147,15 @@ introScreen.addEventListener('click', () => {
 });
 
 document.getElementById('level-toggle-btn').addEventListener('click', () => {
-  dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+  dropdownMenu.style.display =
+    dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
 });
 
 document.querySelectorAll('.lvl-btn').forEach((btn) => {
   btn.addEventListener('click', (e) => {
     currentLevel = parseInt(e.target.dataset.level);
-    document.getElementById('current-level-text').innerText = e.target.innerText;
+    document.getElementById('current-level-text').innerText =
+      e.target.innerText;
     dropdownMenu.style.display = 'none';
     renderCalendar(currentLevel);
   });
@@ -171,7 +179,8 @@ function renderCalendar(level) {
 
 function openSettingModal(data) {
   currentDayData = data;
-  document.getElementById('modal-day-title').innerText = `Day ${data.day} 학습 설정`;
+  document.getElementById('modal-day-title').innerText =
+    `Day ${data.day} 학습 설정`;
   settingModal.style.display = 'flex';
 }
 
@@ -188,7 +197,7 @@ window.confirmStudyStart = function () {
 // 7. 복습장 로직
 // ==========================================
 document.getElementById('open-review-btn').addEventListener('click', () => {
-  mainHeader.style.display = 'none'; 
+  mainHeader.style.display = 'none';
   calendarView.style.display = 'none';
   levelSelector.style.display = 'none';
   reviewListView.style.display = 'block';
@@ -197,7 +206,7 @@ document.getElementById('open-review-btn').addEventListener('click', () => {
 
 document.getElementById('close-review-btn').addEventListener('click', () => {
   reviewListView.style.display = 'none';
-  mainHeader.style.display = 'flex'; 
+  mainHeader.style.display = 'flex';
   levelSelector.style.display = 'flex';
   calendarView.style.display = 'grid';
 });
@@ -206,7 +215,8 @@ function renderReviewList() {
   reviewGrid.innerHTML = '';
   const masteredDays = curriculum.filter((item) => progressData[item.day]);
   if (masteredDays.length === 0) {
-    reviewGrid.innerHTML = '<p style="text-align: center; width: 100%; margin-top: 50px; color: #666;">아직 마스터한 한자가 없습니다.<br>달력에서 학습을 먼저 진행해 주세요!</p>';
+    reviewGrid.innerHTML =
+      '<p style="text-align: center; width: 100%; margin-top: 50px; color: #666;">아직 마스터한 한자가 없습니다.<br>달력에서 학습을 먼저 진행해 주세요!</p>';
     return;
   }
   masteredDays.forEach((data) => {
@@ -246,9 +256,11 @@ function createReviewCharBtn(charData, index, day) {
   return btn;
 }
 
-document.getElementById('review-modal-cancel-btn').addEventListener('click', () => {
-  reviewSelectModal.style.display = 'none';
-});
+document
+  .getElementById('review-modal-cancel-btn')
+  .addEventListener('click', () => {
+    reviewSelectModal.style.display = 'none';
+  });
 
 function startReviewWriting(charData, index) {
   reviewTargetData = charData;
@@ -256,7 +268,7 @@ function startReviewWriting(charData, index) {
   isReviewMode = true;
   isBlindMode = false;
   currentReviewCount = 0;
-  mainHeader.style.display = 'none'; 
+  mainHeader.style.display = 'none';
   reviewListView.style.display = 'none';
   studyView.style.display = 'flex';
   loadHanziWriter();
@@ -270,9 +282,9 @@ function startStudy(data) {
   currentStudyStep = 0;
   isBlindMode = false;
   isReviewMode = false;
-  isStudyCompleted = false; 
-  
-  mainHeader.style.display = 'none'; 
+  isStudyCompleted = false;
+
+  mainHeader.style.display = 'none';
   calendarView.style.display = 'none';
   levelSelector.style.display = 'none';
   studyView.style.display = 'flex';
@@ -295,14 +307,23 @@ function loadHanziWriter() {
 
   if (isReviewMode) {
     targetData = reviewTargetData;
-    document.getElementById('study-desc').innerText = reviewTargetIndex === 0 ? `[부수] ${targetData.name}` : targetData.name;
-    document.getElementById('pinyin-display').innerText = reviewTargetIndex === 0 ? `${targetData.cnName} (${targetData.cnPinyin})` : targetData.pinyin;
+    document.getElementById('study-desc').innerText =
+      reviewTargetIndex === 0 ? `[부수] ${targetData.name}` : targetData.name;
+    document.getElementById('pinyin-display').innerText =
+      reviewTargetIndex === 0
+        ? `${targetData.cnName} (${targetData.cnPinyin})`
+        : targetData.pinyin;
     textToRead = reviewTargetIndex === 0 ? targetData.cnName : targetData.char;
   } else {
-    targetData = currentStudyStep === 0 ? currentDayData.radical : currentDayData.related[currentStudyStep - 1];
+    targetData =
+      currentStudyStep === 0
+        ? currentDayData.radical
+        : currentDayData.related[currentStudyStep - 1];
     if (currentStudyStep === 0) {
-      document.getElementById('study-desc').innerText = `[부수] ${targetData.name}`;
-      document.getElementById('pinyin-display').innerText = `${targetData.cnName} (${targetData.cnPinyin})`;
+      document.getElementById('study-desc').innerText =
+        `[부수] ${targetData.name}`;
+      document.getElementById('pinyin-display').innerText =
+        `${targetData.cnName} (${targetData.cnPinyin})`;
       textToRead = targetData.cnName;
     } else {
       document.getElementById('study-desc').innerText = targetData.name;
@@ -315,25 +336,31 @@ function loadHanziWriter() {
   let isReviewBlind = isReviewMode && currentReviewCount > 0;
 
   if (isReviewMode) {
-    document.getElementById('step-indicator').innerText = `집중 훈련: ${currentReviewCount + 1} / 10회차`;
+    document.getElementById('step-indicator').innerText =
+      `집중 훈련: ${currentReviewCount + 1} / 10회차`;
     if (isReviewBlind) {
-      document.getElementById('status-msg').innerText = '가이드 없이 백지에 도전하세요! 🧠';
+      document.getElementById('status-msg').innerText =
+        '가이드 없이 백지에 도전하세요! 🧠';
       document.getElementById('study-title-text').style.visibility = 'hidden';
     } else {
-      document.getElementById('status-msg').innerText = '첫 번째는 가이드라인을 따라 써보세요. ✍️';
+      document.getElementById('status-msg').innerText =
+        '첫 번째는 가이드라인을 따라 써보세요. ✍️';
       document.getElementById('study-title-text').style.visibility = 'visible';
       if (currentReviewCount === 0) playTTS(textToRead);
     }
   } else {
     let totalSteps = (currentDayData.related.length + 1) * 2;
     let currentStepIndicator = currentStudyStep * 2 + (isBlindMode ? 2 : 1);
-    document.getElementById('step-indicator').innerText = `Step ${currentStepIndicator} / ${totalSteps}`;
-    
+    document.getElementById('step-indicator').innerText =
+      `Step ${currentStepIndicator} / ${totalSteps}`;
+
     if (isBlindMode) {
-      document.getElementById('status-msg').innerText = '가이드 없이 스스로 도전해 보세요! 🧠';
+      document.getElementById('status-msg').innerText =
+        '가이드 없이 스스로 도전해 보세요! 🧠';
       document.getElementById('study-title-text').style.visibility = 'hidden';
     } else {
-      document.getElementById('status-msg').innerText = '획순에 맞춰 예쁘게 따라 써보세요. ✍️';
+      document.getElementById('status-msg').innerText =
+        '획순에 맞춰 예쁘게 따라 써보세요. ✍️';
       document.getElementById('study-title-text').style.visibility = 'visible';
       playTTS(textToRead);
     }
@@ -348,7 +375,12 @@ function loadHanziWriter() {
   targetEl.style.height = size + 'px';
 
   writer = HanziWriter.create('writer-target', targetData.char, {
-    width: size, height: size, padding: 20, highlightColor: '#e11d48', drawingWidth: 35, strokeWidth: 3,
+    width: size,
+    height: size,
+    padding: 20,
+    highlightColor: '#e11d48',
+    drawingWidth: 35,
+    strokeWidth: 3,
     showOutline: isReviewMode ? !isReviewBlind : !isBlindMode,
   });
 
@@ -359,10 +391,13 @@ function startQuizMode() {
   writer.quiz({
     onCorrectStroke: function () {
       playSound('tok');
-      document.getElementById('status-msg').innerText = isReviewMode ? '계속 이어서 그어주세요! ✨' : '좋아요! 다음 획을 그어주세요. ✨';
+      document.getElementById('status-msg').innerText = isReviewMode
+        ? '계속 이어서 그어주세요! ✨'
+        : '좋아요! 다음 획을 그어주세요. ✨';
     },
     onMistake: function () {
-      document.getElementById('status-msg').innerText = '앗! 획순이나 방향이 틀렸어요. 😅';
+      document.getElementById('status-msg').innerText =
+        '앗! 획순이나 방향이 틀렸어요. 😅';
       const targetBox = document.getElementById('writer-target');
       targetBox.style.transform = 'translateX(-5px)';
       setTimeout(() => (targetBox.style.transform = 'translateX(5px)'), 100);
@@ -371,7 +406,11 @@ function startQuizMode() {
     onComplete: function () {
       playSound('tuk');
 
-      let currentTarget = isReviewMode ? reviewTargetData : (currentStudyStep === 0 ? currentDayData.radical : currentDayData.related[currentStudyStep - 1]);
+      let currentTarget = isReviewMode
+        ? reviewTargetData
+        : currentStudyStep === 0
+          ? currentDayData.radical
+          : currentDayData.related[currentStudyStep - 1];
       if (currentTarget.story) {
         const storyCard = document.getElementById('story-card');
         document.getElementById('story-text').innerText = currentTarget.story;
@@ -385,22 +424,30 @@ function startQuizMode() {
         currentReviewCount++;
         if (currentReviewCount >= targetReviewCount) {
           playTTS('太出色了');
-          document.getElementById('status-msg').innerText = `완벽해요! 10번 쓰기를 마스터했습니다! 🎉`;
+          document.getElementById('status-msg').innerText =
+            `완벽해요! 10번 쓰기를 마스터했습니다! 🎉`;
           const progressKey = `${currentDayData.day}-${reviewTargetIndex}`;
           reviewProgressData[progressKey] = true;
-          localStorage.setItem('jindamReviewProgress', JSON.stringify(reviewProgressData));
+          localStorage.setItem(
+            'jindamReviewProgress',
+            JSON.stringify(reviewProgressData),
+          );
 
           const nextBtn = document.getElementById('next-btn');
           nextBtn.innerText = '복습장으로 돌아가기';
           nextBtn.style.display = 'block';
         } else {
-          document.getElementById('status-msg').innerText = `잘했어요! 1초 뒤 다음 빈칸 진행... (${currentReviewCount}/10) 🔥`;
-          setTimeout(() => { loadHanziWriter(); }, 1000);
+          document.getElementById('status-msg').innerText =
+            `잘했어요! 1초 뒤 다음 빈칸 진행... (${currentReviewCount}/10) 🔥`;
+          setTimeout(() => {
+            loadHanziWriter();
+          }, 1000);
         }
         return;
       }
 
-      const randomPraise = praiseList[Math.floor(Math.random() * praiseList.length)];
+      const randomPraise =
+        praiseList[Math.floor(Math.random() * praiseList.length)];
       playTTS(randomPraise.cn);
 
       if (isBlindMode) {
@@ -409,8 +456,9 @@ function startQuizMode() {
           progressData[currentDayData.day] = true;
           localStorage.setItem('jindamProgress', JSON.stringify(progressData));
 
-          document.getElementById('status-msg').innerText = '축하합니다! 오늘의 학습을 모두 마스터했습니다! 🎉';
-          
+          document.getElementById('status-msg').innerText =
+            '축하합니다! 오늘의 학습을 모두 마스터했습니다! 🎉';
+
           const nextBtn = document.getElementById('next-btn');
           nextBtn.innerText = '🏠 로비로 돌아가기';
           nextBtn.style.display = 'block';
@@ -418,21 +466,22 @@ function startQuizMode() {
           // 💡 투박한 alert 대신 예쁜 팝업을 띄우고 확인을 누르면 탈출하도록 변경!
           setTimeout(() => {
             showCustomAlert(
-              "학습 완료! 🏆", 
-              "축하합니다! 오늘의 부수와 한자를 모두 마스터했습니다! 🎉", 
-              "확인 (로비로 돌아가기)", 
-              exitStudy
+              '학습 완료! 🏆',
+              '축하합니다! 오늘의 부수와 한자를 모두 마스터했습니다! 🎉',
+              '확인 (로비로 돌아가기)',
+              exitStudy,
             );
           }, 500);
-
         } else {
-          document.getElementById('status-msg').innerText = `${randomPraise.cn} (${randomPraise.kr}) 완벽하게 외우셨네요! 👏`;
+          document.getElementById('status-msg').innerText =
+            `${randomPraise.cn} (${randomPraise.kr}) 완벽하게 외우셨네요! 👏`;
           const nextBtn = document.getElementById('next-btn');
           nextBtn.innerText = '다음 한자 배우기';
           nextBtn.style.display = 'block';
         }
       } else {
-        document.getElementById('status-msg').innerText = `${randomPraise.cn} (${randomPraise.kr}) 이제 스스로 써볼까요? 🔥`;
+        document.getElementById('status-msg').innerText =
+          `${randomPraise.cn} (${randomPraise.kr}) 이제 스스로 써볼까요? 🔥`;
         const nextBtn = document.getElementById('next-btn');
         nextBtn.innerText = '혼자서 써보기';
         nextBtn.style.display = 'block';
@@ -479,10 +528,12 @@ document.getElementById('hint-btn').addEventListener('click', () => {
 
     writer.animateCharacter({
       onComplete: function () {
-        document.getElementById('status-msg').innerText = '다시 기억을 더듬어 써보세요!';
+        document.getElementById('status-msg').innerText =
+          '다시 기억을 더듬어 써보세요!';
         setTimeout(() => {
           if (isBlindMode || isReviewBlind) {
-            document.getElementById('study-title-text').style.visibility = 'hidden';
+            document.getElementById('study-title-text').style.visibility =
+              'hidden';
             writer.hideOutline();
           }
           document.getElementById('status-msg').innerText = '';
@@ -505,14 +556,21 @@ document.getElementById('back-btn').addEventListener('click', () => {
 
 const ttsButton = document.getElementById('tts-btn');
 const triggerTTS = (e) => {
-  if (e) e.preventDefault(); 
+  if (e) e.preventDefault();
   if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
-  
-  let targetData = (isReviewMode && reviewTargetIndex === 0) || (!isReviewMode && currentStudyStep === 0)
-                   ? currentDayData.radical
-                   : (isReviewMode ? reviewTargetData : currentDayData.related[currentStudyStep - 1]);
-  let textToRead = (isReviewMode && reviewTargetIndex === 0) || (!isReviewMode && currentStudyStep === 0)
-                   ? targetData.cnName : targetData.char;
+
+  let targetData =
+    (isReviewMode && reviewTargetIndex === 0) ||
+    (!isReviewMode && currentStudyStep === 0)
+      ? currentDayData.radical
+      : isReviewMode
+        ? reviewTargetData
+        : currentDayData.related[currentStudyStep - 1];
+  let textToRead =
+    (isReviewMode && reviewTargetIndex === 0) ||
+    (!isReviewMode && currentStudyStep === 0)
+      ? targetData.cnName
+      : targetData.char;
   playTTS(textToRead);
 };
 ttsButton.addEventListener('touchstart', triggerTTS, { passive: false });
@@ -522,7 +580,9 @@ ttsButton.addEventListener('click', triggerTTS);
 // 10. 공통 함수 (TTS 등)
 // ==========================================
 let availableVoices = [];
-window.speechSynthesis.onvoiceschanged = () => { availableVoices = window.speechSynthesis.getVoices(); };
+window.speechSynthesis.onvoiceschanged = () => {
+  availableVoices = window.speechSynthesis.getVoices();
+};
 
 function playTTS(text) {
   if ('speechSynthesis' in window) {
@@ -530,10 +590,25 @@ function playTTS(text) {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'zh-CN';
     utterance.rate = 0.8;
-    if (availableVoices.length === 0) availableVoices = window.speechSynthesis.getVoices();
-    const zhVoices = availableVoices.filter((v) => v.lang.includes('zh-CN') || v.lang.includes('zh-TW'));
-    const femaleKeywords = ['huihui', 'xiaoxiao', 'yaoyao', 'ting', 'mei', 'lilian', 'google 普通话'];
-    let selectedVoice = zhVoices.find((voice) => femaleKeywords.some((keyword) => voice.name.toLowerCase().includes(keyword)));
+    if (availableVoices.length === 0)
+      availableVoices = window.speechSynthesis.getVoices();
+    const zhVoices = availableVoices.filter(
+      (v) => v.lang.includes('zh-CN') || v.lang.includes('zh-TW'),
+    );
+    const femaleKeywords = [
+      'huihui',
+      'xiaoxiao',
+      'yaoyao',
+      'ting',
+      'mei',
+      'lilian',
+      'google 普通话',
+    ];
+    let selectedVoice = zhVoices.find((voice) =>
+      femaleKeywords.some((keyword) =>
+        voice.name.toLowerCase().includes(keyword),
+      ),
+    );
     if (!selectedVoice && zhVoices.length > 0) selectedVoice = zhVoices[0];
     if (selectedVoice) utterance.voice = selectedVoice;
     window.speechSynthesis.speak(utterance);
@@ -542,8 +617,298 @@ function playTTS(text) {
 
 function exitStudy() {
   studyView.style.display = 'none';
-  mainHeader.style.display = 'flex'; 
+  mainHeader.style.display = 'flex';
   levelSelector.style.display = 'flex';
   calendarView.style.display = 'grid';
   renderCalendar(currentLevel);
+}
+
+// ==========================================
+// [시험장 전역 변수]
+// ==========================================
+let examProgressData =
+  JSON.parse(localStorage.getItem('jindamExamProgress')) || {};
+let isExamMode = false;
+let examRemainingChars = []; // 아직 통과 못한 한자 배열
+let examMistakes = 0; // 현재 한자 틀린 횟수 (최대 3)
+let currentExamTarget = null; // 현재 룰렛으로 뽑힌 한자
+
+// ==========================================
+// [시험장 열기 및 렌더링]
+// ==========================================
+document.getElementById('open-exam-btn').addEventListener('click', () => {
+  mainHeader.style.display = 'none';
+  calendarView.style.display = 'none';
+  levelSelector.style.display = 'none';
+  document.getElementById('review-list-view').style.display = 'none';
+  document.getElementById('exam-list-view').style.display = 'block';
+  renderExamList();
+});
+
+document.getElementById('close-exam-btn').addEventListener('click', () => {
+  document.getElementById('exam-list-view').style.display = 'none';
+  mainHeader.style.display = 'flex';
+  levelSelector.style.display = 'flex';
+  calendarView.style.display = 'grid';
+});
+
+function renderExamList() {
+  const examGrid = document.getElementById('exam-grid');
+  examGrid.innerHTML = '';
+
+  curriculum.forEach((data) => {
+    const btn = document.createElement('button');
+    btn.className = 'day-btn';
+
+    // 전체 마스터 여부 체크 (해당 Day의 부수+파생 6개가 모두 통과되었는지)
+    if (examProgressData[`day_${data.day}_mastered`]) {
+      btn.classList.add('exam-mastered');
+    }
+
+    btn.innerHTML = `<span class="char">${data.radical.char}</span><span class="name">${data.radical.name}</span>`;
+    btn.onclick = () => openExamRoulette(data);
+    examGrid.appendChild(btn);
+  });
+}
+
+// ==========================================
+// [룰렛 로직]
+// ==========================================
+function openExamRoulette(data) {
+  currentDayData = data;
+  isExamMode = true;
+  examMistakes = 0;
+
+  // 현재 Day의 모든 한자 세팅 (부수 1개 + 파생 5개 = 총 6개)
+  const allChars = [data.radical, ...data.related];
+
+  // 아직 통과하지 않은 한자만 추려내기
+  examRemainingChars = allChars.filter(
+    (_, idx) => !examProgressData[`${data.day}_${idx}`],
+  );
+
+  if (examRemainingChars.length === 0) {
+    showCustomAlert(
+      '마스터 완료',
+      '이미 완벽하게 마스터한 부수입니다! 🏆',
+      '확인',
+    );
+    return;
+  }
+
+  const charGrid = document.getElementById('exam-char-grid');
+  charGrid.innerHTML = '';
+
+  // 모달에 6개 한자 배치
+  allChars.forEach((charData, idx) => {
+    const btn = document.createElement('div');
+    btn.className = 'day-btn';
+    btn.id = `exam-char-btn-${idx}`;
+
+    // ✨ 이 부분을 수정해 주세요! ✨
+    // [수정 전]
+    // btn.innerHTML = `<span class="char">${charData.char}</span>`;
+
+    // [수정 후]
+    btn.innerHTML = `<span class="char">${charData.char}</span><span class="name">${charData.name}</span>`;
+
+    if (examProgressData[`${data.day}_${idx}`]) {
+      btn.classList.add('exam-passed'); // 통과한 건 흐리게
+    }
+    charGrid.appendChild(btn);
+  });
+
+  document.getElementById('exam-roulette-modal').style.display = 'flex';
+
+  // 1초 뒤 룰렛 회전 시작
+  setTimeout(() => startRoulette(allChars), 1000);
+}
+
+function startRoulette(allChars) {
+  let speed = 50; // 초기 속도 (빠름)
+  let steps = Math.floor(Math.random() * 10) + 20; // 최소 20번 이상 회전
+  let currentStep = 0;
+  let currentIndex = 0;
+
+  document.getElementById('exam-roulette-msg').innerText =
+    '룰렛이 돌아갑니다...!';
+
+  function spin() {
+    // 모든 강조 초기화
+    allChars.forEach((_, idx) => {
+      document
+        .getElementById(`exam-char-btn-${idx}`)
+        .classList.remove('roulette-highlight');
+    });
+
+    // 다음 칸 이동 (통과한 칸도 시각적으로 지나가게 하여 시계방향 유지)
+    currentIndex = (currentIndex + 1) % allChars.length;
+    document
+      .getElementById(`exam-char-btn-${currentIndex}`)
+      .classList.add('roulette-highlight');
+
+    currentStep++;
+
+    if (currentStep < steps) {
+      // 속도 점점 느려지게 (마찰력 효과)
+      speed += 15;
+      setTimeout(spin, speed);
+    } else {
+      // 멈췄을 때 만약 이미 통과한 한자라면, 다음 남은 한자로 이동
+      while (examProgressData[`${currentDayData.day}_${currentIndex}`]) {
+        document
+          .getElementById(`exam-char-btn-${currentIndex}`)
+          .classList.remove('roulette-highlight');
+        currentIndex = (currentIndex + 1) % allChars.length;
+        document
+          .getElementById(`exam-char-btn-${currentIndex}`)
+          .classList.add('roulette-highlight');
+      }
+
+      // 최종 당첨 한자
+      currentExamTarget = allChars[currentIndex];
+      currentExamTarget.originalIndex = currentIndex; // 나중에 저장할 때 쓸 인덱스
+
+      document.getElementById('exam-roulette-msg').innerText =
+        '당첨! 이 한자를 써주세요!';
+      playSound('tok'); // 당첨 사운드
+
+      // 1.5초 후 시험 화면으로 이동
+      setTimeout(() => {
+        document.getElementById('exam-roulette-modal').style.display = 'none';
+        startExamWriting(currentExamTarget);
+      }, 1500);
+    }
+  }
+
+  spin();
+}
+
+// ==========================================
+// [시험 모드 작성 로직]
+// ==========================================
+function startExamWriting(targetData) {
+  document.getElementById('exam-list-view').style.display = 'none';
+  studyView.style.display = 'flex';
+  isBlindMode = true; // 무조건 백지 모드
+  examMistakes = 0;
+
+  document.getElementById('study-desc').innerText = `시험 모드 (기회: 3번)`;
+  document.getElementById('pinyin-display').innerText =
+    targetData.pinyin || targetData.cnPinyin;
+  document.getElementById('study-title-text').innerText = targetData.char;
+  document.getElementById('study-title-text').style.visibility = 'hidden'; // 한자 가리기
+  document.getElementById('status-msg').innerText =
+    `가이드 없이 백지에 도전하세요! (남은 기회: 3번)`;
+
+  // 스토리 카드 등 불필요한 UI 숨기기
+  document.getElementById('story-card').style.display = 'none';
+  document.getElementById('hint-btn').style.display = 'none'; // 힌트 금지
+
+  document.getElementById('writer-target').innerHTML = '';
+
+  const container = document.querySelector('.writer-container');
+  let size = Math.min(container.clientWidth, container.clientHeight);
+  if (size > 350) size = 350;
+
+  writer = HanziWriter.create('writer-target', targetData.char, {
+    width: size,
+    height: size,
+    padding: 20,
+    highlightColor: '#e11d48',
+    drawingWidth: 35,
+    strokeWidth: 3,
+    showOutline: false, // 백지 모드
+  });
+
+  writer.quiz({
+    onCorrectStroke: function () {
+      playSound('tok');
+    },
+    onMistake: function () {
+      examMistakes++;
+      const leftChances = 3 - examMistakes;
+      playSound('tuk');
+
+      const targetBox = document.getElementById('writer-target');
+      targetBox.style.transform = 'translateX(-5px)';
+      setTimeout(() => (targetBox.style.transform = 'translateX(5px)'), 100);
+      setTimeout(() => (targetBox.style.transform = 'translateX(0)'), 200);
+
+      if (leftChances > 0) {
+        document.getElementById('status-msg').innerText =
+          `앗! 틀렸어요. (남은 기회: ${leftChances}번) 😅`;
+      } else {
+        // 3번 틀리면 실패
+        writer.cancelQuiz();
+        document.getElementById('study-title-text').style.visibility =
+          'visible'; // 정답 보여주기
+        playTTS('加油'); // 아쉬운 TTS
+
+        showCustomAlert(
+          '시험 실패 😭',
+          '3번 모두 틀렸습니다. 다시 룰렛을 돌려보세요!',
+          '돌아가기',
+          () => {
+            studyView.style.display = 'none';
+            openExamRoulette(currentDayData); // 룰렛으로 복귀
+          },
+        );
+      }
+    },
+    onComplete: function () {
+      if (examMistakes >= 3) return; // 이미 실패한 경우 무시
+
+      playSound('tuk');
+      playTTS('回答正确！做得太棒了！'); // 정답! 정말 잘했어요! (중국어)
+
+      // 해당 한자 통과 처리
+      examProgressData[
+        `${currentDayData.day}_${currentExamTarget.originalIndex}`
+      ] = true;
+
+      // 남은 한자 개수 확인
+      const allCharsLength = currentDayData.related.length + 1; // 6개
+      let passedCount = 0;
+      for (let i = 0; i < allCharsLength; i++) {
+        if (examProgressData[`${currentDayData.day}_${i}`]) passedCount++;
+      }
+
+      if (passedCount >= allCharsLength) {
+        // 6개 모두 마스터
+        examProgressData[`day_${currentDayData.day}_mastered`] = true;
+        localStorage.setItem(
+          'jindamExamProgress',
+          JSON.stringify(examProgressData),
+        );
+
+        showCustomAlert(
+          '🎉 부수 마스터! 🎉',
+          '6개의 한자를 모두 완벽하게 맞췄습니다!',
+          '최고예요!',
+          () => {
+            studyView.style.display = 'none';
+            document.getElementById('exam-list-view').style.display = 'block';
+            renderExamList(); // 리스트 갱신 (마스터 뱃지 적용)
+          },
+        );
+      } else {
+        // 아직 남은 한자가 있을 경우
+        localStorage.setItem(
+          'jindamExamProgress',
+          JSON.stringify(examProgressData),
+        );
+
+        showCustomAlert(
+          '정답! 👏',
+          `정말 잘했어요!\n남은 한자: ${allCharsLength - passedCount}개`,
+          '다음 룰렛 돌리기',
+          () => {
+            studyView.style.display = 'none';
+            openExamRoulette(currentDayData); // 룰렛으로 복귀하여 남은 것들 중 다시 추첨
+          },
+        );
+      }
+    },
+  });
 }
