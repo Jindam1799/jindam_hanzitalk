@@ -651,7 +651,9 @@ document.getElementById('close-exam-btn').addEventListener('click', () => {
   levelSelector.style.display = 'flex';
   calendarView.style.display = 'grid';
 });
-
+// ==========================================
+// [시험장 열기 및 렌더링]
+// ==========================================
 function renderExamList() {
   const examGrid = document.getElementById('exam-grid');
   examGrid.innerHTML = '';
@@ -660,13 +662,27 @@ function renderExamList() {
     const btn = document.createElement('button');
     btn.className = 'day-btn';
 
-    // 전체 마스터 여부 체크 (해당 Day의 부수+파생 6개가 모두 통과되었는지)
+    // 마스터 기록이 있으면 빨간색 뱃지 표시 (이 기록은 지우지 않고 평생 유지!)
     if (examProgressData[`day_${data.day}_mastered`]) {
       btn.classList.add('exam-mastered');
     }
 
     btn.innerHTML = `<span class="char">${data.radical.char}</span><span class="name">${data.radical.name}</span>`;
-    btn.onclick = () => openExamRoulette(data);
+
+    // ✨ 핵심 수정: 리스트에서 버튼을 누를 때마다 개별 한자 진행도를 초기화!
+    btn.onclick = () => {
+      const allCharsLength = data.related.length + 1; // 부수 1 + 파생 5 = 총 6개
+      for (let i = 0; i < allCharsLength; i++) {
+        delete examProgressData[`${data.day}_${i}`]; // 0~5번 한자 통과 기록만 싹 삭제
+      }
+      localStorage.setItem(
+        'jindamExamProgress',
+        JSON.stringify(examProgressData),
+      );
+
+      openExamRoulette(data); // 초기화 후 룰렛 진입
+    };
+
     examGrid.appendChild(btn);
   });
 }
@@ -679,15 +695,18 @@ function openExamRoulette(data) {
   isExamMode = true;
   examMistakes = 0;
 
-  // 현재 Day의 모든 한자 세팅 (부수 1개 + 파생 5개 = 총 6개)
   const allChars = [data.radical, ...data.related];
 
-  // 아직 통과하지 않은 한자만 추려내기
-  examRemainingChars = allChars.filter(
-    (_, idx) => !examProgressData[`${data.day}_${idx}`],
-  );
+  // 💡 1. 통과 안 한 '남은 한자'들의 원래 인덱스만 따로 모읍니다.
+  const remainingIndices = [];
+  allChars.forEach((_, idx) => {
+    if (!examProgressData[`${data.day}_${idx}`]) {
+      remainingIndices.push(idx);
+    }
+  });
 
-  if (examRemainingChars.length === 0) {
+  // 🗑️ 아래 5줄의 코드를 찾아서 과감하게 지워주세요! 🗑️
+  if (remainingIndices.length === 0) {
     showCustomAlert(
       '마스터 완료',
       '이미 완벽하게 마스터한 부수입니다! 🏆',
@@ -701,79 +720,68 @@ function openExamRoulette(data) {
 
   // 모달에 6개 한자 배치
   allChars.forEach((charData, idx) => {
-    const btn = document.createElement('div');
+    const btn = document.createElement('button'); // 폰트 일치를 위해 button 사용
     btn.className = 'day-btn';
     btn.id = `exam-char-btn-${idx}`;
-
-    // ✨ 이 부분을 수정해 주세요! ✨
-    // [수정 전]
-    // btn.innerHTML = `<span class="char">${charData.char}</span>`;
-
-    // [수정 후]
     btn.innerHTML = `<span class="char">${charData.char}</span><span class="name">${charData.name}</span>`;
 
+    // 💡 2. 이미 한 한자는 칙칙하게 색칠해서 시각적으로 완전히 제외!
     if (examProgressData[`${data.day}_${idx}`]) {
-      btn.classList.add('exam-passed'); // 통과한 건 흐리게
+      btn.classList.add('exam-passed');
     }
     charGrid.appendChild(btn);
   });
 
   document.getElementById('exam-roulette-modal').style.display = 'flex';
-
-  // 1초 뒤 룰렛 회전 시작
-  setTimeout(() => startRoulette(allChars), 1000);
+  setTimeout(() => startRoulette(allChars, remainingIndices), 1000);
 }
 
-function startRoulette(allChars) {
-  let speed = 50; // 초기 속도 (빠름)
-  let steps = Math.floor(Math.random() * 10) + 20; // 최소 20번 이상 회전
+function startRoulette(allChars, remainingIndices) {
+  let speed = 40;
+
+  // 💡 3. 완전 랜덤! 남은 한자 배열(remainingIndices) 중에서 진짜 랜덤으로 타겟 설정
+  const randomPick = Math.floor(Math.random() * remainingIndices.length);
+  const targetOriginalIdx = remainingIndices[randomPick];
+
+  // 총 이동해야 할 스텝 계산 (최소 4바퀴 돌고 타겟에 안착)
+  const totalSteps = remainingIndices.length * 4 + randomPick;
   let currentStep = 0;
-  let currentIndex = 0;
+  let currentPos = 0;
 
   document.getElementById('exam-roulette-msg').innerText =
     '룰렛이 돌아갑니다...!';
 
   function spin() {
     // 모든 강조 초기화
-    allChars.forEach((_, idx) => {
+    remainingIndices.forEach((idx) => {
       document
         .getElementById(`exam-char-btn-${idx}`)
         .classList.remove('roulette-highlight');
     });
 
-    // 다음 칸 이동 (통과한 칸도 시각적으로 지나가게 하여 시계방향 유지)
-    currentIndex = (currentIndex + 1) % allChars.length;
+    // 💡 4. 제외된 한자는 건너뛰고 '남은 한자'들 사이에서만 애니메이션 이동!
+    currentPos = currentStep % remainingIndices.length;
+    const highlightIdx = remainingIndices[currentPos];
+
     document
-      .getElementById(`exam-char-btn-${currentIndex}`)
+      .getElementById(`exam-char-btn-${highlightIdx}`)
       .classList.add('roulette-highlight');
+    playSound('tok'); // 틱! 틱! 틱! 룰렛 돌아가는 사운드 추가
 
     currentStep++;
 
-    if (currentStep < steps) {
-      // 속도 점점 느려지게 (마찰력 효과)
-      speed += 15;
+    if (currentStep <= totalSteps) {
+      speed += 12; // 점진적으로 속도 느려짐 (마찰력)
       setTimeout(spin, speed);
     } else {
-      // 멈췄을 때 만약 이미 통과한 한자라면, 다음 남은 한자로 이동
-      while (examProgressData[`${currentDayData.day}_${currentIndex}`]) {
-        document
-          .getElementById(`exam-char-btn-${currentIndex}`)
-          .classList.remove('roulette-highlight');
-        currentIndex = (currentIndex + 1) % allChars.length;
-        document
-          .getElementById(`exam-char-btn-${currentIndex}`)
-          .classList.add('roulette-highlight');
-      }
-
-      // 최종 당첨 한자
-      currentExamTarget = allChars[currentIndex];
-      currentExamTarget.originalIndex = currentIndex; // 나중에 저장할 때 쓸 인덱스
+      // 멈춤 완료! 최종 당첨
+      currentExamTarget = allChars[targetOriginalIdx];
+      currentExamTarget.originalIndex = targetOriginalIdx;
 
       document.getElementById('exam-roulette-msg').innerText =
         '당첨! 이 한자를 써주세요!';
-      playSound('tok'); // 당첨 사운드
+      playSound('tuk');
 
-      // 1.5초 후 시험 화면으로 이동
       setTimeout(() => {
         document.getElementById('exam-roulette-modal').style.display = 'none';
         startExamWriting(currentExamTarget);
