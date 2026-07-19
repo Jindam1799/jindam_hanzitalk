@@ -458,3 +458,80 @@ html {
   word-break: keep-all;
   font-weight: bold;
 }
+/* 시험장 버튼 스타일 */
+.exam-btn {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* 룰렛 회전 시 부드러운 강조 효과 (어지러움 방지) */
+.roulette-highlight {
+  box-shadow: 0 0 0 4px var(--primary) inset !important;
+  background-color: #ffe4e6 !important;
+  transition:
+    background-color 0.1s ease,
+    box-shadow 0.1s ease;
+  transform: scale(1.05);
+}
+
+/* 이미 통과한 한자 흐리게 처리 */
+.exam-passed {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* 시험 마스터 부수 붉은색 표시 */
+.day-btn.exam-mastered {
+  background-color: #9f1239; /* 기존 완료(primary)보다 더 짙은 마스터 색상 */
+  color: white;
+  border: 2px solid #ffd700; /* 금테두리 추가 */
+}
+
+/* =========================================
+   💡 시험장 & 룰렛 모달 CSS 수정
+   ========================================= */
+/* 시험장 통과한 한자 시각적 제외 표시 (회색 칠하기) */
+.exam-passed {
+  background-color: #f1f3f5 !important;
+  border: 2px solid #dee2e6 !important;
+  opacity: 0.5;
+  pointer-events: none;
+  box-shadow: none !important;
+}
+.exam-passed .char,
+.exam-passed .name {
+  color: #adb5bd !important;
+}
+
+/* 룰렛 회전 애니메이션 (빨간 테두리와 스케일 업) */
+.roulette-highlight {
+  box-shadow: 0 0 0 4px var(--primary) inset !important;
+  background-color: #ffe4e6 !important;
+  transform: scale(1.08);
+  transition: all 0.1s ease;
+  z-index: 2;
+}
+
+/* 팝업창 넘침 해결: 모바일에서 6개(3x2)가 딱 맞게 들어가도록 조정 */
+#exam-char-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding: 5px; /* 모달 패딩 여백 확보 */
+}
+#exam-char-grid .day-btn {
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 5px;
+  margin: 0;
+}
+#exam-char-grid .char {
+  font-size: 1.8rem; /* 모바일 넘침 방지를 위해 약간 축소 */
+}
+#exam-char-grid .name {
+  font-size: 0.75rem;
+}
