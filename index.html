@@ -22,6 +22,10 @@
     <script>
       (function () {
         if (!/^https?:$/.test(location.protocol)) return; // 내 PC에서 파일로 열 때는 건너뜀
+        var standalone =
+          navigator.standalone === true ||
+          (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+        if (standalone) return; // 홈 화면 아이콘으로 실행한 경우는 그대로 사용
         var ua = navigator.userAgent;
         var isAndroid = /android/i.test(ua);
         var isIOS =
@@ -56,7 +60,6 @@
         } else if (isIOS && /line\//i.test(ua) && url.indexOf('openExternalBrowser') < 0) {
           location.href = url + (url.indexOf('?') < 0 ? '?' : '&') + 'openExternalBrowser=1';
         }
-        // 아이폰에서 바로 이동할 수 없는 경우는 시작 화면의 "크롬으로 열기" 안내로 처리
       })();
     </script>
 
@@ -77,10 +80,6 @@
         <p class="brand-subtitle">진심을 담은 중국어, <strong>진담중국어</strong></p>
         <h1>진담한자톡</h1>
         <p class="blink-text">화면을 터치하여 시작하세요</p>
-      </div>
-      <div id="chrome-banner" class="chrome-banner" hidden>
-        <span>크롬에서 열면 소리와 쓰기가 더 잘 돼요</span>
-        <a id="chrome-open-btn" href="#">크롬으로 열기</a>
       </div>
     </section>
 

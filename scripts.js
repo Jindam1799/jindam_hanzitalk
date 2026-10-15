@@ -167,16 +167,6 @@ const praiseList = [
 ];
 
 // ---------- 6. 시작 화면 ----------
-(function setupChromeBanner() {
-  const info = window.__jindamChrome;
-  // 아이폰에서 크롬이 아닌 경우 시작 화면에 "크롬으로 열기" 안내
-  if (!info || info.isChrome || !info.isIOS || !/^https?:$/.test(location.protocol)) return;
-  const link = location.href.replace(/^http(s?):\/\//, (m, s) => (s ? 'googlechromes://' : 'googlechrome://'));
-  $('chrome-open-btn').href = link;
-  $('chrome-open-btn').addEventListener('click', (e) => e.stopPropagation());
-  $('chrome-banner').hidden = false;
-})();
-
 $('intro-screen').addEventListener('click', () => {
   if (typeof curriculum === 'undefined' || typeof HanziWriter === 'undefined') {
     showAlert('연결 오류', '필요한 파일을 불러오지 못했어요.\n인터넷 연결을 확인하고 새로고침해 주세요.');

@@ -111,31 +111,6 @@ button {
     opacity: 0.3;
   }
 }
-.chrome-banner {
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--safe-b) + 18px);
-  transform: translateX(-50%);
-  width: min(92%, 420px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 14px;
-  padding: 10px 12px;
-  font-size: 0.85rem;
-}
-.chrome-banner a {
-  flex-shrink: 0;
-  background: #fff;
-  color: var(--primary);
-  font-weight: 700;
-  padding: 8px 12px;
-  border-radius: 10px;
-  text-decoration: none;
-}
 
 /* =========================================
    목록 화면
